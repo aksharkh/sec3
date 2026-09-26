@@ -5,9 +5,9 @@ import { Arrow } from "@/components/ui/Button";
 import { KnotMark } from "@/components/ui/Logo";
 
 const tones = {
-  knot: { bg: "bg-knot", fg: "text-lime", mark: "text-ivory/15" },
-  lime: { bg: "bg-lime", fg: "text-ink", mark: "text-ink/15" },
-  ink: { bg: "bg-ink", fg: "text-ivory", mark: "text-lime/25" },
+  brand: { bg: "bg-brand", fg: "text-accent", mark: "text-ivory/15" },
+  accent: { bg: "bg-accent", fg: "text-ink", mark: "text-ink/15" },
+  ink: { bg: "bg-ink", fg: "text-ivory", mark: "text-accent/25" },
 };
 
 export function Insights() {
@@ -18,7 +18,7 @@ export function Insights() {
           <div>
             <p className="eyebrow text-muted">(SK—11) Insights</p>
             <Reveal as="h2" className="display mt-8 text-[clamp(2.6rem,6vw,6rem)]">
-              Field <span className="serif text-knot">notes.</span>
+              Field <span className="serif text-brand">notes.</span>
             </Reveal>
           </div>
           <Link href="/insights" className="group inline-flex items-center gap-3 font-medium">

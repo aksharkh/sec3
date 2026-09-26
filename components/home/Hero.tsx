@@ -61,7 +61,7 @@ export function Hero() {
             Many frameworks.
           </Reveal>
           <Reveal as="span" trigger="load" delay={0.5} className="block">
-            One <span className="serif text-knot">secure</span> knot.
+            One <span className="serif text-brand">secure</span> knot.
           </Reveal>
         </h1>
 
@@ -92,8 +92,8 @@ function NowTying() {
     <div className="hero-fade flex flex-col items-end text-right md:items-start md:text-left">
       <p className="eyebrow flex items-center gap-2 text-muted">
         <span className="relative flex size-1.5">
-          <span className="absolute inset-0 animate-ping rounded-full bg-knot-3" />
-          <span className="relative size-1.5 rounded-full bg-knot-3" />
+          <span className="absolute inset-0 animate-ping rounded-full bg-brand-3" />
+          <span className="relative size-1.5 rounded-full bg-brand-3" />
         </span>
         Now tying
       </p>

@@ -10,10 +10,10 @@ import { KnotMark } from "@/components/ui/Logo";
 
 const themes = [
   { card: "bg-paper text-ink", sub: "text-ink/60", pill: "border-ink/15", mark: "text-ink/[0.06]" },
-  { card: "bg-knot text-ivory", sub: "text-ivory/65", pill: "border-ivory/20", mark: "text-ivory/[0.07]" },
-  { card: "bg-ink text-ivory", sub: "text-ivory/60", pill: "border-ivory/20", mark: "text-lime/[0.12]" },
-  { card: "bg-bone text-ink", sub: "text-ink/60", pill: "border-ink/15", mark: "text-knot/[0.1]" },
-  { card: "bg-lime text-ink", sub: "text-ink/70", pill: "border-ink/20", mark: "text-ink/[0.08]" },
+  { card: "bg-brand text-ivory", sub: "text-ivory/65", pill: "border-ivory/20", mark: "text-ivory/[0.07]" },
+  { card: "bg-ink text-ivory", sub: "text-ivory/60", pill: "border-ivory/20", mark: "text-accent/[0.12]" },
+  { card: "bg-bone text-ink", sub: "text-ink/60", pill: "border-ink/15", mark: "text-brand/[0.1]" },
+  { card: "bg-accent text-ink", sub: "text-ink/70", pill: "border-ink/20", mark: "text-ink/[0.08]" },
 ];
 
 export function Services() {
@@ -42,7 +42,7 @@ export function Services() {
           <p className="eyebrow text-muted md:col-span-3">(SK—05) What we do</p>
           <div className="md:col-span-9">
             <Reveal as="h2" className="display text-[clamp(2.8rem,7vw,7.5rem)]">
-              Five services. <span className="serif text-knot">One program.</span>
+              Five services. <span className="serif text-brand">One program.</span>
             </Reveal>
           </div>
         </div>

@@ -69,7 +69,7 @@ export function Cursor() {
 
   return (
     <div ref={ref} aria-hidden className="cursor pointer-events-none fixed left-0 top-0 z-[100] invisible opacity-0">
-      <div className="cursor-disc grid -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-lime text-ink">
+      <div className="cursor-disc grid -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-accent text-ink">
         <span className="eyebrow cursor-label whitespace-nowrap text-[0.65rem]">{label}</span>
       </div>
     </div>

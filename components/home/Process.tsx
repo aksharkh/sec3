@@ -47,13 +47,13 @@ export function Process() {
   }, []);
 
   return (
-    <section ref={root} data-theme="dark" className="relative overflow-hidden bg-knot text-ivory md:h-screen">
+    <section ref={root} data-theme="dark" className="relative overflow-hidden bg-brand text-ivory md:h-screen">
       <div className="flex h-full flex-col py-24 md:py-0">
         <div className="container-x flex items-end justify-between gap-6 md:pt-32">
           <div>
             <p className="eyebrow text-ivory/50">(SK—06) How it works</p>
             <h2 className="display mt-6 text-[clamp(2.6rem,6vw,6rem)]">
-              From tangle <span className="serif text-lime">to tied</span>
+              From tangle <span className="serif text-accent">to tied</span>
             </h2>
           </div>
           <p className="eyebrow hidden text-ivory/50 md:block">Typical SOC 2 / ISO 27001 timeline →</p>
@@ -61,7 +61,7 @@ export function Process() {
 
         <div className="container-x mt-10 hidden md:block">
           <div className="h-px w-full bg-ivory/15">
-            <div className="proc-bar h-px origin-left scale-x-0 bg-lime" />
+            <div className="proc-bar h-px origin-left scale-x-0 bg-accent" />
           </div>
         </div>
 
@@ -75,7 +75,7 @@ export function Process() {
               className="proc-panel relative flex shrink-0 flex-col justify-between rounded-[2rem] border border-ivory/12 bg-ivory/[0.03] p-7 md:h-[52vh] md:w-[38vw] md:p-10 lg:w-[30vw]"
             >
               <div className="proc-anim flex items-center justify-between">
-                <span className="eyebrow text-lime">{p.time}</span>
+                <span className="eyebrow text-accent">{p.time}</span>
                 <span className="eyebrow text-ivory/40">Step {p.n}</span>
               </div>
               <div className="mt-12 md:mt-0">

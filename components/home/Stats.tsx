@@ -42,7 +42,7 @@ export function Stats() {
           <p className="eyebrow text-muted md:col-span-3">(SK—07) In numbers</p>
           <div className="md:col-span-9">
             <Reveal as="h2" className="display max-w-5xl text-[clamp(2.4rem,5.5vw,5.5rem)]">
-              Knots that <span className="serif text-knot">hold</span> under audit.
+              Knots that <span className="serif text-brand">hold</span> under audit.
             </Reveal>
           </div>
         </div>
@@ -55,7 +55,7 @@ export function Stats() {
                 <span className="stat-num" data-value={s.value}>
                   {s.value}
                 </span>
-                <span className="serif mt-[0.12em] text-[0.45em] text-knot">{s.suffix}</span>
+                <span className="serif mt-[0.12em] text-[0.45em] text-brand">{s.suffix}</span>
               </p>
               <p className="mt-3 max-w-[15rem] text-muted">{s.label}</p>
             </div>

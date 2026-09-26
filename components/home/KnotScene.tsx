@@ -13,13 +13,13 @@ import { KnotMark } from "@/components/ui/Logo";
  */
 
 const STRANDS = [
-  { color: "#0e3b34", lime: false },
-  { color: "#16574c", lime: false },
-  { color: "#0b0f0e", lime: false },
-  { color: "#d7ff3a", lime: true },
-  { color: "#2c7a6b", lime: false },
-  { color: "#0e3b34", lime: false },
-  { color: "#1b2522", lime: false },
+  { color: "#0b2a5b", accent: false },
+  { color: "#1c4a96", accent: false },
+  { color: "#0b0f0e", accent: false },
+  { color: "#5b9bff", accent: true },
+  { color: "#3a6fd8", accent: false },
+  { color: "#0b2a5b", accent: false },
+  { color: "#16233d", accent: false },
 ];
 
 const SAMPLES = 420;
@@ -118,7 +118,7 @@ const vertexShader = /* glsl */ `
 
 const fragmentShader = /* glsl */ `
   uniform vec3 uColor;
-  uniform float uLime;
+  uniform float uAccent;
   uniform float uTime;
   uniform float uOffset;
   uniform float uOpacity;
@@ -141,15 +141,15 @@ const fragmentShader = /* glsl */ `
 
     vec3 base = uColor;
     vec3 col = base * (0.42 + diff * 0.75 + fill);
-    col += spec * mix(0.55, 0.9, uLime);
+    col += spec * mix(0.55, 0.9, uAccent);
     // warm ivory rim picks the strands off the paper background
-    col = mix(col, vec3(0.96, 0.94, 0.88), fres * 0.35 * (1.0 - uLime));
+    col = mix(col, vec3(0.96, 0.94, 0.88), fres * 0.35 * (1.0 - uAccent));
 
     // light pulse travelling along each strand once the knot is tied
     float travel = fract(vUv.x * 2.0 - uTime * 0.08 + uOffset);
     float pulse = smoothstep(0.0, 0.02, travel) * (1.0 - smoothstep(0.02, 0.09, travel));
-    col = mix(col, vec3(0.843, 1.0, 0.227), pulse * vProgress * (1.0 - uLime) * 0.9);
-    col += pulse * uLime * 0.35;
+    col = mix(col, vec3(0.5, 0.7, 1.0), pulse * vProgress * (1.0 - uAccent) * 0.9);
+    col += pulse * uAccent * 0.35;
 
     gl_FragColor = vec4(col, uOpacity);
   }
@@ -197,7 +197,7 @@ export function KnotScene({ className }: Props) {
 
     STRANDS.forEach((s, i) => {
       const { knot: kc, tangle: tc } = buildStrandCurves(i, STRANDS.length);
-      const radius = s.lime ? 0.062 : 0.056;
+      const radius = s.accent ? 0.062 : 0.056;
       const g = new THREE.TubeGeometry(kc, TUBULAR, radius, RADIAL, true);
       const gt = new THREE.TubeGeometry(tc, TUBULAR, radius, RADIAL, true);
       g.setAttribute("aTangle", gt.getAttribute("position"));
@@ -213,7 +213,7 @@ export function KnotScene({ className }: Props) {
           uProgress: { value: reduce ? 1 : 0 },
           uTime: { value: 0 },
           uColor: { value: new THREE.Color(s.color) },
-          uLime: { value: s.lime ? 1 : 0 },
+          uAccent: { value: s.accent ? 1 : 0 },
           uOffset: { value: i * 0.37 },
           uOpacity: { value: reduce ? 1 : 0 },
         },
@@ -312,7 +312,7 @@ export function KnotScene({ className }: Props) {
     <div ref={mount} className={className} aria-hidden>
       {fallback && (
         <div className="grid h-full w-full place-items-center lg:justify-end lg:pr-[12vw]">
-          <KnotMark className="w-[60vmin] text-knot" strokeWidth={1.6} />
+          <KnotMark className="w-[60vmin] text-brand" strokeWidth={1.6} />
         </div>
       )}
     </div>

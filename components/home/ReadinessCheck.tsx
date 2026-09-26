@@ -56,7 +56,7 @@ export function ReadinessCheck() {
         <div className="lg:col-span-5">
           <p className="eyebrow text-ivory/45">(SK—10) Readiness check</p>
           <Reveal as="h2" className="display mt-8 text-[clamp(2.6rem,5.5vw,5.8rem)]">
-            How ready are you? <span className="serif text-lime">Find out in 60 seconds.</span>
+            How ready are you? <span className="serif text-accent">Find out in 60 seconds.</span>
           </Reveal>
           <p className="mt-8 max-w-md text-lg leading-relaxed text-ivory/60">
             Six questions. An instant readiness score and the fastest path to your first report — no email
@@ -81,7 +81,7 @@ export function ReadinessCheck() {
               {questions.map((_, i) => (
                 <span
                   key={i}
-                  className={`h-1 flex-1 rounded-full transition-colors duration-500 ${i < step || done ? "bg-lime" : i === step ? "bg-ivory/40" : "bg-ivory/10"}`}
+                  className={`h-1 flex-1 rounded-full transition-colors duration-500 ${i < step || done ? "bg-accent" : i === step ? "bg-ivory/40" : "bg-ivory/10"}`}
                 />
               ))}
             </div>
@@ -98,7 +98,7 @@ export function ReadinessCheck() {
                         type="button"
                         onClick={() => choose(idx)}
                         className={`group flex items-center justify-between rounded-2xl border px-5 py-4 text-left transition-all duration-500 ease-out-expo ${
-                          picked ? "border-lime bg-lime text-ink" : "border-ivory/12 hover:border-ivory/40 hover:bg-ivory/[0.04]"
+                          picked ? "border-accent bg-accent text-ink" : "border-ivory/12 hover:border-ivory/40 hover:bg-ivory/[0.04]"
                         }`}
                       >
                         <span className="flex items-center gap-4">
@@ -120,7 +120,7 @@ export function ReadinessCheck() {
                       cx="80"
                       cy="80"
                       r={R}
-                      stroke="var(--lime)"
+                      stroke="var(--accent)"
                       strokeWidth="6"
                       fill="none"
                       strokeLinecap="round"
@@ -137,12 +137,12 @@ export function ReadinessCheck() {
                   </div>
                 </div>
                 <div>
-                  <p className="eyebrow text-lime">{result.label}</p>
+                  <p className="eyebrow text-accent">{result.label}</p>
                   <p className="mt-3 text-2xl leading-snug tracking-[-0.02em]">{result.body}</p>
                   {priority && <p className="mt-3 text-sm text-ivory/50">Priority: {priority}</p>}
                 </div>
                 <div className="sm:col-span-2">
-                  <Button href="/contact" variant="lime">
+                  <Button href="/contact" variant="accent">
                     Get your full gap assessment
                   </Button>
                 </div>

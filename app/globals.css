@@ -2,8 +2,8 @@
 
 /* ─────────────────────────────────────────────────────────────
    SecureKnots — design tokens
-   Warm editorial: ivory paper, ink type, deep knot-green brand,
-   a single electric-lime signal used sparingly.
+   Warm editorial: ivory paper, ink type, deep navy brand,
+   a single sky-blue signal used sparingly.
    ───────────────────────────────────────────────────────────── */
 :root {
   --ivory: #f3f0e8;
@@ -12,10 +12,10 @@
   --ink: #0b0f0e;
   --ink-2: #151b19;
   --ink-3: #222a27;
-  --knot: #0e3b34;
-  --knot-2: #16574c;
-  --knot-3: #2c7a6b;
-  --lime: #d7ff3a;
+  --brand: #0b2a5b;
+  --brand-2: #1c4a96;
+  --brand-3: #3a6fd8;
+  --accent: #7fb2ff;
   --muted: #6b716d;
   --muted-dark: #8f9792;
   --line: rgb(11 15 14 / 0.12);
@@ -33,10 +33,10 @@
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
   --color-ink-3: var(--ink-3);
-  --color-knot: var(--knot);
-  --color-knot-2: var(--knot-2);
-  --color-knot-3: var(--knot-3);
-  --color-lime: var(--lime);
+  --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-brand-3: var(--brand-3);
+  --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-muted-dark: var(--muted-dark);
   --color-line: var(--line);
@@ -76,12 +76,12 @@ body {
 }
 
 ::selection {
-  background: var(--lime);
+  background: var(--accent);
   color: var(--ink);
 }
 
 :focus-visible {
-  outline: 2px solid var(--knot-3);
+  outline: 2px solid var(--brand-3);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -209,7 +209,7 @@ html.has-cursor * {
 .cursor[data-state="hover"] .cursor-disc {
   width: 44px;
   height: 44px;
-  background: rgb(215 255 58 / 0.35);
+  background: rgb(110 168 255 / 0.35);
 }
 .cursor[data-state="label"] .cursor-disc {
   width: 92px;

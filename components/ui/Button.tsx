@@ -2,11 +2,11 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Magnetic } from "./Magnetic";
 
-type Variant = "ink" | "lime" | "ivory" | "outline" | "outline-light";
+type Variant = "ink" | "accent" | "ivory" | "outline" | "outline-light";
 
 const styles: Record<Variant, { wrap: string; dot: string }> = {
-  ink: { wrap: "bg-ink text-ivory", dot: "bg-lime text-ink" },
-  lime: { wrap: "bg-lime text-ink", dot: "bg-ink text-lime" },
+  ink: { wrap: "bg-ink text-ivory", dot: "bg-accent text-ink" },
+  accent: { wrap: "bg-accent text-ink", dot: "bg-ink text-accent" },
   ivory: { wrap: "bg-ivory text-ink", dot: "bg-ink text-ivory" },
   outline: { wrap: "border border-ink/20 text-ink", dot: "bg-ink text-ivory" },
   "outline-light": { wrap: "border border-ivory/25 text-ivory", dot: "bg-ivory text-ink" },

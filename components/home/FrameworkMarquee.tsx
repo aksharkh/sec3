@@ -19,7 +19,7 @@ export function FrameworkMarquee() {
           <Fragment key={name}>
             <span
               className={`whitespace-nowrap px-6 text-[clamp(2.6rem,6.5vw,6.5rem)] leading-none tracking-[-0.045em] md:px-10 ${
-                i % 2 ? "serif text-knot" : "font-medium text-ink"
+                i % 2 ? "serif text-brand" : "font-medium text-ink"
               }`}
             >
               {name}

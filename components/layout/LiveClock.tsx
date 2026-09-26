@@ -13,5 +13,5 @@ export function LiveClock({ tz }: { tz: string }) {
     return () => clearInterval(id);
   }, [tz]);
 
-  return <span className="eyebrow tabular-nums text-lime">{time}</span>;
+  return <span className="eyebrow tabular-nums text-accent">{time}</span>;
 }

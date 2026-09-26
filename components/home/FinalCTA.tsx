@@ -17,7 +17,7 @@ export function FinalCTA() {
               Let&apos;s tie it
             </Reveal>
             <Reveal as="span" delay={0.1} className="block">
-              <span className="serif text-knot">together.</span>
+              <span className="serif text-brand">together.</span>
             </Reveal>
           </h2>
           <div className="flex lg:col-span-3 lg:justify-end">
@@ -27,7 +27,7 @@ export function FinalCTA() {
                 data-cursor="hide"
                 className="group relative grid size-44 place-items-center overflow-hidden rounded-full bg-ink text-ivory md:size-56"
               >
-                <span className="absolute inset-0 origin-bottom scale-y-0 rounded-full bg-lime transition-transform duration-700 ease-out-expo group-hover:scale-y-100" />
+                <span className="absolute inset-0 origin-bottom scale-y-0 rounded-full bg-accent transition-transform duration-700 ease-out-expo group-hover:scale-y-100" />
                 <span className="relative flex flex-col items-center gap-3 text-center transition-colors duration-500 group-hover:text-ink">
                   <Arrow className="size-5 transition-transform duration-700 ease-out-expo group-hover:rotate-45" />
                   <span className="text-lg font-medium leading-tight">

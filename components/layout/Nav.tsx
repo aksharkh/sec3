@@ -132,7 +132,7 @@ export function Nav() {
               href="/contact"
               data-cursor="hide"
               className={`group hidden h-11 items-center gap-2 rounded-full px-5 text-[0.9rem] font-medium transition-colors duration-500 md:inline-flex ${
-                onDark ? "bg-lime text-ink" : "bg-ink text-ivory"
+                onDark ? "bg-accent text-ink" : "bg-ink text-ivory"
               }`}
             >
               Book an assessment
@@ -144,7 +144,7 @@ export function Nav() {
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((v) => !v)}
               className={`relative z-10 grid size-11 place-items-center rounded-full lg:hidden ${
-                mobileOpen ? "bg-lime text-ink" : onDark ? "bg-ivory text-ink" : "bg-ink text-ivory"
+                mobileOpen ? "bg-accent text-ink" : onDark ? "bg-ivory text-ink" : "bg-ink text-ivory"
               }`}
             >
               <span className="relative block h-2.5 w-4">
@@ -166,9 +166,9 @@ export function Nav() {
           <div className="container-x pb-12 pt-28">
             {menu === "frameworks" && (
               <div className="grid grid-cols-12 gap-8">
-                <div className="col-span-3 flex flex-col justify-between rounded-3xl bg-knot p-7 text-ivory">
+                <div className="col-span-3 flex flex-col justify-between rounded-3xl bg-brand p-7 text-ivory">
                   <div>
-                    <p className="eyebrow text-lime">{frameworkCount} frameworks</p>
+                    <p className="eyebrow text-accent">{frameworkCount} frameworks</p>
                     <p className="mt-4 text-3xl leading-[1.05] tracking-[-0.03em]">
                       Assess once. <span className="serif">Comply to many.</span>
                     </p>
@@ -203,7 +203,7 @@ export function Nav() {
                     href={`/services/${s.id}`}
                     className="group flex min-h-56 flex-col justify-between rounded-3xl border border-line p-6 transition-colors duration-500 hover:bg-ink hover:text-ivory"
                   >
-                    <span className="eyebrow text-muted group-hover:text-lime">
+                    <span className="eyebrow text-muted group-hover:text-accent">
                       {String(i + 1).padStart(2, "0")} — {s.kicker}
                     </span>
                     <span>
@@ -239,13 +239,13 @@ export function Nav() {
                 opacity: mobileOpen ? 1 : 0,
               }}
             >
-              <span className="eyebrow text-lime">0{i + 1}</span>
+              <span className="eyebrow text-accent">0{i + 1}</span>
               {l.label}
             </Link>
           ))}
         </nav>
         <div className="container-x flex flex-col gap-6 pb-10">
-          <Button href="/contact" variant="lime" magnetic={false}>
+          <Button href="/contact" variant="accent" magnetic={false}>
             Book an assessment
           </Button>
           <a href="mailto:contact@secureknots.com" className="eyebrow text-ivory/60">

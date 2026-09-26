@@ -37,7 +37,7 @@ export function Industries() {
           <p className="eyebrow text-ivory/45 md:col-span-3">(SK—08) Industries</p>
           <div className="md:col-span-9">
             <Reveal as="h2" className="display text-[clamp(2.6rem,6.5vw,7rem)]">
-              Built for teams that sell to <span className="serif text-lime">demanding buyers.</span>
+              Built for teams that sell to <span className="serif text-accent">demanding buyers.</span>
             </Reveal>
           </div>
         </div>
@@ -67,7 +67,7 @@ export function Industries() {
                   ))}
                 </span>
                 <span className="hidden justify-end md:col-span-1 md:flex">
-                  <span className="grid size-11 place-items-center rounded-full border border-ivory/15 transition-all duration-500 group-hover:rotate-45 group-hover:border-lime group-hover:bg-lime group-hover:text-ink">
+                  <span className="grid size-11 place-items-center rounded-full border border-ivory/15 transition-all duration-500 group-hover:rotate-45 group-hover:border-accent group-hover:bg-accent group-hover:text-ink">
                     <Arrow className="size-3" />
                   </span>
                 </span>
@@ -82,7 +82,7 @@ export function Industries() {
             className="pointer-events-none absolute left-0 top-0 z-10 hidden md:block"
           >
             <div
-              className={`w-72 -translate-x-1/2 -translate-y-[115%] rounded-3xl bg-lime p-6 text-ink shadow-2xl transition-[opacity,scale] duration-500 ease-out-expo ${
+              className={`w-72 -translate-x-1/2 -translate-y-[115%] rounded-3xl bg-accent p-6 text-ink shadow-2xl transition-[opacity,scale] duration-500 ease-out-expo ${
                 current ? "scale-100 opacity-100" : "scale-75 opacity-0"
               }`}
             >

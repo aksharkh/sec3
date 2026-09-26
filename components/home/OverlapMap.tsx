@@ -32,14 +32,14 @@ export function OverlapMap() {
     <section id="assess-once" data-theme="dark" className="relative overflow-hidden bg-ink py-28 text-ivory md:py-40">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-[20%] -top-[30%] size-[80vw] rounded-full bg-[radial-gradient(circle,rgb(22_87_76/0.45),transparent_60%)]"
+        className="pointer-events-none absolute -right-[20%] -top-[30%] size-[80vw] rounded-full bg-[radial-gradient(circle,rgb(47_93_176/0.45),transparent_60%)]"
       />
       <div className="container-x relative">
         <div className="grid gap-10 md:grid-cols-12">
           <p className="eyebrow text-ivory/45 md:col-span-3">(SK—04) Assess once</p>
           <div className="md:col-span-9">
             <Reveal as="h2" className="display text-[clamp(2.8rem,7vw,7.5rem)]">
-              Test a control once. <span className="serif text-lime">Map it everywhere.</span>
+              Test a control once. <span className="serif text-accent">Map it everywhere.</span>
             </Reveal>
           </div>
         </div>
@@ -63,13 +63,13 @@ export function OverlapMap() {
                     onClick={() => toggle(f.name)}
                     className={`flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm transition-all duration-500 ease-out-expo ${
                       on
-                        ? "border-lime bg-lime text-ink"
+                        ? "border-accent bg-accent text-ink"
                         : "border-ivory/15 text-ivory/70 hover:border-ivory/40 hover:text-ivory"
                     }`}
                   >
                     <span
                       className={`grid size-4 place-items-center rounded-full border transition-colors ${
-                        on ? "border-ink bg-ink text-lime" : "border-ivory/30"
+                        on ? "border-ink bg-ink text-accent" : "border-ivory/30"
                       }`}
                     >
                       {on && (
@@ -94,7 +94,7 @@ export function OverlapMap() {
                     {selected.length < 2 ? "Select two or more frameworks" : `Across ${selected.length} frameworks`}
                   </p>
                 </div>
-                <p className="display text-[clamp(4rem,8vw,7rem)] text-lime">
+                <p className="display text-[clamp(4rem,8vw,7rem)] text-accent">
                   <Count value={saved} />
                   <span className="text-[0.5em]">%</span>
                 </p>
@@ -116,13 +116,13 @@ export function OverlapMap() {
                         ? "border-ivory/8 bg-transparent text-ivory/30"
                         : c === 1
                           ? "border-ivory/10 bg-ink-3 text-ivory"
-                          : "border-knot-3/60 bg-knot text-ivory"
+                          : "border-brand-3/60 bg-brand text-ivory"
                     }`}
                   >
                     <div className="flex items-start justify-between gap-2">
                       <span className="eyebrow text-[0.62rem] opacity-60">{String(d.weight).padStart(2, "0")} ctrl</span>
                       {c > 1 && (
-                        <span className="eyebrow rounded-full bg-lime px-2 py-0.5 text-[0.6rem] text-ink">×{c}</span>
+                        <span className="eyebrow rounded-full bg-accent px-2 py-0.5 text-[0.6rem] text-ink">×{c}</span>
                       )}
                     </div>
                     <div>
@@ -133,7 +133,7 @@ export function OverlapMap() {
                             key={s}
                             title={s}
                             className={`h-1 flex-1 rounded-full transition-colors duration-500 ${
-                              hits.includes(s) ? "bg-lime" : "bg-ivory/10"
+                              hits.includes(s) ? "bg-accent" : "bg-ivory/10"
                             }`}
                           />
                         ))}

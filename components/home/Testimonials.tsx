@@ -51,7 +51,7 @@ export function Testimonials() {
         </div>
 
         <figure className="md:col-span-9">
-          <span aria-hidden className="serif block text-[8rem] leading-[0.5] text-knot">&ldquo;</span>
+          <span aria-hidden className="serif block text-[8rem] leading-[0.5] text-brand">&ldquo;</span>
           <blockquote
             key={i}
             ref={quote}
@@ -60,7 +60,7 @@ export function Testimonials() {
             {t.quote}
           </blockquote>
           <figcaption className="mt-12 flex items-center gap-4 border-t border-line pt-6">
-            <span className="grid size-12 place-items-center rounded-full bg-knot text-lime">
+            <span className="grid size-12 place-items-center rounded-full bg-brand text-accent">
               <KnotMark className="size-6" strokeWidth={4} />
             </span>
             <span>
@@ -70,7 +70,7 @@ export function Testimonials() {
             <span className="ml-auto hidden h-px w-40 overflow-hidden bg-ink/10 sm:block">
               <span
                 key={`${i}-${paused}`}
-                className="block h-full origin-left bg-knot"
+                className="block h-full origin-left bg-brand"
                 style={{
                   animation: paused ? "none" : `progress ${INTERVAL}ms linear forwards`,
                   transform: paused ? "scaleX(0)" : undefined,

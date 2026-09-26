@@ -77,7 +77,7 @@ export function Preloader() {
         <span className="pl-fade eyebrow text-ivory/50">Tying it together</span>
       </div>
       <div className="flex flex-1 items-center justify-center">
-        <svg viewBox="0 0 48 48" fill="none" className="pl-fade size-28 text-lime md:size-36">
+        <svg viewBox="0 0 48 48" fill="none" className="pl-fade size-28 text-accent md:size-36">
           <path ref={path} d={TREFOIL_PATH} stroke="currentColor" strokeWidth={1.4} strokeLinejoin="round" />
         </svg>
       </div>

@@ -182,8 +182,8 @@ export const testimonials = [
 ];
 
 export const insights = [
-  { tag: "Government", title: "CMMC Phase II: what actually changes for defense suppliers", read: "8 min", tone: "knot" },
-  { tag: "AI Governance", title: "ISO 42001 is the new SOC 2 for AI companies", read: "6 min", tone: "lime" },
+  { tag: "Government", title: "CMMC Phase II: what actually changes for defense suppliers", read: "8 min", tone: "brand" },
+  { tag: "AI Governance", title: "ISO 42001 is the new SOC 2 for AI companies", read: "6 min", tone: "accent" },
   { tag: "Strategy", title: "SOC 2 or ISO 27001 first? A decision framework for founders", read: "5 min", tone: "ink" },
 ] as const;
 

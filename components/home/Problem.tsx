@@ -56,7 +56,7 @@ export function Problem() {
           </p>
 
           <div className="problem-answer-wrap mt-10 overflow-hidden">
-            <p className="problem-answer display text-[clamp(3rem,8vw,8rem)] text-knot">
+            <p className="problem-answer display text-[clamp(3rem,8vw,8rem)] text-brand">
               We tie it into <span className="serif">one.</span>
             </p>
           </div>
