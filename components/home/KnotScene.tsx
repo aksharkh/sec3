@@ -23,6 +23,7 @@ const STRANDS = [
 ];
 
 const SAMPLES = 420;
+const CAM_Z = 7.2;
 const TUBULAR = 720;
 const RADIAL = 12;
 
@@ -185,7 +186,7 @@ export function KnotScene({ className }: Props) {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
-    camera.position.set(0, 0, 7.2);
+    camera.position.set(0, 0, CAM_Z);
 
     const root = new THREE.Group();
     const knot = new THREE.Group();
@@ -225,14 +226,13 @@ export function KnotScene({ className }: Props) {
     // Layout: fit the knot to the visible frustum. Right-aligned on desktop,
     // centred and raised on mobile.
     const target = { x: 0, y: 0 };
-    const desktop = () => host.clientWidth >= 1024;
     const layout = () => {
       const w = host.clientWidth;
       const h = host.clientHeight;
       renderer.setSize(w, h, false);
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
-      const visH = 2 * camera.position.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+      const visH = 2 * CAM_Z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
       const visW = visH * camera.aspect;
       const desktop = w >= 1024;
       const s = desktop ? Math.min((visH * 0.6) / 3.4, (visW * 0.38) / 3.4) : Math.min((visH * 0.9) / 3.4, (visW * 0.8) / 3.4);
@@ -269,22 +269,29 @@ export function KnotScene({ className }: Props) {
     const io = new IntersectionObserver(([e]) => (visible = e.isIntersecting));
     io.observe(host);
 
-    const clock = new THREE.Clock();
+    const timer = new THREE.Timer();
     let raf = 0;
     const loop = () => {
       raf = requestAnimationFrame(loop);
       if (!visible) return;
-      const t = clock.getElapsedTime();
-      const scroll = Math.min(window.scrollY / window.innerHeight, 1.5);
+      timer.update();
+      const t = timer.getElapsed();
+      // Hero scroll progress (0 → 1) drives a fly-through into the knot's centre.
+      const hero = window.__skHero ?? 0;
+      const dive = hero * hero * (3 - 2 * hero);
 
       pointer.x += (pointer.tx - pointer.x) * 0.04;
       pointer.y += (pointer.ty - pointer.y) * 0.04;
 
       if (!reduce) {
-        knot.rotation.y = t * 0.12 + scroll * 1.4;
-        knot.rotation.x = Math.sin(t * 0.2) * 0.08 + pointer.y * 0.25 + scroll * 0.3;
+        knot.rotation.y = t * 0.12 + dive * 2.2;
+        knot.rotation.x = Math.sin(t * 0.2) * 0.08 + pointer.y * 0.25 * (1 - dive);
         root.rotation.y = pointer.x * 0.3;
-        root.position.y += (target.y + scroll * (desktop() ? 1.2 : 0.4) - root.position.y) * 0.1;
+        root.position.y += (target.y - root.position.y) * 0.1;
+        camera.position.x = root.position.x * dive;
+        camera.position.y = root.position.y * dive;
+        camera.position.z = CAM_Z - dive * 6.6;
+        camera.rotation.z = dive * 0.6;
       }
       materials.forEach((m) => (m.uniforms.uTime.value = t));
       renderer.render(scene, camera);

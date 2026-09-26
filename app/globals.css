@@ -237,3 +237,7 @@ html.has-cursor * {
     display: none;
   }
 }
+
+@keyframes drift {
+  to { transform: rotate(360deg); }
+}

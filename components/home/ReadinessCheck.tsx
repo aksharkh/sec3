@@ -23,7 +23,7 @@ function band(pct: number) {
   return { label: "Early stage", body: "Perfect time to design it right — build one unified control set now instead of retrofitting three later." };
 }
 
-export function ReadinessCheck() {
+export function ReadinessCheck({ eyebrow = "(SK—12) Readiness check" }: { eyebrow?: string }) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const done = step >= questions.length;
@@ -54,7 +54,7 @@ export function ReadinessCheck() {
     <section data-theme="dark" className="relative overflow-hidden bg-ink py-28 text-ivory md:py-40">
       <div className="container-x grid gap-14 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <p className="eyebrow text-ivory/45">(SK—10) Readiness check</p>
+          <p className="eyebrow text-ivory/45">{eyebrow}</p>
           <Reveal as="h2" className="display mt-8 text-[clamp(2.6rem,5.5vw,5.8rem)]">
             How ready are you? <span className="serif text-accent">Find out in 60 seconds.</span>
           </Reveal>
@@ -142,7 +142,7 @@ export function ReadinessCheck() {
                   {priority && <p className="mt-3 text-sm text-ivory/50">Priority: {priority}</p>}
                 </div>
                 <div className="sm:col-span-2">
-                  <Button href="/contact" variant="accent">
+                  <Button href="#book" variant="accent">
                     Get your full gap assessment
                   </Button>
                 </div>

@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { process } from "@/lib/content";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
-export function Process() {
+export function Process({ eyebrow = "(SK—07) How it works" }: { eyebrow?: string }) {
   const root = useRef<HTMLElement>(null);
   const track = useRef<HTMLDivElement>(null);
 
@@ -51,7 +51,7 @@ export function Process() {
       <div className="flex h-full flex-col py-24 md:py-0">
         <div className="container-x flex items-end justify-between gap-6 md:pt-32">
           <div>
-            <p className="eyebrow text-ivory/50">(SK—06) How it works</p>
+            <p className="eyebrow text-ivory/50">{eyebrow}</p>
             <h2 className="display mt-6 text-[clamp(2.6rem,6vw,6rem)]">
               From tangle <span className="serif text-accent">to tied</span>
             </h2>

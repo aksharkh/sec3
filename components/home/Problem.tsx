@@ -22,7 +22,7 @@ export function Problem() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".pw",
-        { opacity: 0.12 },
+        { opacity: 0.18 },
         {
           opacity: 1,
           ease: "none",
@@ -40,10 +40,10 @@ export function Problem() {
   }, []);
 
   return (
-    <section ref={root} className="relative bg-ivory py-28 md:py-44">
+    <section ref={root} data-theme="dark" className="relative -mt-px bg-brand pb-28 pt-16 text-ivory md:pb-44 md:pt-24">
       <div className="container-x grid gap-12 md:grid-cols-12">
         <div className="md:col-span-3">
-          <p className="eyebrow sticky top-28 text-muted">(SK—03) The tangle</p>
+          <p className="eyebrow sticky top-28 text-ivory/50">(SK—02) The tangle</p>
         </div>
 
         <div className="md:col-span-9">
@@ -56,16 +56,16 @@ export function Problem() {
           </p>
 
           <div className="problem-answer-wrap mt-10 overflow-hidden">
-            <p className="problem-answer display text-[clamp(3rem,8vw,8rem)] text-brand">
+            <p className="problem-answer display text-[clamp(3rem,8vw,8rem)] text-accent">
               We tie it into <span className="serif">one.</span>
             </p>
           </div>
 
-          <div className="mt-20 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-3">
+          <div className="mt-20 grid gap-px overflow-hidden rounded-3xl border border-ivory/10 bg-ivory/10 sm:grid-cols-3">
             {notes.map((n, i) => (
-              <FadeUp key={n.k} delay={i * 0.08} className="bg-ivory p-7">
+              <FadeUp key={n.k} delay={i * 0.08} className="bg-brand p-7">
                 <p className="text-4xl tracking-[-0.04em]">{n.k}</p>
-                <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-muted">{n.v}</p>
+                <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-ivory/55">{n.v}</p>
               </FadeUp>
             ))}
           </div>

@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const DEFAULT = ["SOC 2", "ISO 27001", "HIPAA"];
 
-export function OverlapMap() {
+export function OverlapMap({ eyebrow = "(SK—04) Assess once" }: { eyebrow?: string }) {
   const [selected, setSelected] = useState<string[]>(DEFAULT);
 
   const { separate, unified, saved, coverage } = useMemo(() => {
@@ -36,7 +36,7 @@ export function OverlapMap() {
       />
       <div className="container-x relative">
         <div className="grid gap-10 md:grid-cols-12">
-          <p className="eyebrow text-ivory/45 md:col-span-3">(SK—04) Assess once</p>
+          <p className="eyebrow text-ivory/45 md:col-span-3">{eyebrow}</p>
           <div className="md:col-span-9">
             <Reveal as="h2" className="display text-[clamp(2.8rem,7vw,7.5rem)]">
               Test a control once. <span className="serif text-accent">Map it everywhere.</span>

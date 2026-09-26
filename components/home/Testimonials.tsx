@@ -7,17 +7,17 @@ import { KnotMark } from "@/components/ui/Logo";
 
 const INTERVAL = 9000;
 
-export function Testimonials() {
+export function Testimonials({ items = testimonials, eyebrow = "(SK—09) Client voices" }: { items?: { quote: string; name: string; org: string }[]; eyebrow?: string }) {
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
   const quote = useRef<HTMLQuoteElement>(null);
-  const t = testimonials[i];
+  const t = items[i];
 
   useEffect(() => {
     if (paused) return;
-    const id = setTimeout(() => setI((v) => (v + 1) % testimonials.length), INTERVAL);
+    const id = setTimeout(() => setI((v) => (v + 1) % items.length), INTERVAL);
     return () => clearTimeout(id);
-  }, [i, paused]);
+  }, [i, paused, items.length]);
 
   useEffect(() => {
     const el = quote.current;
@@ -30,7 +30,7 @@ export function Testimonials() {
     };
   }, [i]);
 
-  const go = (d: number) => setI((v) => (v + d + testimonials.length) % testimonials.length);
+  const go = (d: number) => setI((v) => (v + d + items.length) % items.length);
 
   return (
     <section
@@ -40,12 +40,12 @@ export function Testimonials() {
     >
       <div className="container-x grid gap-12 md:grid-cols-12">
         <div className="flex flex-col justify-between gap-10 md:col-span-3">
-          <p className="eyebrow text-muted">(SK—09) Client voices</p>
+          <p className="eyebrow text-muted">{eyebrow}</p>
           <div className="flex items-center gap-3">
             <NavBtn onClick={() => go(-1)} label="Previous testimonial" dir={-1} />
             <NavBtn onClick={() => go(1)} label="Next testimonial" dir={1} />
             <span className="eyebrow ml-3 tabular-nums text-muted">
-              {String(i + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}
+              {String(i + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
             </span>
           </div>
         </div>

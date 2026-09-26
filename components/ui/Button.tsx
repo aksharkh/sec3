@@ -27,17 +27,21 @@ export function Button({
   variant = "ink",
   className,
   magnetic = true,
+  book,
 }: {
   href: string;
   children: ReactNode;
   variant?: Variant;
   className?: string;
   magnetic?: boolean;
+  /** Opens the booking modal pre-selecting this framework. */
+  book?: string;
 }) {
   const s = styles[variant];
   const inner = (
     <Link
-      href={href}
+      href={book ? "#book" : href}
+      data-book={book}
       data-cursor="hide"
       className={`group relative inline-flex h-14 items-center gap-4 rounded-full pl-6 pr-2 text-[0.95rem] font-medium tracking-[-0.01em] transition-transform duration-500 ease-out-expo active:scale-[0.97] ${s.wrap} ${className ?? ""}`}
     >

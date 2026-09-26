@@ -28,7 +28,7 @@ export function Services() {
         const next = cards[i + 1];
         if (!next) return;
         const st = { trigger: next, start: "top bottom", end: "top 15%", scrub: true };
-        gsap.to(card.querySelector(".svc-inner"), { scale: 0.92, ease: "none", scrollTrigger: st });
+        gsap.to(card.querySelector(".svc-inner"), { scale: 0.9, rotateX: 12, yPercent: -4, ease: "none", scrollTrigger: st });
         gsap.to(card.querySelector(".svc-shade"), { opacity: 0.55, ease: "none", scrollTrigger: st });
       });
     }, el);
@@ -39,7 +39,7 @@ export function Services() {
     <section ref={root} className="relative bg-ivory pb-28 pt-28 md:pb-40 md:pt-40">
       <div className="container-x">
         <div className="grid gap-10 md:grid-cols-12">
-          <p className="eyebrow text-muted md:col-span-3">(SK—05) What we do</p>
+          <p className="eyebrow text-muted md:col-span-3">(SK—06) What we do</p>
           <div className="md:col-span-9">
             <Reveal as="h2" className="display text-[clamp(2.8rem,7vw,7.5rem)]">
               Five services. <span className="serif text-brand">One program.</span>
@@ -53,7 +53,7 @@ export function Services() {
             return (
               <article
                 key={s.id}
-                className="svc-card sticky mb-6 md:mb-10"
+                className="svc-card sticky mb-6 [perspective:1400px] md:mb-10"
                 style={{ top: `calc(6rem + ${i * 1.25}rem)` }}
               >
                 <div

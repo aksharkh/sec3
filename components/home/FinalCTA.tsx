@@ -4,12 +4,12 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Arrow } from "@/components/ui/Button";
 
-export function FinalCTA() {
+export function FinalCTA({ eyebrow = "(SK—14) Start here" }: { eyebrow?: string }) {
   return (
     <section className="relative overflow-hidden bg-ivory pb-24 pt-20 md:pb-36 md:pt-28">
       <div className="container-x">
         <div className="border-t border-line pt-10">
-          <p className="eyebrow text-muted">(SK—12) Start here</p>
+          <p className="eyebrow text-muted">{eyebrow}</p>
         </div>
         <div className="mt-12 grid items-end gap-12 lg:grid-cols-12">
           <h2 className="display text-[clamp(3.6rem,11vw,12.5rem)] lg:col-span-9">
@@ -23,7 +23,7 @@ export function FinalCTA() {
           <div className="flex lg:col-span-3 lg:justify-end">
             <Magnetic strength={0.4}>
               <Link
-                href="/contact"
+                href="#book"
                 data-cursor="hide"
                 className="group relative grid size-44 place-items-center overflow-hidden rounded-full bg-ink text-ivory md:size-56"
               >

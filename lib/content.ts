@@ -181,12 +181,6 @@ export const testimonials = [
   },
 ];
 
-export const insights = [
-  { tag: "Government", title: "CMMC Phase II: what actually changes for defense suppliers", read: "8 min", tone: "brand" },
-  { tag: "AI Governance", title: "ISO 42001 is the new SOC 2 for AI companies", read: "6 min", tone: "accent" },
-  { tag: "Strategy", title: "SOC 2 or ISO 27001 first? A decision framework for founders", read: "5 min", tone: "ink" },
-] as const;
-
 /* ───────── Overlap map ─────────
    Illustrative mapping of control domains to frameworks, used by the
    interactive "Assess once" section. Weights ≈ number of testable controls. */
@@ -222,4 +216,116 @@ export const overlapFrameworks: { name: string; domains: DomainId[] }[] = [
   { name: "CMMC", domains: [...core, "physical", "cui"] },
   { name: "FedRAMP", domains: [...core, "sdlc", "bcdr", "physical", "cui"] },
   { name: "ISO 42001", domains: ["gov", "risk", "asset", "ops", "change", "sdlc", "vendor", "privacy"] },
+];
+
+/* ───────── Site navigation ───────── */
+export const navLinks = [
+  { label: "Frameworks", href: "/frameworks", menu: "frameworks" as const },
+  { label: "Services", href: "/services", menu: "services" as const },
+  { label: "Industries", href: "/industries" },
+  { label: "Customers", href: "/customers" },
+  { label: "About", href: "/about" },
+  { label: "Insights", href: "/insights" },
+];
+
+/* ───────── Service detail pages ───────── */
+export const serviceDetails: Record<
+  string,
+  { tagline: string; includes: { t: string; d: string }[]; outcomes: { v: string; l: string }[]; frameworks: string[] }
+> = {
+  advisory: {
+    tagline: "A roadmap that turns every framework you'll ever need into one program.",
+    includes: [
+      { t: "Framework strategy", d: "Which frameworks, in what order, tied to your pipeline and markets." },
+      { t: "Unified control library", d: "One control set mapped to every target requirement." },
+      { t: "Policy suite", d: "Plain-language policies your teams will actually follow." },
+      { t: "Risk management", d: "Risk methodology, register and treatment plans." },
+      { t: "Board reporting", d: "One executive view of posture across all obligations." },
+      { t: "Regulatory watch", d: "Early warning on changes that affect you." },
+    ],
+    outcomes: [{ v: "1", l: "Control set for every framework" }, { v: "60%", l: "Less duplicated work" }, { v: "2 wks", l: "To a costed roadmap" }],
+    frameworks: ["soc-2", "iso-27001", "iso-42001", "gdpr", "dora"],
+  },
+  readiness: {
+    tagline: "Walk into the audit already knowing the outcome.",
+    includes: [
+      { t: "Gap assessment", d: "Control-by-control review against each target framework." },
+      { t: "Remediation plan", d: "Prioritised, owned and sized to your team." },
+      { t: "Hands-on remediation", d: "We write, configure and implement alongside you." },
+      { t: "Evidence collection", d: "Automated where possible, organised always." },
+      { t: "Mock audit", d: "A realistic dry run with auditor-grade sampling." },
+      { t: "Auditor selection", d: "Shortlisting and negotiation support." },
+    ],
+    outcomes: [{ v: "98%", l: "First-attempt pass rate" }, { v: "8–16", l: "Weeks to audit-ready" }, { v: "0", l: "Surprises in fieldwork" }],
+    frameworks: ["soc-2", "iso-27001", "cmmc", "hipaa", "pci-dss"],
+  },
+  unified: {
+    tagline: "Test each control once. Map the evidence everywhere.",
+    includes: [
+      { t: "Cross-framework mapping", d: "Every control traced to every applicable requirement." },
+      { t: "Single fieldwork window", d: "Auditors and certification bodies coordinated." },
+      { t: "Common evidence pool", d: "One request list, reused across assessors." },
+      { t: "Consolidated findings", d: "One remediation register across frameworks." },
+      { t: "Aligned renewals", d: "One compliance calendar instead of four." },
+      { t: "Executive reporting", d: "One report for the board." },
+    ],
+    outcomes: [{ v: "3–5", l: "Frameworks per program" }, { v: "1", l: "Fieldwork window" }, { v: "60%", l: "Fewer evidence requests" }],
+    frameworks: ["unified-audits", "soc-2", "iso-27001", "pci-dss", "hipaa"],
+  },
+  testing: {
+    tagline: "Find what attackers would — and satisfy auditors in the same engagement.",
+    includes: [
+      { t: "Web & API testing", d: "OWASP-aligned manual and automated testing." },
+      { t: "Cloud configuration review", d: "AWS, Azure and GCP posture assessment." },
+      { t: "Network & segmentation", d: "Internal, external and PCI segmentation tests." },
+      { t: "Mobile testing", d: "iOS and Android application security." },
+      { t: "Red team", d: "Objective-based adversary simulation." },
+      { t: "Retest & attestation", d: "Verification and a letter for your buyers." },
+    ],
+    outcomes: [{ v: "100%", l: "Manual validation of findings" }, { v: "48h", l: "Critical findings reported" }, { v: "Free", l: "Retest included" }],
+    frameworks: ["pci-dss", "soc-2", "iso-27001", "dora", "fedramp"],
+  },
+  continuous: {
+    tagline: "Stay audit-ready all year, so renewals are a formality.",
+    includes: [
+      { t: "Fractional vCISO", d: "Senior security leadership, part-time." },
+      { t: "Quarterly control testing", d: "Internal audits that catch drift early." },
+      { t: "Vendor risk management", d: "Third-party reviews and register upkeep." },
+      { t: "Security questionnaires", d: "We answer them, fast and consistently." },
+      { t: "Policy & training", d: "Annual reviews and awareness programs." },
+      { t: "Renewal management", d: "Auditor scheduling and evidence refresh." },
+    ],
+    outcomes: [{ v: "365", l: "Days audit-ready" }, { v: "48h", l: "Questionnaire turnaround" }, { v: "1", l: "Named security lead" }],
+    frameworks: ["soc-2", "iso-27001", "cmmc", "sebi-cscrf", "dpdpa"],
+  },
+};
+
+/* ───────── About ───────── */
+export const values = [
+  { t: "Practitioners, not paper-pushers", d: "Our consultants have run security programs and sat on the auditor side of the table." },
+  { t: "One program, many frameworks", d: "We design for the frameworks you'll need next year, not just this quarter." },
+  { t: "Plain language", d: "If your engineers can't read the policy, it isn't a control." },
+  { t: "Outcomes over hours", d: "We measure success in reports issued and deals closed." },
+];
+
+// PLACEHOLDER — replace with the real leadership team and credentials.
+export const team = [
+  { name: "Founder & CEO", role: "Leadership", focus: "Compliance strategy" },
+  { name: "Head of Advisory", role: "Leadership", focus: "ISO & SOC programs" },
+  { name: "Head of Government", role: "Leadership", focus: "FedRAMP & CMMC" },
+  { name: "Head of Offensive Security", role: "Leadership", focus: "Penetration testing" },
+  { name: "Head of Privacy", role: "Leadership", focus: "GDPR, DPDPA & AI" },
+  { name: "Head of Delivery, India", role: "Leadership", focus: "SEBI & financial services" },
+];
+
+// PLACEHOLDER — confirm actual team certifications.
+export const credentials = ["CISSP", "CISA", "CISM", "ISO 27001 Lead Auditor", "ISO 42001 Lead Auditor", "CMMC RP", "OSCP", "CIPP/E", "CRISC", "CCSP"];
+
+// PLACEHOLDER — replace with real openings.
+export const roles = [
+  { title: "Senior GRC Consultant", team: "Advisory", location: "Remote, US", type: "Full-time" },
+  { title: "ISO Lead Implementer", team: "Advisory", location: "Bengaluru, IN", type: "Full-time" },
+  { title: "CMMC Assessment Specialist", team: "Government", location: "Remote, US", type: "Full-time" },
+  { title: "Penetration Tester", team: "Offensive Security", location: "Bengaluru, IN / Remote", type: "Full-time" },
+  { title: "Privacy Counsel", team: "Privacy", location: "Remote, EU / IN", type: "Contract" },
 ];

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { frameworkGroups, frameworkCount } from "@/lib/content";
-import { Marquee } from "@/components/ui/Marquee";
+import { VelocityMarquee } from "@/components/ui/VelocityMarquee";
 import { KnotMark } from "@/components/ui/Logo";
 
 const all = frameworkGroups.flatMap((g) => g.items);
@@ -10,11 +10,11 @@ export function FrameworkMarquee() {
   return (
     <section aria-label="Frameworks we deliver" className="relative border-y border-line bg-ivory py-10 md:py-14">
       <div className="container-x mb-8 flex items-center justify-between gap-6">
-        <p className="eyebrow text-muted">(SK—02) {frameworkCount} frameworks. One partner.</p>
+        <p className="eyebrow text-muted">(SK—03) {frameworkCount} frameworks. One partner.</p>
         <p className="eyebrow hidden text-muted md:block">Security · Government · Privacy &amp; AI · Financial · Management</p>
       </div>
 
-      <Marquee duration={55}>
+      <VelocityMarquee speed={70}>
         {headline.map((name, i) => (
           <Fragment key={name}>
             <span
@@ -27,9 +27,9 @@ export function FrameworkMarquee() {
             <KnotMark className="size-8 shrink-0 text-ink/20 md:size-12" strokeWidth={3} />
           </Fragment>
         ))}
-      </Marquee>
+      </VelocityMarquee>
 
-      <Marquee duration={70} reverse className="mt-8">
+      <VelocityMarquee speed={40} reverse skew={false} className="mt-8">
         {all.map((f) => (
           <span
             key={f.slug}
@@ -38,7 +38,7 @@ export function FrameworkMarquee() {
             {f.name}
           </span>
         ))}
-      </Marquee>
+      </VelocityMarquee>
     </section>
   );
 }

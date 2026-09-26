@@ -1,21 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { frameworkGroups, frameworkCount, services } from "@/lib/content";
-import { gsap, onSiteReady, prefersReducedMotion } from "@/lib/gsap";
+import { frameworkGroups, frameworkCount, services, navLinks as links } from "@/lib/content";
+import { gsap, onSiteReady, openSearch, prefersReducedMotion, READY_EVENT } from "@/lib/gsap";
 import { Logo } from "@/components/ui/Logo";
 import { Arrow, Button } from "@/components/ui/Button";
 
 type MenuKey = "frameworks" | "services" | null;
 
-const links = [
-  { label: "Frameworks", href: "/frameworks", menu: "frameworks" as const },
-  { label: "Services", href: "/services", menu: "services" as const },
-  { label: "Industries", href: "/industries" },
-  { label: "About", href: "/about" },
-  { label: "Insights", href: "/insights" },
-];
 
 export function Nav() {
   const bar = useRef<HTMLDivElement>(null);
@@ -25,6 +19,14 @@ export function Nav() {
   const [menu, setMenu] = useState<MenuKey>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const pathname = usePathname();
+
+  // Close menus on navigation.
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- reset UI on route change
+    setMenu(null);
+    setMobileOpen(false);
+  }, [pathname]);
 
   // Intro
   useEffect(() => {
@@ -58,10 +60,19 @@ export function Nav() {
     };
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    window.addEventListener(READY_EVENT, onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener(READY_EVENT, onScroll);
+    };
+  }, [pathname]);
 
+  const mobileTouched = useRef(false);
   useEffect(() => {
+    if (!mobileTouched.current) {
+      mobileTouched.current = mobileOpen;
+      if (!mobileOpen) return;
+    }
     if (mobileOpen) window.__lenis?.stop();
     else window.__lenis?.start();
   }, [mobileOpen]);
@@ -127,9 +138,23 @@ export function Nav() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
+            <button
+              type="button"
+              onClick={openSearch}
+              aria-label="Search (Ctrl K)"
+              className={`group hidden h-11 items-center gap-3 rounded-full border px-4 text-sm transition-colors duration-500 sm:flex ${
+                onDark ? "border-ivory/15 text-ivory/70 hover:text-ivory" : "border-ink/10 text-ink/60 hover:text-ink"
+              } ${mobileOpen ? "invisible" : ""}`}
+            >
+              <svg viewBox="0 0 20 20" className="size-4" fill="none">
+                <circle cx="9" cy="9" r="6.5" stroke="currentColor" strokeWidth="1.6" />
+                <path d="m14 14 4 4" stroke="currentColor" strokeWidth="1.6" />
+              </svg>
+              <kbd className="eyebrow hidden text-[0.62rem] xl:inline">⌘K</kbd>
+            </button>
             <Link
-              href="/contact"
+              href="#book"
               data-cursor="hide"
               className={`group hidden h-11 items-center gap-2 rounded-full px-5 text-[0.9rem] font-medium transition-colors duration-500 md:inline-flex ${
                 onDark ? "bg-accent text-ink" : "bg-ink text-ivory"
@@ -245,9 +270,11 @@ export function Nav() {
           ))}
         </nav>
         <div className="container-x flex flex-col gap-6 pb-10">
-          <Button href="/contact" variant="accent" magnetic={false}>
-            Book an assessment
-          </Button>
+          <div onClick={() => setMobileOpen(false)} className="w-fit">
+            <Button href="#book" variant="accent" magnetic={false}>
+              Book an assessment
+            </Button>
+          </div>
           <a href="mailto:contact@secureknots.com" className="eyebrow text-ivory/60">
             contact@secureknots.com
           </a>

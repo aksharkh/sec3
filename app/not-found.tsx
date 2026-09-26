@@ -8,15 +8,15 @@ export default function NotFound() {
       <div className="container-x relative">
         <p className="eyebrow text-muted">(404) Loose thread</p>
         <h1 className="display mt-8 text-[clamp(3.4rem,10vw,10rem)]">
-          This page is still <span className="serif text-brand">being tied.</span>
+          This thread <span className="serif text-brand">comes loose.</span>
         </h1>
         <p className="mt-8 max-w-md text-lg text-muted">
-          We&apos;re rebuilding SecureKnots from the ground up. This section is on its way.
+          The page you&apos;re looking for has moved or never existed. Try search, or head back to solid ground.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <Button href="/">Back to home</Button>
-          <Button href="/contact" variant="outline" magnetic={false}>
-            Talk to us
+          <Button href="/frameworks" variant="outline" magnetic={false}>
+            Browse frameworks
           </Button>
         </div>
       </div>

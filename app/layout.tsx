@@ -6,6 +6,12 @@ import { Cursor } from "@/components/ui/Cursor";
 import { Preloader } from "@/components/layout/Preloader";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { PageTransition } from "@/components/providers/PageTransition";
+import { BookingModal } from "@/components/overlays/BookingModal";
+import { SearchPalette } from "@/components/overlays/SearchPalette";
+import { CookieBanner } from "@/components/overlays/CookieBanner";
+import { Toaster } from "@/components/overlays/Toaster";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
 const sans = Inter_Tight({
   variable: "--font-inter-tight",
@@ -53,15 +59,36 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" id="top" className={`${sans.variable} ${serif.variable} ${mono.variable} antialiased`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "SecureKnots",
+              url: "https://secureknots.com",
+              email: "contact@secureknots.com",
+              telephone: "+1-302-608-6708",
+              address: { "@type": "PostalAddress", streetAddress: "1207 Delaware Ave #749", addressLocality: "Wilmington", addressRegion: "DE", postalCode: "19806", addressCountry: "US" },
+              areaServed: ["US", "IN", "EU"],
+            }),
+          }}
+        />
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-ink">
           Skip to content
         </a>
         <SmoothScroll />
         <Preloader />
+        <PageTransition />
+        <ScrollProgress />
         <Cursor />
         <Nav />
         <main id="main">{children}</main>
         <Footer />
+        <BookingModal />
+        <SearchPalette />
+        <CookieBanner />
+        <Toaster />
         <div className="grain" aria-hidden />
       </body>
     </html>

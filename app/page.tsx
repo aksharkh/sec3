@@ -1,12 +1,14 @@
 import { Hero } from "@/components/home/Hero";
-import { FrameworkMarquee } from "@/components/home/FrameworkMarquee";
 import { Problem } from "@/components/home/Problem";
+import { FrameworkMarquee } from "@/components/home/FrameworkMarquee";
 import { OverlapMap } from "@/components/home/OverlapMap";
+import { ControlMatrix } from "@/components/home/ControlMatrix";
 import { Services } from "@/components/home/Services";
 import { Process } from "@/components/home/Process";
+import { LetterPortal } from "@/components/home/LetterPortal";
 import { Stats } from "@/components/home/Stats";
 import { Industries } from "@/components/home/Industries";
-import { Testimonials } from "@/components/home/Testimonials";
+import { StoriesRail } from "@/components/home/StoriesRail";
 import { ReadinessCheck } from "@/components/home/ReadinessCheck";
 import { Insights } from "@/components/home/Insights";
 import { FinalCTA } from "@/components/home/FinalCTA";
@@ -15,14 +17,16 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <FrameworkMarquee />
       <Problem />
+      <FrameworkMarquee />
       <OverlapMap />
+      <ControlMatrix />
       <Services />
       <Process />
+      <LetterPortal />
       <Stats />
       <Industries />
-      <Testimonials />
+      <StoriesRail />
       <ReadinessCheck />
       <Insights />
       <FinalCTA />
