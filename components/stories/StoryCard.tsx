@@ -11,6 +11,7 @@ export function StoryCard({ story, className, size = "md" }: { story: Story; cla
     <Link
       href={`/customers/${story.slug}`}
       data-cursor="Read story"
+      data-fx
       data-label={story.company}
       className={`group relative flex flex-col overflow-hidden rounded-[2rem] ${t.bg} ${t.fg} ${
         size === "lg" ? "min-h-[34rem] p-8 md:p-12" : "min-h-[30rem] p-7"

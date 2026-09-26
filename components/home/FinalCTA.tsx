@@ -3,11 +3,13 @@ import { contact } from "@/lib/content";
 import { Reveal } from "@/components/ui/Reveal";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Arrow } from "@/components/ui/Button";
+import { DotField } from "@/components/ui/DotField";
 
 export function FinalCTA({ eyebrow = "(SK—14) Start here" }: { eyebrow?: string }) {
   return (
     <section className="relative overflow-hidden bg-ivory pb-24 pt-20 md:pb-36 md:pt-28">
-      <div className="container-x">
+      <DotField className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_70%_60%,black_20%,transparent_75%)]" />
+      <div className="container-x relative">
         <div className="border-t border-line pt-10">
           <p className="eyebrow text-muted">{eyebrow}</p>
         </div>

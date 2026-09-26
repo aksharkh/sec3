@@ -241,3 +241,29 @@ html.has-cursor * {
 @keyframes drift {
   to { transform: rotate(360deg); }
 }
+
+@keyframes ft-flow {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* ───────── Card tilt + spotlight ([data-fx]) ───────── */
+[data-fx] {
+  --mx: 50%;
+  --my: 50%;
+  --spot: 0;
+  transition: transform 0.6s var(--ease-out), background-color 0.7s var(--ease-out), color 0.7s var(--ease-out), border-color 0.7s var(--ease-out);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+[data-fx]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: var(--spot);
+  transition: opacity 0.4s;
+  background: radial-gradient(420px circle at var(--mx) var(--my), color-mix(in srgb, var(--accent) 28%, transparent), transparent 60%);
+  mix-blend-mode: screen;
+}

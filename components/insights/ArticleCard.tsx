@@ -10,7 +10,7 @@ export function ArticleCard({ a, large }: { a: Article; large?: boolean }) {
   const t = toneClasses[a.tone];
   return (
     <Link href={`/insights/${a.slug}`} data-cursor="Read" data-label={a.tag} className={`group block ${large ? "lg:grid lg:grid-cols-12 lg:items-end lg:gap-10" : ""}`}>
-      <div className={`relative overflow-hidden rounded-[1.75rem] ${t.bg} ${large ? "aspect-[16/10] lg:col-span-7" : "aspect-[4/5]"}`}>
+      <div data-fx className={`relative overflow-hidden rounded-[1.75rem] ${t.bg} ${large ? "aspect-[16/10] lg:col-span-7" : "aspect-[4/5]"}`}>
         <div className="absolute inset-0 transition-transform duration-[1.4s] ease-out-expo group-hover:scale-110 group-hover:rotate-6">
           <Glyph seed={a.slug} className={`absolute left-1/2 top-1/2 w-[115%] -translate-x-1/2 -translate-y-1/2 ${t.art} opacity-70`} strands={9} strokeWidth={0.5} />
         </div>

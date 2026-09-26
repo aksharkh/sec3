@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { stats } from "@/lib/content";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 import { Reveal } from "@/components/ui/Reveal";
+import { Odometer } from "@/components/ui/Odometer";
 
 export function Stats({ eyebrow = "(SK—09) In numbers" }: { eyebrow?: string }) {
   const root = useRef<HTMLElement>(null);
@@ -12,18 +13,6 @@ export function Stats({ eyebrow = "(SK—09) In numbers" }: { eyebrow?: string }
     const el = root.current;
     if (!el || prefersReducedMotion()) return;
     const ctx = gsap.context(() => {
-      gsap.utils.toArray<HTMLElement>(".stat-num").forEach((n) => {
-        const end = Number(n.dataset.value);
-        const obj = { v: 0 };
-        n.textContent = "0";
-        gsap.to(obj, {
-          v: end,
-          duration: 2.2,
-          ease: "expo.out",
-          scrollTrigger: { trigger: n, start: "top 90%", once: true },
-          onUpdate: () => (n.textContent = String(Math.round(obj.v))),
-        });
-      });
       gsap.from(".stat-line", {
         scaleX: 0,
         transformOrigin: "left",
@@ -52,9 +41,7 @@ export function Stats({ eyebrow = "(SK—09) In numbers" }: { eyebrow?: string }
             <div key={s.label}>
               <div className="stat-line h-px w-full bg-ivory/20" />
               <p className="display mt-6 flex items-start text-[clamp(4.5rem,8vw,8.5rem)] tabular-nums">
-                <span className="stat-num" data-value={s.value}>
-                  {s.value}
-                </span>
+                <Odometer value={s.value} />
                 <span className="serif mt-[0.12em] text-[0.45em] text-accent">{s.suffix}</span>
               </p>
               <p className="mt-3 max-w-[15rem] text-ivory/55">{s.label}</p>

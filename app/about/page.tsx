@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/Button";
 import { Stats } from "@/components/home/Stats";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import { LiveClock } from "@/components/layout/LiveClock";
+import { OutlineBand } from "@/components/ui/OutlineBand";
 
 export const metadata: Metadata = {
   title: "About",
@@ -124,6 +125,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <OutlineBand rows={[["Practitioners", "Not paper-pushers", "Practitioners", "Not paper-pushers"], ["Plain language", "Outcomes", "One program", "Plain language", "Outcomes"]]} />
       <FinalCTA eyebrow="(AB—07) Work with us" />
     </>
   );

@@ -67,9 +67,10 @@ export function FrameworkExplorer({ items }: { items: Framework[] }) {
               key={f.slug}
               href={`/frameworks/${f.slug}`}
               data-cursor="Explore"
+              data-fx
               data-label={f.name}
               style={{ animationDelay: `${Math.min(i, 12) * 40}ms` }}
-              className="group relative flex min-h-72 animate-[fadeUp_0.7s_var(--ease-out)_both] flex-col justify-between overflow-hidden rounded-[1.75rem] border border-line bg-paper/60 p-7 transition-colors duration-700 ease-out-expo hover:border-brand hover:bg-brand hover:text-ivory"
+              className="group relative flex min-h-72 animate-[fadeUp_0.7s_var(--ease-out)_backwards] flex-col justify-between overflow-hidden rounded-[1.75rem] border border-line bg-paper/60 p-7 transition-colors duration-700 ease-out-expo hover:border-brand hover:bg-brand hover:text-ivory"
             >
               <Glyph
                 seed={f.slug}

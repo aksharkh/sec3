@@ -13,6 +13,8 @@ import { CookieBanner } from "@/components/overlays/CookieBanner";
 import { Toaster } from "@/components/overlays/Toaster";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { ThemeLab } from "@/components/ui/ThemeLab";
+import { CursorTrail } from "@/components/ui/CursorTrail";
+import { InteractiveFX } from "@/components/providers/InteractiveFX";
 
 const sans = Inter_Tight({
   variable: "--font-inter-tight",
@@ -83,6 +85,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <PageTransition />
         <ScrollProgress />
         <Cursor />
+        <CursorTrail />
+        <InteractiveFX />
         <Nav />
         <main id="main">{children}</main>
         <Footer />

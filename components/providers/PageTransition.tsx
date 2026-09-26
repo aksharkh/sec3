@@ -16,7 +16,7 @@ export function PageTransition() {
   const curtain = useRef<HTMLDivElement>(null);
   const label = useRef<HTMLSpanElement>(null);
   const pending = useRef(false);
-  const first = useRef(true);
+  const lastPath = useRef<string | null>(null);
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
@@ -53,10 +53,12 @@ export function PageTransition() {
 
   // New route rendered → reset scroll, refresh triggers, lift the curtain.
   useEffect(() => {
-    if (first.current) {
-      first.current = false;
+    // Only react to real route changes (effects may run twice in development).
+    if (lastPath.current === null || lastPath.current === pathname) {
+      lastPath.current = pathname;
       return;
     }
+    lastPath.current = pathname;
     window.__lenis?.scrollTo(0, { immediate: true, force: true });
     window.scrollTo(0, 0);
     const el = curtain.current!;

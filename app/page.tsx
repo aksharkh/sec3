@@ -12,12 +12,15 @@ import { StoriesRail } from "@/components/home/StoriesRail";
 import { ReadinessCheck } from "@/components/home/ReadinessCheck";
 import { Insights } from "@/components/home/Insights";
 import { FinalCTA } from "@/components/home/FinalCTA";
+import { FlowThread } from "@/components/ui/FlowThread";
+import { OutlineBand } from "@/components/ui/OutlineBand";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <Problem />
+      <FlowThread dark />
       <FrameworkMarquee />
       <OverlapMap />
       <ControlMatrix />
@@ -25,10 +28,12 @@ export default function Home() {
       <Process />
       <LetterPortal />
       <Stats />
+      <FlowThread />
       <Industries />
       <StoriesRail />
       <ReadinessCheck />
       <Insights />
+      <OutlineBand />
       <FinalCTA />
     </>
   );
