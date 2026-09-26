@@ -12,6 +12,7 @@ import { SearchPalette } from "@/components/overlays/SearchPalette";
 import { CookieBanner } from "@/components/overlays/CookieBanner";
 import { Toaster } from "@/components/overlays/Toaster";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { ThemeLab } from "@/components/ui/ThemeLab";
 
 const sans = Inter_Tight({
   variable: "--font-inter-tight",
@@ -89,6 +90,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SearchPalette />
         <CookieBanner />
         <Toaster />
+        <ThemeLab />
         <div className="grain" aria-hidden />
       </body>
     </html>
