@@ -37,10 +37,13 @@ export function CoverageMatrix({
   collapse,
   className,
   onHover,
+  onDark = false,
 }: {
   collapse: MutableRefObject<number>;
   className?: string;
   onHover?: (label: string | null) => void;
+  /** Render for a dark panel: white cells, light-blue wave. */
+  onDark?: boolean;
 }) {
   const ref = useRef<HTMLCanvasElement>(null);
 
@@ -69,7 +72,11 @@ export function CoverageMatrix({
       cell = pitch - gap;
       ox = (w - pitch * COLS + gap) / 2;
       oy = (h - pitch * ROWS + gap) / 2;
-      colors = { ink: cssVar("--ink") || colors.ink, brand: cssVar("--brand") || colors.brand, muted: cssVar("--muted-dark") || colors.muted };
+      colors = {
+        ink: cssVar(onDark ? "--accent" : "--ink") || colors.ink,
+        brand: cssVar(onDark ? "--brand-3" : "--brand") || colors.brand,
+        muted: cssVar(onDark ? "--muted" : "--muted-dark") || colors.muted,
+      };
     };
 
     const draw = (t: number) => {
@@ -155,7 +162,7 @@ export function CoverageMatrix({
       c.removeEventListener("pointermove", move);
       c.removeEventListener("pointerleave", leave);
     };
-  }, [collapse, onHover]);
+  }, [collapse, onHover, onDark]);
 
   return <canvas ref={ref} className={className} role="img" aria-label="Coverage matrix of 29 frameworks against 16 control domains" />;
 }

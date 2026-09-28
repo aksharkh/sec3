@@ -1,30 +1,29 @@
 @import "tailwindcss";
 
 /* ─────────────────────────────────────────────────────────────
-   SecureKnots "Signal" design tokens
-   Dark instrument-panel theme. Token names are semantic roles
-   shared with the rest of the codebase:
-     ivory / paper / bone  → page surfaces (graphite)
-     ink / ink-2 / ink-3   → primary text, and bone-white slabs
-     brand                 → signal orange (emphasis + orange slabs)
-     accent                → near-black, used on orange / bone slabs
+   SecureKnots "Corporate" design tokens
+   Light theme with deep-navy blocks and a royal-blue brand.
+     ivory / paper / bone  → light page surfaces
+     ink / ink-2 / ink-3   → primary text, and deep-navy sections
+     brand                 → royal blue (emphasis, primary actions, blue slabs)
+     accent                → white, for text and controls on navy / blue
    ───────────────────────────────────────────────────────────── */
 :root {
-  --ivory: #0d0d0e;
-  --paper: #151517;
-  --bone: #1d1d20;
-  --ink: #ecebe6;
-  --ink-2: #e3e2dc;
-  --ink-3: #d6d5ce;
-  --brand: #ff5b2e;
-  --brand-2: #e2461b;
-  --brand-3: #ff8a62;
-  --accent: #121213;
-  --glow: #ffd9c7;
-  --muted: #8c8b86;
-  --muted-dark: #5c5b57;
-  --line: rgb(236 235 230 / 0.1);
-  --line-dark: rgb(13 13 14 / 0.12);
+  --ivory: #f6f8fb;
+  --paper: #edf1f7;
+  --bone: #e1e7f0;
+  --ink: #0b1b36;
+  --ink-2: #0f2344;
+  --ink-3: #182f57;
+  --brand: #1f4fd6;
+  --brand-2: #163a9e;
+  --brand-3: #5b8cff;
+  --accent: #ffffff;
+  --glow: #dbe6ff;
+  --muted: #5a6478;
+  --muted-dark: #9aa4b6;
+  --line: rgb(11 27 54 / 0.1);
+  --line-dark: rgb(255 255 255 / 0.12);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
@@ -92,8 +91,8 @@ body {
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--ink);
+  background: var(--brand);
+  color: #fff;
 }
 
 :focus-visible {

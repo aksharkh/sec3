@@ -77,18 +77,18 @@ export function SignalHero() {
             </div>
           </div>
 
-          <div className="sh-fade sh-panel relative flex min-h-[280px] flex-col overflow-hidden rounded-[12px] border border-line bg-paper md:col-span-8">
-            <div className="flex items-center justify-between border-b border-line px-5 py-3">
-              <span className="eyebrow text-muted">Coverage matrix</span>
-              <span ref={readout} className="eyebrow text-ink">
+          <div className="sh-fade sh-panel relative flex min-h-[280px] flex-col overflow-hidden rounded-[12px] bg-ink text-ivory shadow-[0_30px_80px_-40px_rgb(11_27_54/0.6)] md:col-span-8">
+            <div className="flex items-center justify-between border-b border-line-dark px-5 py-3">
+              <span className="eyebrow text-ivory/55">Coverage matrix</span>
+              <span ref={readout} className="eyebrow text-brand-3">
                 {matrixStats.frameworks} frameworks × {matrixStats.domains} domains
               </span>
             </div>
             <div className="relative flex-1 p-4">
-              <CoverageMatrix collapse={collapse} onHover={onHover} className="absolute inset-4 size-[calc(100%-2rem)]" />
+              <CoverageMatrix collapse={collapse} onHover={onHover} onDark className="absolute inset-4 size-[calc(100%-2rem)]" />
             </div>
-            <div className="flex h-10 items-center border-t border-line px-5">
-              <span className="mono text-xs text-muted">{tip ?? "Hover a cell to see the framework and control domain."}</span>
+            <div className="flex h-10 items-center border-t border-line-dark px-5">
+              <span className="mono text-xs text-ivory/55">{tip ?? "Hover a cell to see the framework and control domain."}</span>
             </div>
           </div>
         </div>

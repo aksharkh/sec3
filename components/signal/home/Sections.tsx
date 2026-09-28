@@ -153,30 +153,30 @@ export function ProcessRail() {
   }, []);
 
   return (
-    <section ref={root} className="bg-ivory py-24 md:py-36">
+    <section ref={root} className="bg-ink py-24 text-ivory md:py-36">
       <div className="container-x grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-28">
             <Reveal as="h2" className="wide text-[clamp(2rem,4.6vw,5rem)]">
-              From tangle <span className="em text-brand">to tied.</span>
+              From tangle <span className="em text-brand-3">to tied.</span>
             </Reveal>
-            <p className="mt-6 max-w-sm text-lg text-ink/65">A typical SOC 2 or ISO 27001 program, from first call to signed report.</p>
-            <p className="mono mt-12 hidden text-[clamp(4rem,9vw,9rem)] leading-none text-ink lg:block">
+            <p className="mt-6 max-w-sm text-lg text-ivory/65">A typical SOC 2 or ISO 27001 program, from first call to signed report.</p>
+            <p className="mono mt-12 hidden text-[clamp(4rem,9vw,9rem)] leading-none text-ivory lg:block">
               <span ref={counter}>01</span>
-              <span className="text-muted-dark">/0{steps.length}</span>
+              <span className="text-ivory/30">/0{steps.length}</span>
             </p>
           </div>
         </div>
         <div className="pr-list relative lg:col-span-6 lg:col-start-7">
-          <div className="absolute inset-y-0 left-0 w-px bg-line">
-            <div className="pr-fill h-full w-px origin-top bg-brand" />
+          <div className="absolute inset-y-0 left-0 w-px bg-line-dark">
+            <div className="pr-fill h-full w-px origin-top bg-brand-3" />
           </div>
           {steps.map((p) => (
             <article key={p.n} className="pr-step relative py-10 pl-10 md:py-16">
-              <span className="absolute left-[-4px] top-12 size-[9px] rounded-full border border-brand bg-ivory md:top-[4.5rem]" />
-              <p className="eyebrow text-brand">{p.time}</p>
+              <span className="absolute left-[-4px] top-12 size-[9px] rounded-full border border-brand-3 bg-ink md:top-[4.5rem]" />
+              <p className="eyebrow text-brand-3">{p.time}</p>
               <h3 className="wide mt-4 text-[clamp(1.8rem,3vw,3rem)]">{p.title}</h3>
-              <p className="mt-4 max-w-md text-lg leading-relaxed text-ink/65">{p.body}</p>
+              <p className="mt-4 max-w-md text-lg leading-relaxed text-ivory/65">{p.body}</p>
             </article>
           ))}
         </div>
