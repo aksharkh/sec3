@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
 const cols = ["SOC 2", "ISO 27001", "HIPAA", "PCI DSS", "ISO 42001"];
@@ -23,7 +23,7 @@ const rows: { id: string; name: string; owner: string; map: number[] }[] = [
 export function ControlMatrix() {
   const root = useRef<HTMLElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = root.current;
     if (!el || prefersReducedMotion()) return;
     const mm = gsap.matchMedia();

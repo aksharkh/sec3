@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
 const WORD = "UNIFIED";
@@ -18,7 +18,7 @@ export function LetterPortal() {
   const group = useRef<SVGGElement>(null);
   const [size, setSize] = useState({ w: 1440, h: 900 });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = root.current;
     if (!el) return;
     const measure = () => setSize({ w: window.innerWidth, h: window.innerHeight });
@@ -27,7 +27,7 @@ export function LetterPortal() {
     return () => window.removeEventListener("resize", measure);
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = root.current;
     if (!el || !text.current || prefersReducedMotion()) return;
     let ctx: gsap.Context | undefined;

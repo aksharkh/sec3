@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap, onSiteReady, prefersReducedMotion } from "@/lib/gsap";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
@@ -26,7 +26,9 @@ export function Hero() {
   const knotBox = useRef<HTMLDivElement>(null);
   const portal = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  // Layout effect: ScrollTrigger pins wrap elements in a pin-spacer, so they
+  // must be reverted before React removes the DOM on navigation.
+  useLayoutEffect(() => {
     const el = root.current;
     if (!el) return;
     window.__skHero = 0;

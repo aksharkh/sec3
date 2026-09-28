@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { process } from "@/lib/content";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
@@ -8,7 +8,7 @@ export function Process({ eyebrow = "" }: { eyebrow?: string }) {
   const root = useRef<HTMLElement>(null);
   const track = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = root.current;
     const tr = track.current;
     if (!el || !tr || prefersReducedMotion()) return;
