@@ -1,38 +1,33 @@
-import { Hero } from "@/components/home/Hero";
-import { Problem } from "@/components/home/Problem";
-import { FrameworkMarquee } from "@/components/home/FrameworkMarquee";
+import { SignalHero } from "@/components/signal/home/SignalHero";
+import {
+  FrameworkIndex,
+  Statement,
+  ServiceConsole,
+  ProcessRail,
+  StoriesBento,
+  InsightsIndex,
+  SignalCTA,
+} from "@/components/signal/home/Sections";
 import { OverlapMap } from "@/components/home/OverlapMap";
-import { ControlMatrix } from "@/components/home/ControlMatrix";
-import { Services } from "@/components/home/Services";
-import { Process } from "@/components/home/Process";
-import { LetterPortal } from "@/components/home/LetterPortal";
 import { Stats } from "@/components/home/Stats";
 import { Industries } from "@/components/home/Industries";
-import { StoriesRail } from "@/components/home/StoriesRail";
 import { ReadinessCheck } from "@/components/home/ReadinessCheck";
-import { Insights } from "@/components/home/Insights";
-import { FinalCTA } from "@/components/home/FinalCTA";
-import { FlowThread } from "@/components/ui/FlowThread";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Problem />
-      <FlowThread dark />
-      <FrameworkMarquee />
+      <SignalHero />
+      <FrameworkIndex />
+      <Statement />
       <OverlapMap />
-      <ControlMatrix />
-      <Services />
-      <Process />
-      <LetterPortal />
+      <ServiceConsole />
+      <ProcessRail />
       <Stats />
-      <FlowThread />
+      <StoriesBento />
       <Industries />
-      <StoriesRail />
+      <InsightsIndex />
       <ReadinessCheck />
-      <Insights />
-      <FinalCTA />
+      <SignalCTA />
     </>
   );
 }

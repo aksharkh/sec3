@@ -1,29 +1,29 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Archivo, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
-import { GlassCursor } from "@/components/ui/GlassCursor";
-import { Preloader } from "@/components/layout/Preloader";
-import { Nav } from "@/components/layout/Nav";
-import { Footer } from "@/components/layout/Footer";
+import { SignalLoader } from "@/components/signal/SignalLoader";
+import { SignalNav } from "@/components/signal/SignalNav";
+import { SignalFooter } from "@/components/signal/SignalFooter";
 import { PageTransition } from "@/components/providers/PageTransition";
 import { BookingModal } from "@/components/overlays/BookingModal";
 import { SearchPalette } from "@/components/overlays/SearchPalette";
 import { CookieBanner } from "@/components/overlays/CookieBanner";
 import { Toaster } from "@/components/overlays/Toaster";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
-import { ThemeLab } from "@/components/ui/ThemeLab";
 import { InteractiveFX } from "@/components/providers/InteractiveFX";
 
-const sans = Geist({
-  variable: "--font-geist",
+const sans = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
+  axes: ["wdth"],
   display: "swap",
 });
 
-const mono = Geist_Mono({
-  variable: "--font-geist-mono",
+const mono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f2f3f5",
+  themeColor: "#0d0d0e",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -72,19 +72,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <SmoothScroll />
-        <Preloader />
+        <SignalLoader />
         <PageTransition />
         <ScrollProgress />
-        <GlassCursor />
         <InteractiveFX />
-        <Nav />
+        <SignalNav />
         <main id="main">{children}</main>
-        <Footer />
+        <SignalFooter />
         <BookingModal />
         <SearchPalette />
         <CookieBanner />
         <Toaster />
-        <ThemeLab />
         <div className="grain" aria-hidden />
       </body>
     </html>

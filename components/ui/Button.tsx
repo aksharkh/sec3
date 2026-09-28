@@ -4,11 +4,12 @@ import { Magnetic } from "./Magnetic";
 
 type Variant = "ink" | "accent" | "ivory" | "outline" | "outline-light";
 
+// "ink" is the primary action: signal orange on the dark theme.
 const styles: Record<Variant, { wrap: string; dot: string }> = {
-  ink: { wrap: "bg-ink text-ivory", dot: "bg-accent text-ink" },
-  accent: { wrap: "bg-accent text-ink", dot: "bg-ink text-accent" },
-  ivory: { wrap: "bg-ivory text-ink", dot: "bg-ink text-ivory" },
-  outline: { wrap: "border border-ink/20 text-ink", dot: "bg-ink text-ivory" },
+  ink: { wrap: "bg-brand text-accent hover:bg-brand-3", dot: "bg-accent text-brand" },
+  accent: { wrap: "bg-accent text-ink", dot: "bg-brand text-accent" },
+  ivory: { wrap: "bg-ink text-ivory", dot: "bg-brand text-accent" },
+  outline: { wrap: "border border-ink/20 text-ink hover:border-ink/50", dot: "bg-ink text-ivory" },
   "outline-light": { wrap: "border border-ivory/25 text-ivory", dot: "bg-ivory text-ink" },
 };
 
@@ -20,7 +21,7 @@ export function Arrow({ className }: { className?: string }) {
   );
 }
 
-/** Pill button: rolling label + arrow chip that swaps on hover. */
+/** Signal button: expanded uppercase label that rolls on hover + square arrow chip. */
 export function Button({
   href,
   children,
@@ -43,7 +44,7 @@ export function Button({
       href={book ? "#book" : href}
       data-book={book}
       data-cursor="hide"
-      className={`group relative inline-flex h-14 items-center gap-4 rounded-full pl-6 pr-2 text-[0.95rem] font-medium tracking-[-0.01em] transition-transform duration-500 ease-out-expo active:scale-[0.97] ${s.wrap} ${className ?? ""}`}
+      className={`group relative inline-flex h-13 items-center gap-5 rounded-[8px] pl-5 pr-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.02em] [font-stretch:118%] transition-[transform,background-color,border-color] duration-500 ease-out-expo active:scale-[0.98] ${s.wrap} ${className ?? ""}`}
     >
       <span className="relative block overflow-hidden">
         <span className="block transition-transform duration-700 ease-out-expo group-hover:-translate-y-full">
@@ -56,11 +57,11 @@ export function Button({
           {children}
         </span>
       </span>
-      <span className={`relative grid size-10 place-items-center overflow-hidden rounded-full ${s.dot}`}>
+      <span className={`relative grid size-10 place-items-center overflow-hidden rounded-[6px] ${s.dot}`}>
         <Arrow className="size-3.5 transition-transform duration-700 ease-out-expo group-hover:translate-x-6 group-hover:-translate-y-6" />
         <Arrow className="absolute size-3.5 -translate-x-6 translate-y-6 transition-transform duration-700 ease-out-expo group-hover:translate-x-0 group-hover:translate-y-0" />
       </span>
     </Link>
   );
-  return magnetic ? <Magnetic strength={0.25}>{inner}</Magnetic> : inner;
+  return magnetic ? <Magnetic strength={0.12}>{inner}</Magnetic> : inner;
 }

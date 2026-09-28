@@ -1,27 +1,30 @@
 @import "tailwindcss";
 
 /* ─────────────────────────────────────────────────────────────
-   SecureKnots design tokens
-   Cool porcelain surfaces, near-black ink, deep cobalt brand,
-   one periwinkle accent. `--glow` is the warm light seen through
-   the reeded glass.
+   SecureKnots "Signal" design tokens
+   Dark instrument-panel theme. Token names are semantic roles
+   shared with the rest of the codebase:
+     ivory / paper / bone  → page surfaces (graphite)
+     ink / ink-2 / ink-3   → primary text, and bone-white slabs
+     brand                 → signal orange (emphasis + orange slabs)
+     accent                → near-black, used on orange / bone slabs
    ───────────────────────────────────────────────────────────── */
 :root {
-  --ivory: #f2f3f5;
-  --paper: #e9ebef;
-  --bone: #dde0e6;
-  --ink: #0a0c10;
-  --ink-2: #12151b;
-  --ink-3: #1d212a;
-  --brand: #101b3f;
-  --brand-2: #23367e;
-  --brand-3: #4a64e0;
-  --accent: #a9b8ff;
-  --glow: #efe7dc;
-  --muted: #5f646d;
-  --muted-dark: #8d929c;
-  --line: rgb(10 12 16 / 0.1);
-  --line-dark: rgb(242 243 245 / 0.12);
+  --ivory: #0d0d0e;
+  --paper: #151517;
+  --bone: #1d1d20;
+  --ink: #ecebe6;
+  --ink-2: #e3e2dc;
+  --ink-3: #d6d5ce;
+  --brand: #ff5b2e;
+  --brand-2: #e2461b;
+  --brand-3: #ff8a62;
+  --accent: #121213;
+  --glow: #ffd9c7;
+  --muted: #8c8b86;
+  --muted-dark: #5c5b57;
+  --line: rgb(236 235 230 / 0.1);
+  --line-dark: rgb(13 13 14 / 0.12);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
@@ -44,11 +47,23 @@
   --color-line: var(--line);
   --color-line-dark: var(--line-dark);
 
-  --font-sans: var(--font-geist);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-archivo);
+  --font-mono: var(--font-plex-mono);
 
   --ease-out-expo: var(--ease-out);
   --ease-in-out-quart: var(--ease-in-out);
+
+  --radius-2xl: 10px;
+  --radius-3xl: 12px;
+}
+
+/* Signal shape lock: panels 12px, controls 8px, tags stay pill. */
+[class*="rounded-[1.5rem]"],
+[class*="rounded-[1.75rem]"],
+[class*="rounded-[2rem]"],
+[class*="rounded-[2.5rem]"],
+[class*="rounded-[3rem]"] {
+  border-radius: 12px !important;
 }
 
 /* ───────── Base ───────── */
@@ -71,7 +86,8 @@ html.lenis body {
 body {
   background: var(--ivory);
   color: var(--ink);
-  font-family: var(--font-geist), system-ui, sans-serif;
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-stretch: 100%;
   overflow-x: clip;
 }
 
@@ -88,20 +104,31 @@ body {
 
 /* ───────── Type primitives ───────── */
 .display {
-  font-weight: 500;
-  letter-spacing: -0.05em;
-  line-height: 0.95;
+  font-weight: 550;
+  font-stretch: 116%;
+  letter-spacing: -0.035em;
+  line-height: 0.96;
 }
-/* Emphasis inside headlines: same family, lighter weight + tint. */
+/* Signature headline voice: expanded, uppercase, tight. */
+.wide {
+  font-stretch: 125%;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  line-height: 0.9;
+}
+/* Emphasis inside headlines: same family, light weight + signal colour. */
 .em {
   font-weight: 250;
-  letter-spacing: -0.045em;
 }
 .eyebrow {
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
   font-size: 0.7rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+.mono {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
 }
 
 /* SplitText line masks — keep descenders from being clipped */

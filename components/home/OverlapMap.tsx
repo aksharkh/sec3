@@ -32,7 +32,7 @@ export function OverlapMap({ eyebrow = "Assess once" }: { eyebrow?: string }) {
     <section id="assess-once" data-theme="dark" className="relative overflow-hidden bg-ink py-28 text-ivory md:py-40">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-[20%] -top-[30%] size-[80vw] rounded-full bg-[radial-gradient(circle,rgb(47_93_176/0.45),transparent_60%)]"
+        className="pointer-events-none absolute -right-[20%] -top-[30%] size-[80vw] rounded-full bg-[radial-gradient(circle,rgb(255_91_46/0.28),transparent_60%)]"
       />
       <div className="container-x relative">
         <div className="grid gap-10 md:grid-cols-12">
