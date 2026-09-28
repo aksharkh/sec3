@@ -12,7 +12,7 @@ const questions: Q[] = [
   { q: "How is access to production systems reviewed?", options: ["Ad hoc", "Occasionally", "Quarterly, with evidence"], scored: true },
   { q: "Have you completed a risk assessment in the last 12 months?", options: ["No", "In progress", "Yes, documented"], scored: true },
   { q: "How do you collect audit evidence today?", options: ["Screenshots when asked", "Shared drive", "Automated / GRC tool"], scored: true },
-  { q: "When do you need the report in hand?", options: ["Under 3 months", "3–6 months", "Just exploring"], scored: false },
+  { q: "When do you need the report in hand?", options: ["Under 3 months", "3-6 months", "Just exploring"], scored: false },
 ];
 
 const maxScore = questions.filter((q) => q.scored).length * 2;
@@ -20,10 +20,10 @@ const maxScore = questions.filter((q) => q.scored).length * 2;
 function band(pct: number) {
   if (pct >= 75) return { label: "Audit-ready soon", body: "Your foundations are solid. A focused gap assessment and mock audit could get you to fieldwork within weeks." };
   if (pct >= 40) return { label: "Developing", body: "You have the building blocks. A structured remediation sprint will close the gaps auditors care about most." };
-  return { label: "Early stage", body: "Perfect time to design it right — build one unified control set now instead of retrofitting three later." };
+  return { label: "Early stage", body: "Perfect time to design it right, build one unified control set now instead of retrofitting three later." };
 }
 
-export function ReadinessCheck({ eyebrow = "(SK—12) Readiness check" }: { eyebrow?: string }) {
+export function ReadinessCheck({ eyebrow = "Readiness check" }: { eyebrow?: string }) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const done = step >= questions.length;
@@ -56,10 +56,10 @@ export function ReadinessCheck({ eyebrow = "(SK—12) Readiness check" }: { eyeb
         <div className="lg:col-span-5">
           <p className="eyebrow text-ivory/45">{eyebrow}</p>
           <Reveal as="h2" className="display mt-8 text-[clamp(2.6rem,5.5vw,5.8rem)]">
-            How ready are you? <span className="serif text-accent">Find out in 60 seconds.</span>
+            How ready are you? <span className="em text-accent">Find out in 60 seconds.</span>
           </Reveal>
           <p className="mt-8 max-w-md text-lg leading-relaxed text-ivory/60">
-            Six questions. An instant readiness score and the fastest path to your first report — no email
+            Six questions. An instant readiness score and the fastest path to your first report, no email
             required to see it.
           </p>
         </div>

@@ -1,4 +1,4 @@
-/** Trefoil knot mark — the simplest knot that can't be untied without cutting. */
+/** Trefoil knot mark, the simplest knot that can't be untied without cutting. */
 function trefoilPath(size: number, pad: number) {
   const pts: string[] = [];
   const steps = 180;
@@ -41,7 +41,7 @@ export function Logo({ className }: { className?: string }) {
     <span className={`inline-flex items-center gap-2.5 ${className ?? ""}`}>
       <KnotMark className="size-7" />
       <span className="text-[1.15rem] font-semibold tracking-[-0.04em]">
-        Secure<span className="serif font-normal tracking-[-0.02em]">Knots</span>
+        Secure<span className="em text-brand-3">Knots</span>
       </span>
     </span>
   );

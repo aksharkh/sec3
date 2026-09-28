@@ -45,9 +45,9 @@ export function ControlMatrix() {
   return (
     <section ref={root} className="relative h-[100svh] overflow-hidden bg-ivory max-md:h-auto">
       <div className="cm-head pointer-events-none absolute inset-x-0 top-0 z-10 hidden pt-[9vh] text-center md:block">
-        <p className="eyebrow text-muted">(SK—05) What you get</p>
-        <h2 className="display mx-auto mt-4 max-w-4xl text-[clamp(2.4rem,5vw,5rem)] text-ink">
-          Every control. <span className="serif text-brand">One matrix.</span>
+        
+        <h2 className="display mx-auto max-w-4xl text-[clamp(2.4rem,5vw,5rem)] text-ink">
+          Every control. <span className="em text-brand">One matrix.</span>
         </h2>
       </div>
 
@@ -57,7 +57,7 @@ export function ControlMatrix() {
             <div>
               <p className="eyebrow text-accent">Unified control matrix · sample program</p>
               <p className="mt-3 text-[clamp(1.8rem,3.4vw,3.2rem)] leading-none tracking-[-0.03em]">
-                Tested once. <span className="serif text-accent">Mapped to five.</span>
+                Tested once. <span className="em text-accent">Mapped to five.</span>
               </p>
             </div>
             <div className="min-w-64">

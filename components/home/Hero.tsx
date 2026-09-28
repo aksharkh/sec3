@@ -1,16 +1,13 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useRef, useState } from "react";
-import { frameworkGroups } from "@/lib/content";
+import { useEffect, useRef } from "react";
 import { gsap, onSiteReady, prefersReducedMotion } from "@/lib/gsap";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
-import { RotatingBadge } from "@/components/ui/RotatingBadge";
+import { ReededGlass } from "@/components/ui/ReededGlass";
 
 const KnotScene = dynamic(() => import("./KnotScene").then((m) => m.KnotScene), { ssr: false });
-
-const ticker = frameworkGroups.flatMap((g) => g.items.map((i) => i.name));
 
 declare global {
   interface Window {
@@ -20,7 +17,7 @@ declare global {
 
 /**
  * Pinned hero. Scrolling pushes the camera into the knot while a navy portal
- * opens from the knot's centre and swallows the screen — handing off
+ * opens from the knot's centre and swallows the screen, handing off
  * seamlessly to the (navy) section that follows.
  */
 export function Hero() {
@@ -60,7 +57,7 @@ export function Hero() {
         },
       });
       tl.to(".hero-copy", { yPercent: -25, scale: 0.92, autoAlpha: 0, filter: "blur(8px)", duration: 0.45 }, 0)
-        .to(".hero-meta", { autoAlpha: 0, y: -30, duration: 0.3 }, 0)
+        .to(".hero-glass", { scale: 1.08, autoAlpha: 0, duration: 0.5 }, 0.05)
         .fromTo(
           portal.current,
           { clipPath: () => `circle(0% at ${origin()})` },
@@ -77,50 +74,35 @@ export function Hero() {
 
   return (
     <section ref={root} className="relative">
-      <div
-        ref={stage}
-        className="relative flex min-h-[100svh] flex-col overflow-hidden bg-[radial-gradient(120%_90%_at_75%_40%,#faf8f2_0%,var(--ivory)_45%,var(--paper)_100%)]"
-      >
-        {/* Top meta row */}
-        <div className="hero-meta container-x relative z-10 grid grid-cols-2 gap-6 pt-28 md:grid-cols-4">
-          <p className="hero-fade eyebrow text-muted">(SK—01)</p>
-          <p className="hero-fade eyebrow hidden text-muted md:block">
-            Compliance advisory
-            <br />
-            &amp; audit readiness
-          </p>
-          <p className="hero-fade eyebrow hidden text-muted md:block">
-            Wilmington, DE
-            <br />
-            Bengaluru, IN
-          </p>
-          <NowTying />
+      <div ref={stage} className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-ivory lg:flex-row">
+        {/* Desktop: tall reeded-glass panel on the right */}
+        <div className="hero-glass pointer-events-none absolute bottom-6 right-[var(--gutter)] top-24 hidden w-[41vw] overflow-hidden rounded-[2rem] lg:block">
+          <ReededGlass className="relative size-full" stripes={28} cx={0.46} cy={0.55} />
         </div>
 
-        {/* Mobile: its own block above the headline. Desktop: full-bleed behind the copy. */}
-        <div ref={knotBox} className="relative h-[42svh] w-full lg:absolute lg:inset-0 lg:h-auto">
+        {/* Knot. Mobile: its own glass block above the copy. Desktop: full-bleed, floating over the glass. */}
+        <div
+          ref={knotBox}
+          className="relative mx-[var(--gutter)] mt-20 h-[44svh] overflow-hidden rounded-[1.5rem] lg:absolute lg:inset-0 lg:m-0 lg:h-auto lg:overflow-visible lg:rounded-none"
+        >
+          <ReededGlass className="absolute inset-0 lg:hidden" stripes={18} />
           <KnotScene className="absolute inset-0" />
         </div>
 
-        <div className="hero-copy container-x relative z-10 mt-auto origin-bottom-left pb-10 md:pb-14">
-          <h1 className="display text-[clamp(3.4rem,10.2vw,11.5rem)] text-ink">
-            <Reveal as="span" trigger="load" delay={0.35} className="block">
-              Many frameworks.
-            </Reveal>
-            <Reveal as="span" trigger="load" delay={0.5} className="block">
-              One <span className="serif text-brand">secure</span> knot.
-            </Reveal>
-          </h1>
-
-          <div className="mt-10 grid gap-8 border-t border-line pt-8 md:grid-cols-12 md:items-center">
-            <p className="hero-fade max-w-md text-[1.05rem] leading-relaxed text-ink/70 md:col-span-5">
-              SOC 2, ISO 27001, FedRAMP, CMMC, PCI DSS, ISO 42001 and more — unified into one audit-ready program by
-              practitioners who&apos;ve sat on both sides of the audit table.
+        <div className="hero-copy container-x relative z-10 flex flex-1 flex-col justify-center pb-12 pt-10 lg:pb-16 lg:pt-24">
+          <div className="lg:max-w-[52%]">
+            <h1 className="display text-[clamp(2.8rem,5.3vw,6.2rem)] text-ink">
+              <Reveal as="span" trigger="load" delay={0.35} className="block">
+                Many frameworks.
+              </Reveal>
+              <Reveal as="span" trigger="load" delay={0.5} className="block">
+                One <span className="em text-brand-3">secure</span> knot.
+              </Reveal>
+            </h1>
+            <p className="hero-fade mt-8 max-w-md text-lg leading-relaxed text-ink/65">
+              SOC 2, ISO 27001, FedRAMP, CMMC and 25 more frameworks, unified into one audit-ready program.
             </p>
-            <div className="hero-fade hidden justify-center md:col-span-2 md:flex">
-              <RotatingBadge text="Scroll to enter the knot • Scroll to enter the knot • " />
-            </div>
-            <div className="hero-fade flex flex-wrap items-center gap-3 md:col-span-5 md:justify-end">
+            <div className="hero-fade mt-10 flex flex-wrap items-center gap-3">
               <Button href="#book">Book an assessment</Button>
               <Button href="/customers" variant="outline" magnetic={false}>
                 Customer stories
@@ -136,38 +118,11 @@ export function Hero() {
           className="pointer-events-none absolute inset-0 z-20 grid place-items-center bg-brand text-ivory"
           style={{ clipPath: "circle(0% at 74% 41%)" }}
         >
-          <div className="portal-copy px-6 text-center">
-            <p className="eyebrow text-accent">(SK—02) Inside the knot</p>
-            <p className="display mt-6 text-[clamp(2.8rem,8vw,8rem)]">
-              Untangle <span className="serif">everything.</span>
-            </p>
-          </div>
+          <p className="portal-copy display px-6 text-center text-[clamp(2.8rem,8vw,8rem)]">
+            Untangle <span className="em text-accent">everything.</span>
+          </p>
         </div>
       </div>
     </section>
-  );
-}
-
-function NowTying() {
-  const [i, setI] = useState(0);
-  useEffect(() => {
-    const id = setInterval(() => setI((v) => (v + 1) % ticker.length), 1600);
-    return () => clearInterval(id);
-  }, []);
-  return (
-    <div className="hero-fade flex flex-col items-end text-right md:items-start md:text-left">
-      <p className="eyebrow flex items-center gap-2 text-muted">
-        <span className="relative flex size-1.5">
-          <span className="absolute inset-0 animate-ping rounded-full bg-brand-3" />
-          <span className="relative size-1.5 rounded-full bg-brand-3" />
-        </span>
-        Now tying
-      </p>
-      <p className="relative mt-1 h-5 overflow-hidden text-sm font-medium" aria-live="off">
-        <span key={i} className="block animate-[tick_0.6s_var(--ease-out)]">
-          {ticker[i]}
-        </span>
-      </p>
-    </div>
   );
 }

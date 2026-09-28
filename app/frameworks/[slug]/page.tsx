@@ -88,9 +88,9 @@ export default async function FrameworkPage({ params }: PageProps<"/frameworks/[
           <div className="space-y-28 lg:col-span-9 md:space-y-36">
             {/* Overview */}
             <section id="overview" className="scroll-mt-28">
-              <p className="eyebrow text-muted">01 — Overview</p>
+              <p className="eyebrow text-muted">Overview</p>
               <Reveal as="h2" className="display mt-6 text-[clamp(2.2rem,4.6vw,4.6rem)]">
-                Who needs <span className="serif text-brand">{f.name}?</span>
+                Who needs <span className="em text-brand">{f.name}?</span>
               </Reveal>
               <ul className="mt-12 grid gap-3 md:grid-cols-3">
                 {f.who.map((w, i) => (
@@ -104,14 +104,14 @@ export default async function FrameworkPage({ params }: PageProps<"/frameworks/[
 
             {/* Requirements */}
             <section id="requirements" className="scroll-mt-28">
-              <p className="eyebrow text-muted">02 — Requirements</p>
+              <p className="eyebrow text-muted">Requirements</p>
               <Reveal as="h2" className="display mt-6 text-[clamp(2.2rem,4.6vw,4.6rem)]">
-                What the auditor <span className="serif text-brand">looks for.</span>
+                What the auditor <span className="em text-brand">looks for.</span>
               </Reveal>
               <ol className="mt-12 border-t border-line">
                 {f.requirements.map((r, i) => (
                   <FadeUp as="li" key={r.t} className="group grid gap-4 border-b border-line py-8 md:grid-cols-12 md:items-baseline">
-                    <span className="serif text-5xl text-brand/30 transition-colors duration-500 group-hover:text-brand md:col-span-2">
+                    <span className="em text-5xl text-brand/30 transition-colors duration-500 group-hover:text-brand md:col-span-2">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="text-2xl tracking-[-0.02em] md:col-span-4">{r.t}</span>
@@ -123,15 +123,15 @@ export default async function FrameworkPage({ params }: PageProps<"/frameworks/[
 
             {/* Approach */}
             <section id="approach" className="scroll-mt-28">
-              <p className="eyebrow text-muted">03 — Our approach</p>
+              <p className="eyebrow text-muted">Our approach</p>
               <Reveal as="h2" className="display mt-6 text-[clamp(2.2rem,4.6vw,4.6rem)]">
-                From scoping to <span className="serif text-brand">signed report.</span>
+                From scoping to <span className="em text-brand">signed report.</span>
               </Reveal>
               <div className="mt-12 grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
                 {process.map((p, i) => (
                   <FadeUp key={p.n} delay={i * 0.06} className="relative overflow-hidden rounded-[1.5rem] bg-ink p-6 text-ivory">
                     <p className="eyebrow text-accent">{p.time}</p>
-                    <p className="serif mt-8 text-5xl text-ivory/20">{p.n}</p>
+                    <p className="em mt-8 text-5xl text-ivory/20">{p.n}</p>
                     <p className="mt-2 text-2xl tracking-[-0.02em]">{p.title}</p>
                     <p className="mt-3 text-sm leading-relaxed text-ivory/55">{p.body}</p>
                   </FadeUp>
@@ -141,9 +141,9 @@ export default async function FrameworkPage({ params }: PageProps<"/frameworks/[
 
             {/* Related */}
             <section id="related" className="scroll-mt-28">
-              <p className="eyebrow text-muted">04 — Related frameworks</p>
+              <p className="eyebrow text-muted">Related frameworks</p>
               <Reveal as="h2" className="display mt-6 text-[clamp(2.2rem,4.6vw,4.6rem)]">
-                Tie it together <span className="serif text-brand">with…</span>
+                Tie it together <span className="em text-brand">with…</span>
               </Reveal>
               <p className="mt-6 max-w-2xl text-lg text-muted">
                 {f.name} shares a large share of its controls with these frameworks. Add them to the same program and most of the evidence is already done.
@@ -177,9 +177,9 @@ export default async function FrameworkPage({ params }: PageProps<"/frameworks/[
 
             {/* FAQ */}
             <section id="faq" className="scroll-mt-28">
-              <p className="eyebrow text-muted">05 — FAQ</p>
+              <p className="eyebrow text-muted">FAQ</p>
               <Reveal as="h2" className="display mt-6 text-[clamp(2.2rem,4.6vw,4.6rem)]">
-                Questions, <span className="serif text-brand">answered.</span>
+                Questions, <span className="em text-brand">answered.</span>
               </Reveal>
               <div className="mt-12">
                 <Accordion items={f.faq} />

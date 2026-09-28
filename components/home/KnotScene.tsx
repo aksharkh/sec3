@@ -7,7 +7,7 @@ import { KnotMark } from "@/components/ui/Logo";
 
 /**
  * The SecureKnots hero: seven strands (frameworks) start as a loose tangle
- * and pull tight into a braided trefoil knot. Morphing happens on the GPU —
+ * and pull tight into a braided trefoil knot. Morphing happens on the GPU  - 
  * every strand has two tube geometries with identical topology (tangle + knot)
  * and the vertex shader mixes between them.
  */

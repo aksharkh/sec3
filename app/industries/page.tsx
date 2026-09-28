@@ -37,10 +37,10 @@ export default function IndustriesPage() {
   return (
     <>
       <PageHero
-        eyebrow="(IN—01) Industries"
+        eyebrow="Industries"
         title={
           <>
-            Your buyers. <span className="serif text-brand">Your rules.</span>
+            Your buyers. <span className="em text-brand">Your rules.</span>
           </>
         }
         intro="Every industry has its own mix of frameworks, regulators and buyer expectations. We start from yours."
@@ -115,11 +115,11 @@ export default function IndustriesPage() {
         <FadeUp className="container-x text-center">
           <p className="eyebrow text-muted">Not listed?</p>
           <p className="display mx-auto mt-6 max-w-4xl text-[clamp(2.4rem,5vw,5rem)]">
-            If you sell to demanding buyers, <span className="serif text-brand">we&apos;ve likely seen it.</span>
+            If you sell to demanding buyers, <span className="em text-brand">we&apos;ve likely seen it.</span>
           </p>
         </FadeUp>
       </section>
-      <FinalCTA eyebrow="(IN—02) Start here" />
+      <FinalCTA eyebrow="Start here" />
     </>
   );
 }

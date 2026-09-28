@@ -195,7 +195,7 @@ export function Nav() {
                   <div>
                     <p className="eyebrow text-accent">{frameworkCount} frameworks</p>
                     <p className="mt-4 text-3xl leading-[1.05] tracking-[-0.03em]">
-                      Assess once. <span className="serif">Comply to many.</span>
+                      Assess once. <span className="em">Comply to many.</span>
                     </p>
                   </div>
                   <Link href="/frameworks" className="link-sweep mt-10 inline-flex w-fit items-center gap-2 text-sm">
@@ -229,7 +229,7 @@ export function Nav() {
                     className="group flex min-h-56 flex-col justify-between rounded-3xl border border-line p-6 transition-colors duration-500 hover:bg-ink hover:text-ivory"
                   >
                     <span className="eyebrow text-muted group-hover:text-accent">
-                      {String(i + 1).padStart(2, "0")} — {s.kicker}
+                      {String(i + 1).padStart(2, "0")}, {s.kicker}
                     </span>
                     <span>
                       <span className="block text-2xl leading-tight tracking-[-0.03em]">{s.title}</span>

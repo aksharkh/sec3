@@ -3,11 +3,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { BOOK_EVENT, toast } from "@/lib/gsap";
 import { Modal, CloseButton } from "./Modal";
-import { Glyph } from "@/components/ui/Glyph";
+import { ReededGlassStatic } from "@/components/ui/ReededGlass";
 
 const FRAMEWORKS = ["SOC 2", "ISO 27001", "ISO 42001", "HIPAA", "PCI DSS", "FedRAMP", "CMMC", "GDPR", "DORA", "DPDPA", "SEBI CSCRF", "Not sure yet"];
-const TIMELINES = ["Under 3 months", "3–6 months", "6–12 months", "Just exploring"];
-const SIZES = ["1–50", "51–200", "201–1,000", "1,000+"];
+const TIMELINES = ["Under 3 months", "3-6 months", "6-12 months", "Just exploring"];
+const SIZES = ["1-50", "51-200", "201-1,000", "1,000+"];
 const STEPS = ["Frameworks", "Timeline", "Details"];
 
 type Form = { frameworks: string[]; timeline: string; size: string; name: string; email: string; company: string; message: string };
@@ -70,19 +70,20 @@ export function BookingModal() {
     await new Promise((r) => setTimeout(r, 1100));
     setSending(false);
     setDone(true);
-    toast("Request received — we'll be in touch within one business day.");
+    toast("Request received, we'll be in touch within one business day.");
   };
 
   return (
     <Modal open={open} onClose={close} label="Book an assessment" className="max-w-5xl">
       <div className="grid overflow-hidden rounded-[2rem] bg-ivory md:grid-cols-[0.8fr_1.2fr]">
         {/* Side panel */}
-        <aside className="relative hidden flex-col justify-between overflow-hidden bg-brand p-8 text-ivory md:flex">
-          <Glyph seed="booking" className="absolute -bottom-24 -right-24 size-[26rem] text-accent/40" strands={9} />
+        <aside className="relative hidden flex-col justify-between overflow-hidden bg-ink p-8 text-ivory md:flex">
+          <ReededGlassStatic className="absolute inset-0" stripes={14} hue={0.35} />
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-ink/70 via-transparent to-ink/80" />
           <div className="relative">
             <p className="eyebrow text-accent">Book an assessment</p>
             <p className="mt-5 text-3xl leading-[1.05] tracking-[-0.03em]">
-              30 minutes with a <span className="serif">senior practitioner.</span>
+              30 minutes with a <span className="em">senior practitioner.</span>
             </p>
           </div>
           <ol className="relative mt-12 space-y-4">
@@ -99,7 +100,7 @@ export function BookingModal() {
               </li>
             ))}
           </ol>
-          <p className="relative mt-12 text-sm text-ivory/55">Response within one business day. No sales script — just a clear plan.</p>
+          <p className="relative mt-12 text-sm text-ivory/55">Response within one business day. No sales script, just a clear plan.</p>
         </aside>
 
         {/* Form */}
@@ -113,7 +114,7 @@ export function BookingModal() {
             <div className="flex flex-1 animate-[fadeUp_0.8s_var(--ease-out)] flex-col justify-center">
               <div className="grid size-16 place-items-center rounded-full bg-accent text-2xl">✓</div>
               <h2 className="display mt-8 text-5xl md:text-6xl">
-                You&apos;re <span className="serif text-brand">tied in.</span>
+                You&apos;re <span className="em text-brand">tied in.</span>
               </h2>
               <p className="mt-5 max-w-md text-lg text-muted">
                 Thanks, {form.name.split(" ")[0]}. A practitioner specialising in {form.frameworks.slice(0, 2).join(" and ") || "your frameworks"} will email{" "}

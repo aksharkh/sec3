@@ -57,7 +57,7 @@ export function OutlineBand({
                 ["--fill" as string]: "0%",
               }}
             >
-              {j % 2 ? <span className="serif font-normal">{w}</span> : w}
+              {j % 2 ? <span className="em font-normal">{w}</span> : w}
             </span>
           ))}
         </div>

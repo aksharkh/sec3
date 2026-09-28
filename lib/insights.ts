@@ -1,4 +1,4 @@
-/** PLACEHOLDER — sample articles to demonstrate the Insights templates. Replace with the client's editorial content. */
+/** PLACEHOLDER, sample articles to demonstrate the Insights templates. Replace with the client's editorial content. */
 
 export type Article = {
   slug: string;
@@ -24,7 +24,7 @@ export const articles: Article[] = [
     tone: "brand",
     sections: [
       { h: "The shift from attestation to assessment", p: ["For years, defense suppliers could self-attest to NIST SP 800-171. CMMC changes the burden of proof: for most contracts involving Controlled Unclassified Information, an independent assessment becomes the gate.", "As requirements phase into solicitations, the practical question is no longer whether CMMC applies, but when it will appear in the contracts you care about."] },
-      { h: "Start with scope, not controls", p: ["The single most effective lever is scope. An enclave that isolates CUI can shrink the assessment boundary from the whole company to a handful of users and systems.", "Map where CUI actually flows — email, file shares, CAD systems, the shop floor — before writing a single policy."] },
+      { h: "Start with scope, not controls", p: ["The single most effective lever is scope. An enclave that isolates CUI can shrink the assessment boundary from the whole company to a handful of users and systems.", "Map where CUI actually flows, email, file shares, CAD systems, the shop floor, before writing a single policy."] },
       { h: "Write an SSP your team can maintain", p: ["Assessors read the System Security Plan closely. A plan written in plain language, reflecting how you really operate, is worth more than a template padded with boilerplate."] },
       { h: "Rehearse before it counts", p: ["A mock assessment surfaces evidence gaps while there's still time to fix them. Treat it as a dress rehearsal, not a formality."] },
     ],
@@ -66,11 +66,11 @@ export const articles: Article[] = [
     date: "2026-07-11",
     read: "7 min",
     author: "SecureKnots Advisory",
-    excerpt: "v4 lets you set some control frequencies yourself — if you can justify them. Here's what a good analysis looks like.",
+    excerpt: "v4 lets you set some control frequencies yourself, if you can justify them. Here's what a good analysis looks like.",
     tone: "paper",
     sections: [
       { h: "Flexibility with accountability", p: ["Several v4 requirements let entities define how often an activity happens, provided a documented targeted risk analysis supports the choice."] },
-      { h: "Anatomy of a good analysis", p: ["Identify the asset, the threat, the likelihood and impact, and the resulting frequency — then review it at least annually."] },
+      { h: "Anatomy of a good analysis", p: ["Identify the asset, the threat, the likelihood and impact, and the resulting frequency, then review it at least annually."] },
     ],
   },
   {
@@ -83,7 +83,7 @@ export const articles: Article[] = [
     excerpt: "Mapping every ICT third party and the functions it supports is harder than it looks. Lessons from the first year of DORA.",
     tone: "brand",
     sections: [
-      { h: "More than a vendor list", p: ["The register links contracts, services and the critical or important functions they support — a view most procurement systems were never designed to produce."] },
+      { h: "More than a vendor list", p: ["The register links contracts, services and the critical or important functions they support, a view most procurement systems were never designed to produce."] },
       { h: "Make it maintainable", p: ["Assign owners, integrate with onboarding, and treat the register as a living record rather than an annual spreadsheet exercise."] },
     ],
   },
@@ -94,11 +94,11 @@ export const articles: Article[] = [
     date: "2026-06-05",
     read: "7 min",
     author: "SecureKnots Advisory",
-    excerpt: "Notices, consent, breach reporting and rights handling — a practical first-quarter plan for data fiduciaries.",
+    excerpt: "Notices, consent, breach reporting and rights handling, a practical first-quarter plan for data fiduciaries.",
     tone: "ink",
     sections: [
       { h: "Inventory before notices", p: ["You can't write an itemised notice without knowing what you collect and why. Start with a data inventory tied to purposes."] },
-      { h: "Operationalise rights", p: ["Access, correction and erasure requests need owners, workflows and timelines — test them before users do."] },
+      { h: "Operationalise rights", p: ["Access, correction and erasure requests need owners, workflows and timelines, test them before users do."] },
     ],
   },
 ];

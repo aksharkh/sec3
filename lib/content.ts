@@ -104,7 +104,7 @@ export const services = [
     id: "advisory",
     title: "Compliance Advisory",
     kicker: "Strategy",
-    body: "We map where you sell to what you must prove, then design one control set that satisfies every framework on your roadmap — not five parallel programs.",
+    body: "We map where you sell to what you must prove, then design one control set that satisfies every framework on your roadmap, not five parallel programs.",
     deliverables: ["Framework roadmap", "Unified control library", "Policy suite", "Board-ready reporting"],
   },
   {
@@ -125,7 +125,7 @@ export const services = [
     id: "testing",
     title: "Security Testing",
     kicker: "Offense",
-    body: "Web, API, mobile, cloud and network penetration testing by certified testers — scoped to satisfy auditors and actually find what attackers would.",
+    body: "Web, API, mobile, cloud and network penetration testing by certified testers, scoped to satisfy auditors and actually find what attackers would.",
     deliverables: ["VAPT", "Cloud configuration review", "Red team exercises", "Retest & attestation letter"],
   },
   {
@@ -139,13 +139,13 @@ export const services = [
 
 export const process = [
   { n: "01", title: "Scope", time: "Week 1", body: "We learn your product, your buyers and your deadlines, then fix the exact frameworks, boundaries and systems in scope." },
-  { n: "02", title: "Assess", time: "Weeks 2–3", body: "Control-by-control gap assessment against every target framework at once, with a single prioritised findings register." },
-  { n: "03", title: "Remediate", time: "Weeks 3–10", body: "Policies written, controls implemented, evidence automated. We work inside your tools — Jira, GitHub, AWS, Google Workspace." },
-  { n: "04", title: "Certify", time: "Weeks 10–14", body: "Mock audit, auditor selection and fieldwork support. We sit beside you until the report is signed." },
+  { n: "02", title: "Assess", time: "Weeks 2-3", body: "Control-by-control gap assessment against every target framework at once, with a single prioritised findings register." },
+  { n: "03", title: "Remediate", time: "Weeks 3-10", body: "Policies written, controls implemented, evidence automated. We work inside your tools, Jira, GitHub, AWS, Google Workspace." },
+  { n: "04", title: "Certify", time: "Weeks 10-14", body: "Mock audit, auditor selection and fieldwork support. We sit beside you until the report is signed." },
   { n: "05", title: "Sustain", time: "Year-round", body: "Continuous monitoring, quarterly testing and a renewal calendar that never surprises you." },
 ];
 
-// PLACEHOLDER — replace with verified client figures.
+// PLACEHOLDER, replace with verified client figures.
 export const stats = [
   { value: frameworkCount, suffix: "", label: "Frameworks delivered under one roof" },
   { value: 250, suffix: "+", label: "Audits and assessments completed" },
@@ -162,7 +162,7 @@ export const industries = [
   { name: "Enterprise & BFSI", frameworks: ["ISO 22301", "ITGC", "SOC 1", "DPDPA"], note: "Harmonise controls across entities and geographies." },
 ];
 
-// PLACEHOLDER — anonymised sample testimonials; replace with approved client quotes.
+// PLACEHOLDER, anonymised sample testimonials; replace with approved client quotes.
 export const testimonials = [
   {
     quote: "We had SOC 2, ISO 27001 and HIPAA on the same year's roadmap. SecureKnots turned it into one program and one fieldwork window. Our engineers barely noticed.",
@@ -256,7 +256,7 @@ export const serviceDetails: Record<
       { t: "Mock audit", d: "A realistic dry run with auditor-grade sampling." },
       { t: "Auditor selection", d: "Shortlisting and negotiation support." },
     ],
-    outcomes: [{ v: "98%", l: "First-attempt pass rate" }, { v: "8–16", l: "Weeks to audit-ready" }, { v: "0", l: "Surprises in fieldwork" }],
+    outcomes: [{ v: "98%", l: "First-attempt pass rate" }, { v: "8-16", l: "Weeks to audit-ready" }, { v: "0", l: "Surprises in fieldwork" }],
     frameworks: ["soc-2", "iso-27001", "cmmc", "hipaa", "pci-dss"],
   },
   unified: {
@@ -269,11 +269,11 @@ export const serviceDetails: Record<
       { t: "Aligned renewals", d: "One compliance calendar instead of four." },
       { t: "Executive reporting", d: "One report for the board." },
     ],
-    outcomes: [{ v: "3–5", l: "Frameworks per program" }, { v: "1", l: "Fieldwork window" }, { v: "60%", l: "Fewer evidence requests" }],
+    outcomes: [{ v: "3-5", l: "Frameworks per program" }, { v: "1", l: "Fieldwork window" }, { v: "60%", l: "Fewer evidence requests" }],
     frameworks: ["unified-audits", "soc-2", "iso-27001", "pci-dss", "hipaa"],
   },
   testing: {
-    tagline: "Find what attackers would — and satisfy auditors in the same engagement.",
+    tagline: "Find what attackers would, and satisfy auditors in the same engagement.",
     includes: [
       { t: "Web & API testing", d: "OWASP-aligned manual and automated testing." },
       { t: "Cloud configuration review", d: "AWS, Azure and GCP posture assessment." },
@@ -308,7 +308,7 @@ export const values = [
   { t: "Outcomes over hours", d: "We measure success in reports issued and deals closed." },
 ];
 
-// PLACEHOLDER — replace with the real leadership team and credentials.
+// PLACEHOLDER, replace with the real leadership team and credentials.
 export const team = [
   { name: "Founder & CEO", role: "Leadership", focus: "Compliance strategy" },
   { name: "Head of Advisory", role: "Leadership", focus: "ISO & SOC programs" },
@@ -318,10 +318,10 @@ export const team = [
   { name: "Head of Delivery, India", role: "Leadership", focus: "SEBI & financial services" },
 ];
 
-// PLACEHOLDER — confirm actual team certifications.
+// PLACEHOLDER, confirm actual team certifications.
 export const credentials = ["CISSP", "CISA", "CISM", "ISO 27001 Lead Auditor", "ISO 42001 Lead Auditor", "CMMC RP", "OSCP", "CIPP/E", "CRISC", "CCSP"];
 
-// PLACEHOLDER — replace with real openings.
+// PLACEHOLDER, replace with real openings.
 export const roles = [
   { title: "Senior GRC Consultant", team: "Advisory", location: "Remote, US", type: "Full-time" },
   { title: "ISO Lead Implementer", team: "Advisory", location: "Bengaluru, IN", type: "Full-time" },

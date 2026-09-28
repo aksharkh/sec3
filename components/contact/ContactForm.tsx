@@ -22,7 +22,7 @@ export function ContactForm() {
     // TODO: connect to CRM / email endpoint.
     await new Promise((r) => setTimeout(r, 1000));
     setState("sent");
-    toast("Message sent — we'll reply within one business day.");
+    toast("Message sent, we'll reply within one business day.");
   };
 
   if (state === "sent") {
@@ -30,7 +30,7 @@ export function ContactForm() {
       <div className="flex min-h-[32rem] animate-[fadeUp_0.8s_var(--ease-out)] flex-col justify-center">
         <div className="grid size-16 place-items-center rounded-full bg-accent text-2xl text-ink">✓</div>
         <p className="display mt-8 text-5xl">
-          Message <span className="serif text-accent">received.</span>
+          Message <span className="em text-accent">received.</span>
         </p>
         <p className="mt-5 max-w-md text-lg text-ivory/65">Thanks {f.name.split(" ")[0]}. A practitioner will reply to {f.email} within one business day.</p>
       </div>

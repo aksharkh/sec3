@@ -4,7 +4,7 @@ import { Reveal, FadeUp } from "@/components/ui/Reveal";
 import { Arrow } from "@/components/ui/Button";
 import { ArticleCard } from "@/components/insights/ArticleCard";
 
-export function Insights({ eyebrow = "(SK—13) Insights" }: { eyebrow?: string }) {
+export function Insights({ eyebrow = "" }: { eyebrow?: string }) {
   return (
     <section className="bg-ivory py-28 md:py-40">
       <div className="container-x">
@@ -12,7 +12,7 @@ export function Insights({ eyebrow = "(SK—13) Insights" }: { eyebrow?: string 
           <div>
             <p className="eyebrow text-muted">{eyebrow}</p>
             <Reveal as="h2" className="display mt-8 text-[clamp(2.6rem,6vw,6rem)]">
-              Field <span className="serif text-brand">notes.</span>
+              Latest <span className="em text-brand">thinking.</span>
             </Reveal>
           </div>
           <Link href="/insights" className="group inline-flex items-center gap-3 font-medium">

@@ -8,27 +8,27 @@ import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Compliance advisory, audit readiness, unified audits, security testing and continuous compliance — one team, one program.",
+  description: "Compliance advisory, audit readiness, unified audits, security testing and continuous compliance, one team, one program.",
 };
 
 export default function ServicesPage() {
   return (
     <>
       <PageHero
-        eyebrow="(SV—01) What we do"
+        eyebrow="What we do"
         title={
           <>
-            Five services. <span className="serif text-brand">One program.</span>
+            Five services. <span className="em text-brand">One program.</span>
           </>
         }
-        intro="Strategy, readiness, audit, testing and year-round operation — delivered by one team so nothing gets lost between vendors."
+        intro="Strategy, readiness, audit, testing and year-round operation, delivered by one team so nothing gets lost between vendors."
         actions={<Button href="#book">Book an assessment</Button>}
         art="services-hub"
       />
       <ServiceRows />
-      <Process eyebrow="(SV—02) How it works" />
-      <StoriesRail eyebrow="(SV—03) Results" />
-      <FinalCTA eyebrow="(SV—04) Start here" />
+      <Process eyebrow="How it works" />
+      <StoriesRail eyebrow="Results" />
+      <FinalCTA eyebrow="Start here" />
     </>
   );
 }

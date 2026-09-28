@@ -31,11 +31,11 @@ const details: Record<string, Detail> = {
       { t: "Operating effectiveness (Type II)", d: "Controls are tested over an observation window, typically 3 to 12 months." },
       { t: "Evidence & sampling", d: "Population-based sampling of access reviews, change tickets, onboarding, incidents and more." },
     ],
-    timeline: "8–16 weeks to Type I",
+    timeline: "8-16 weeks to Type I",
     validity: "Renewed annually",
     assessment: "Licensed CPA firm",
     related: ["iso-27001", "soc-3", "hipaa", "iso-42001"],
-    faq: [{ q: "Type I or Type II — which do we need?", a: "Most enterprise buyers ultimately want Type II. A Type I is a useful first milestone that unblocks deals while your observation window runs." }],
+    faq: [{ q: "Type I or Type II, which do we need?", a: "Most enterprise buyers ultimately want Type II. A Type I is a useful first milestone that unblocks deals while your observation window runs." }],
   },
   "soc-1": {
     full: "System and Organization Controls 1 (SSAE 18)",
@@ -48,7 +48,7 @@ const details: Record<string, Detail> = {
       { t: "Complementary user entity controls", d: "Clear articulation of what your customers must do on their side." },
       { t: "Type I / Type II", d: "Design at a point in time, or operating effectiveness over a period." },
     ],
-    timeline: "10–16 weeks",
+    timeline: "10-16 weeks",
     validity: "Renewed annually",
     assessment: "Licensed CPA firm",
     related: ["itgc", "soc-2", "pci-dss"],
@@ -56,7 +56,7 @@ const details: Record<string, Detail> = {
   "soc-3": {
     full: "System and Organization Controls 3",
     issuer: "AICPA",
-    summary: "A general-use version of your SOC 2 report that can be published on your website — a public trust signal without sharing detailed test results.",
+    summary: "A general-use version of your SOC 2 report that can be published on your website, a public trust signal without sharing detailed test results.",
     who: ["Companies with a SOC 2 Type II wanting a public trust badge", "Consumer-facing platforms", "Teams tired of NDAs before sharing SOC 2"],
     requirements: [
       { t: "SOC 2 foundation", d: "Issued alongside or after a SOC 2 examination using the same criteria." },
@@ -75,21 +75,21 @@ const details: Record<string, Detail> = {
     summary: "The international standard for an information security management system (ISMS). Certification proves your security program is systematic, risk-based and continuously improving.",
     who: ["Companies selling into Europe, the Middle East and Asia", "Enterprises needing a globally recognised certificate", "Teams that want a management system, not just a report"],
     requirements: [
-      { t: "ISMS clauses 4–10", d: "Context, leadership, planning, support, operation, evaluation and improvement." },
+      { t: "ISMS clauses 4-10", d: "Context, leadership, planning, support, operation, evaluation and improvement." },
       { t: "Risk assessment & treatment", d: "A documented methodology, risk register and treatment plan." },
       { t: "Annex A controls", d: "93 controls across organisational, people, physical and technological themes, justified in a Statement of Applicability." },
       { t: "Internal audit & management review", d: "Evidence the system checks and improves itself." },
     ],
-    timeline: "12–20 weeks",
+    timeline: "12-20 weeks",
     validity: "3-year certificate, annual surveillance",
     assessment: "Accredited certification body",
     related: ["soc-2", "iso-27701", "iso-42001", "iso-22301"],
-    faq: [{ q: "Is ISO 27001 harder than SOC 2?", a: "It's different. ISO 27001 demands a management system — risk methodology, internal audit, management review — while SOC 2 focuses on control operation. With a unified control set, most of the work serves both." }],
+    faq: [{ q: "Is ISO 27001 harder than SOC 2?", a: "It's different. ISO 27001 demands a management system, risk methodology, internal audit, management review, while SOC 2 focuses on control operation. With a unified control set, most of the work serves both." }],
   },
   "nist-csf": {
     full: "NIST Cybersecurity Framework 2.0",
     issuer: "NIST",
-    summary: "A voluntary, outcome-based framework organised around six functions — Govern, Identify, Protect, Detect, Respond and Recover — used to measure and mature a cybersecurity program.",
+    summary: "A voluntary, outcome-based framework organised around six functions, Govern, Identify, Protect, Detect, Respond and Recover, used to measure and mature a cybersecurity program.",
     who: ["Critical infrastructure and regulated industries", "Boards wanting a maturity baseline", "Organisations aligning to US federal expectations"],
     requirements: [
       { t: "Current profile", d: "Where you are today across the framework's categories and subcategories." },
@@ -97,7 +97,7 @@ const details: Record<string, Detail> = {
       { t: "Implementation tiers", d: "Rigour of risk management practices, from Partial to Adaptive." },
       { t: "Roadmap", d: "Prioritised actions to close the gap between profiles." },
     ],
-    timeline: "4–8 weeks assessment",
+    timeline: "4-8 weeks assessment",
     validity: "Re-assess annually",
     assessment: "Self or third-party assessment",
     related: ["nist-800-53", "iso-27001", "cmmc"],
@@ -105,7 +105,7 @@ const details: Record<string, Detail> = {
   itgc: {
     full: "IT General Controls",
     issuer: "PCAOB / external auditors",
-    summary: "The foundational technology controls — access, change, operations and development — that financial auditors rely on for SOX and statutory audits.",
+    summary: "The foundational technology controls, access, change, operations and development, that financial auditors rely on for SOX and statutory audits.",
     who: ["Pre-IPO and public companies preparing for SOX", "Finance teams facing audit findings", "Organisations with ERP or billing systems in audit scope"],
     requirements: [
       { t: "Logical access", d: "Provisioning, de-provisioning, privileged access and periodic reviews." },
@@ -113,7 +113,7 @@ const details: Record<string, Detail> = {
       { t: "IT operations", d: "Job scheduling, backups, incident and problem management." },
       { t: "Program development", d: "Controls over new system implementations and data migration." },
     ],
-    timeline: "6–10 weeks",
+    timeline: "6-10 weeks",
     validity: "Tested annually",
     assessment: "Internal audit / external auditor",
     related: ["soc-1", "soc-2"],
@@ -121,11 +121,11 @@ const details: Record<string, Detail> = {
   "unified-audits": {
     full: "Unified Multi-Framework Audit",
     issuer: "SecureKnots methodology",
-    summary: "One scoping exercise, one control set, one fieldwork window — with evidence mapped to every framework you need. The fastest route to multiple certifications.",
+    summary: "One scoping exercise, one control set, one fieldwork window, with evidence mapped to every framework you need. The fastest route to multiple certifications.",
     who: ["Companies needing two or more frameworks this year", "Teams exhausted by duplicate evidence requests", "Organisations consolidating audit vendors"],
     requirements: [
       { t: "Unified control library", d: "A single set of controls mapped to each target framework's requirements." },
-      { t: "Common evidence", d: "Collect once, reuse everywhere — with framework-specific supplements only where needed." },
+      { t: "Common evidence", d: "Collect once, reuse everywhere, with framework-specific supplements only where needed." },
       { t: "Coordinated fieldwork", d: "Auditors and certification bodies scheduled together." },
       { t: "Consolidated reporting", d: "One remediation register and one executive view across frameworks." },
     ],
@@ -145,7 +145,7 @@ const details: Record<string, Detail> = {
       { t: "3PAO assessment", d: "Independent testing by an accredited Third Party Assessment Organization." },
       { t: "Continuous monitoring", d: "Ongoing vulnerability scanning, POA&M management and reporting." },
     ],
-    timeline: "6–18 months",
+    timeline: "6-18 months",
     validity: "Continuous monitoring",
     assessment: "Accredited 3PAO",
     related: ["nist-800-53", "stateramp", "cmmc", "soc-2"],
@@ -162,7 +162,7 @@ const details: Record<string, Detail> = {
       { t: "3PAO audit", d: "Independent assessment for verified status." },
       { t: "Continuous monitoring", d: "Monthly reporting to maintain status." },
     ],
-    timeline: "4–9 months",
+    timeline: "4-9 months",
     validity: "Continuous monitoring",
     assessment: "Accredited 3PAO",
     related: ["fedramp", "nist-800-53"],
@@ -173,16 +173,16 @@ const details: Record<string, Detail> = {
     summary: "The DoD's program verifying that defense contractors protect Federal Contract Information and Controlled Unclassified Information, now being phased into contracts.",
     who: ["Defense Industrial Base primes and subcontractors", "Manufacturers and engineering firms handling CUI", "IT and cloud providers to defense suppliers"],
     requirements: [
-      { t: "Level 1 — Foundational", d: "Basic safeguarding of FCI with an annual self-assessment." },
-      { t: "Level 2 — Advanced", d: "The 110 requirements of NIST SP 800-171, typically assessed by a C3PAO." },
-      { t: "Level 3 — Expert", d: "Selected NIST SP 800-172 requirements, assessed by the government." },
+      { t: "Level 1, Foundational", d: "Basic safeguarding of FCI with an annual self-assessment." },
+      { t: "Level 2, Advanced", d: "The 110 requirements of NIST SP 800-171, typically assessed by a C3PAO." },
+      { t: "Level 3, Expert", d: "Selected NIST SP 800-172 requirements, assessed by the government." },
       { t: "SSP & POA&M", d: "Documented implementation and limited, time-bound plans of action." },
     ],
-    timeline: "4–12 months to Level 2",
+    timeline: "4-12 months to Level 2",
     validity: "3 years, annual affirmation",
     assessment: "Self / C3PAO / DIBCAC",
     related: ["nist-800-53", "itar", "ear", "nist-csf"],
-    faq: [{ q: "When does CMMC show up in our contracts?", a: "Requirements are being phased into DoD solicitations over several years. If you handle CUI, the time to prepare is now — Level 2 readiness rarely takes less than a few months." }],
+    faq: [{ q: "When does CMMC show up in our contracts?", a: "Requirements are being phased into DoD solicitations over several years. If you handle CUI, the time to prepare is now, Level 2 readiness rarely takes less than a few months." }],
   },
   "nist-800-53": {
     full: "NIST SP 800-53 Rev. 5",
@@ -195,7 +195,7 @@ const details: Record<string, Detail> = {
       { t: "Tailoring", d: "Scoping, parameter values and compensating controls." },
       { t: "Assessment", d: "Testing procedures aligned to SP 800-53A." },
     ],
-    timeline: "8–24 weeks",
+    timeline: "8-24 weeks",
     validity: "Continuous",
     assessment: "Independent assessor",
     related: ["fedramp", "stateramp", "cmmc", "nist-csf"],
@@ -203,7 +203,7 @@ const details: Record<string, Detail> = {
   itar: {
     full: "International Traffic in Arms Regulations",
     issuer: "US Department of State (DDTC)",
-    summary: "US export controls over defense articles, services and technical data on the US Munitions List — including who can access that data in your systems.",
+    summary: "US export controls over defense articles, services and technical data on the US Munitions List, including who can access that data in your systems.",
     who: ["Defense manufacturers and exporters", "Engineering firms handling USML technical data", "Cloud and IT providers hosting ITAR data"],
     requirements: [
       { t: "Registration", d: "DDTC registration for manufacturers and exporters." },
@@ -211,7 +211,7 @@ const details: Record<string, Detail> = {
       { t: "Access controls", d: "Preventing unauthorised foreign-person access to technical data." },
       { t: "Compliance program", d: "Policies, training, recordkeeping and voluntary disclosure procedures." },
     ],
-    timeline: "6–12 weeks",
+    timeline: "6-12 weeks",
     validity: "Ongoing obligation",
     assessment: "Internal program review",
     related: ["ear", "cmmc"],
@@ -219,7 +219,7 @@ const details: Record<string, Detail> = {
   ear: {
     full: "Export Administration Regulations",
     issuer: "US Department of Commerce (BIS)",
-    summary: "US controls on dual-use items, software and technology on the Commerce Control List — including encryption and emerging technologies.",
+    summary: "US controls on dual-use items, software and technology on the Commerce Control List, including encryption and emerging technologies.",
     who: ["Technology and software exporters", "Companies with encryption in their products", "Semiconductor and advanced-manufacturing firms"],
     requirements: [
       { t: "Classification", d: "Assigning ECCNs or EAR99 to products, software and technology." },
@@ -227,7 +227,7 @@ const details: Record<string, Detail> = {
       { t: "Screening", d: "Restricted-party and end-use screening." },
       { t: "Recordkeeping", d: "Export documentation retained per regulation." },
     ],
-    timeline: "6–10 weeks",
+    timeline: "6-10 weeks",
     validity: "Ongoing obligation",
     assessment: "Internal program review",
     related: ["itar", "cmmc"],
@@ -235,7 +235,7 @@ const details: Record<string, Detail> = {
   "iso-42001": {
     full: "ISO/IEC 42001:2023 AI Management System",
     issuer: "ISO / IEC",
-    summary: "The first certifiable standard for governing AI — covering responsible development, risk and impact assessment, and oversight of AI systems across their lifecycle.",
+    summary: "The first certifiable standard for governing AI, covering responsible development, risk and impact assessment, and oversight of AI systems across their lifecycle.",
     who: ["Companies building or embedding AI in products", "AI vendors facing buyer governance questions", "Enterprises preparing for AI regulation"],
     requirements: [
       { t: "AI management system", d: "Policy, roles, objectives and continual improvement for AI." },
@@ -243,11 +243,11 @@ const details: Record<string, Detail> = {
       { t: "AI system impact assessment", d: "Effects on individuals, groups and society." },
       { t: "Annex A controls", d: "Data, lifecycle, transparency and third-party controls for AI systems." },
     ],
-    timeline: "12–20 weeks",
+    timeline: "12-20 weeks",
     validity: "3-year certificate, annual surveillance",
     assessment: "Accredited certification body",
     related: ["iso-27001", "iso-27701", "gdpr", "soc-2"],
-    faq: [{ q: "We already have ISO 27001 — how much carries over?", a: "A great deal. The management-system clauses are aligned, so your ISMS structure, internal audit and management review extend naturally. The new work is AI-specific risk, impact assessment and lifecycle controls." }],
+    faq: [{ q: "We already have ISO 27001, how much carries over?", a: "A great deal. The management-system clauses are aligned, so your ISMS structure, internal audit and management review extend naturally. The new work is AI-specific risk, impact assessment and lifecycle controls." }],
   },
   "iso-27701": {
     full: "ISO/IEC 27701 Privacy Information Management",
@@ -260,7 +260,7 @@ const details: Record<string, Detail> = {
       { t: "Controller & processor controls", d: "Lawful basis, consent, rights handling, sub-processor management." },
       { t: "Mapping", d: "Alignment to GDPR and other privacy laws." },
     ],
-    timeline: "8–14 weeks on top of ISO 27001",
+    timeline: "8-14 weeks on top of ISO 27001",
     validity: "Certified with ISO 27001",
     assessment: "Accredited certification body",
     related: ["iso-27001", "gdpr", "ccpa", "dpdpa"],
@@ -268,7 +268,7 @@ const details: Record<string, Detail> = {
   gdpr: {
     full: "EU General Data Protection Regulation",
     issuer: "European Union",
-    summary: "The EU's data protection law governing how personal data of people in the EU is collected, used and transferred — with significant penalties for non-compliance.",
+    summary: "The EU's data protection law governing how personal data of people in the EU is collected, used and transferred, with significant penalties for non-compliance.",
     who: ["Any company processing personal data of people in the EU", "SaaS processors serving European customers", "Companies transferring data outside the EU"],
     requirements: [
       { t: "Lawful basis & transparency", d: "Documented basis for processing and clear privacy notices." },
@@ -276,7 +276,7 @@ const details: Record<string, Detail> = {
       { t: "Data subject rights", d: "Access, erasure, portability and objection handled on time." },
       { t: "Breach notification", d: "Supervisory authority notified within 72 hours where required." },
     ],
-    timeline: "8–12 weeks",
+    timeline: "8-12 weeks",
     validity: "Ongoing obligation",
     assessment: "Gap assessment & audit",
     related: ["iso-27701", "ccpa", "dpdpa", "pdpa"],
@@ -292,7 +292,7 @@ const details: Record<string, Detail> = {
       { t: "Contracts", d: "Service provider and contractor terms." },
       { t: "Risk assessments", d: "Assessments and cybersecurity audits for higher-risk processing." },
     ],
-    timeline: "6–10 weeks",
+    timeline: "6-10 weeks",
     validity: "Ongoing obligation",
     assessment: "Gap assessment",
     related: ["gdpr", "iso-27701"],
@@ -300,7 +300,7 @@ const details: Record<string, Detail> = {
   hipaa: {
     full: "Health Insurance Portability and Accountability Act",
     issuer: "US Department of Health & Human Services",
-    summary: "US rules protecting health information — the Privacy, Security and Breach Notification Rules apply to covered entities and their business associates.",
+    summary: "US rules protecting health information, the Privacy, Security and Breach Notification Rules apply to covered entities and their business associates.",
     who: ["Health-tech and digital health platforms", "Business associates handling ePHI", "Providers, payers and clearinghouses"],
     requirements: [
       { t: "Risk analysis", d: "An accurate and thorough assessment of risks to ePHI." },
@@ -308,7 +308,7 @@ const details: Record<string, Detail> = {
       { t: "Business associate agreements", d: "Contracts with every vendor handling ePHI." },
       { t: "Breach notification", d: "Procedures for notifying individuals, HHS and, in some cases, media." },
     ],
-    timeline: "8–12 weeks",
+    timeline: "8-12 weeks",
     validity: "Ongoing obligation",
     assessment: "Third-party assessment",
     related: ["soc-2", "iso-27001", "iso-27701"],
@@ -317,7 +317,7 @@ const details: Record<string, Detail> = {
   pdpa: {
     full: "Personal Data Protection Act (Singapore)",
     issuer: "Personal Data Protection Commission",
-    summary: "Singapore's baseline privacy law governing the collection, use and disclosure of personal data — with similar PDPA regimes in Thailand and Malaysia.",
+    summary: "Singapore's baseline privacy law governing the collection, use and disclosure of personal data, with similar PDPA regimes in Thailand and Malaysia.",
     who: ["Companies operating in or serving Singapore", "Regional APAC businesses", "Processors for Singapore organisations"],
     requirements: [
       { t: "Consent & purpose", d: "Obligations for consent, purpose limitation and notification." },
@@ -325,7 +325,7 @@ const details: Record<string, Detail> = {
       { t: "Protection & retention", d: "Reasonable security arrangements and retention limits." },
       { t: "Breach notification", d: "Assessing and notifying notifiable data breaches promptly." },
     ],
-    timeline: "6–10 weeks",
+    timeline: "6-10 weeks",
     validity: "Ongoing obligation",
     assessment: "Gap assessment",
     related: ["gdpr", "dpdpa", "iso-27701"],
@@ -333,7 +333,7 @@ const details: Record<string, Detail> = {
   dpdpa: {
     full: "Digital Personal Data Protection Act, 2023 (India)",
     issuer: "Government of India",
-    summary: "India's comprehensive data protection law, with implementing rules being phased in — covering consent, data fiduciary duties and rights of data principals.",
+    summary: "India's comprehensive data protection law, with implementing rules being phased in, covering consent, data fiduciary duties and rights of data principals.",
     who: ["Companies processing personal data of people in India", "Global firms with Indian operations or users", "Significant Data Fiduciaries designated by government"],
     requirements: [
       { t: "Notice & consent", d: "Clear, itemised notices and verifiable consent, including via consent managers." },
@@ -341,7 +341,7 @@ const details: Record<string, Detail> = {
       { t: "Rights of data principals", d: "Access, correction, erasure and grievance redressal." },
       { t: "Significant Data Fiduciaries", d: "DPO, independent audits and DPIAs where designated." },
     ],
-    timeline: "8–12 weeks",
+    timeline: "8-12 weeks",
     validity: "Ongoing obligation",
     assessment: "Gap assessment & audit",
     related: ["gdpr", "iso-27701", "sebi-cscrf"],
@@ -349,7 +349,7 @@ const details: Record<string, Detail> = {
   "pci-dss": {
     full: "Payment Card Industry Data Security Standard v4.0.1",
     issuer: "PCI Security Standards Council",
-    summary: "The security standard for any entity that stores, processes or transmits cardholder data — validated by a QSA Report on Compliance or a Self-Assessment Questionnaire.",
+    summary: "The security standard for any entity that stores, processes or transmits cardholder data, validated by a QSA Report on Compliance or a Self-Assessment Questionnaire.",
     who: ["Merchants and payment service providers", "Fintechs touching card data", "SaaS platforms in the payment flow"],
     requirements: [
       { t: "12 requirements", d: "From network security controls to security policies and programs." },
@@ -357,7 +357,7 @@ const details: Record<string, Detail> = {
       { t: "Customised approach", d: "v4 option to meet objectives with tailored controls." },
       { t: "Validation", d: "ROC by a QSA or SAQ, plus quarterly ASV scans." },
     ],
-    timeline: "12–24 weeks",
+    timeline: "12-24 weeks",
     validity: "Validated annually",
     assessment: "QSA or SAQ",
     related: ["pci-risk-assessment", "soc-2", "iso-27001", "soc-1"],
@@ -365,7 +365,7 @@ const details: Record<string, Detail> = {
   "pci-risk-assessment": {
     full: "PCI DSS Risk Assessment & Targeted Risk Analysis",
     issuer: "PCI Security Standards Council",
-    summary: "The risk analyses PCI DSS v4 now requires — including targeted risk analyses that justify control frequencies and customised approaches.",
+    summary: "The risk analyses PCI DSS v4 now requires, including targeted risk analyses that justify control frequencies and customised approaches.",
     who: ["Entities adopting PCI DSS v4", "Organisations using the customised approach", "Teams reducing scope and cost"],
     requirements: [
       { t: "Targeted risk analyses", d: "Documented analyses for requirements with flexible frequencies." },
@@ -373,7 +373,7 @@ const details: Record<string, Detail> = {
       { t: "Threat & vulnerability view", d: "Risks to cardholder data prioritised." },
       { t: "Annual review", d: "Analyses reviewed at least every 12 months." },
     ],
-    timeline: "3–6 weeks",
+    timeline: "3-6 weeks",
     validity: "Reviewed annually",
     assessment: "Consultant-led",
     related: ["pci-dss"],
@@ -381,7 +381,7 @@ const details: Record<string, Detail> = {
   dora: {
     full: "Digital Operational Resilience Act",
     issuer: "European Union",
-    summary: "The EU regulation, applicable since January 2025, requiring financial entities to withstand, respond to and recover from ICT disruptions — including those at third parties.",
+    summary: "The EU regulation, applicable since January 2025, requiring financial entities to withstand, respond to and recover from ICT disruptions, including those at third parties.",
     who: ["EU banks, insurers, investment and payment firms", "Crypto-asset service providers", "ICT providers serving EU financial entities"],
     requirements: [
       { t: "ICT risk management", d: "A governed framework owned by the management body." },
@@ -389,7 +389,7 @@ const details: Record<string, Detail> = {
       { t: "Resilience testing", d: "Regular testing, with threat-led penetration testing for some entities." },
       { t: "Third-party risk", d: "Register of information and contractual requirements for ICT providers." },
     ],
-    timeline: "10–20 weeks",
+    timeline: "10-20 weeks",
     validity: "Ongoing obligation",
     assessment: "Gap assessment",
     related: ["iso-27001", "iso-22301", "pci-dss"],
@@ -405,7 +405,7 @@ const details: Record<string, Detail> = {
       { t: "Respond & recover", d: "Incident response, BCP and recovery testing." },
       { t: "Cyber audit", d: "Periodic audits by CERT-In empanelled auditors." },
     ],
-    timeline: "8–16 weeks",
+    timeline: "8-16 weeks",
     validity: "Periodic audits",
     assessment: "CERT-In empanelled auditor",
     related: ["dpdpa", "iso-27001", "iso-22301"],
@@ -413,7 +413,7 @@ const details: Record<string, Detail> = {
   "iso-9001": {
     full: "ISO 9001:2015 Quality Management",
     issuer: "ISO",
-    summary: "The world's most widely used quality management standard — a framework for consistent products, services and customer satisfaction.",
+    summary: "The world's most widely used quality management standard, a framework for consistent products, services and customer satisfaction.",
     who: ["Manufacturers and service businesses", "Suppliers to large enterprises and government", "Teams formalising operational quality"],
     requirements: [
       { t: "Process approach", d: "Defined, measured and improved business processes." },
@@ -421,7 +421,7 @@ const details: Record<string, Detail> = {
       { t: "Risk-based thinking", d: "Risks and opportunities addressed in planning." },
       { t: "Internal audit", d: "Evidence of continual improvement." },
     ],
-    timeline: "10–16 weeks",
+    timeline: "10-16 weeks",
     validity: "3-year certificate, annual surveillance",
     assessment: "Accredited certification body",
     related: ["iso-27001", "iso-20000", "iso-45001"],
@@ -429,7 +429,7 @@ const details: Record<string, Detail> = {
   "iso-20000": {
     full: "ISO/IEC 20000-1 IT Service Management",
     issuer: "ISO / IEC",
-    summary: "The international standard for IT service management systems — demonstrating reliable, well-governed service delivery.",
+    summary: "The international standard for IT service management systems, demonstrating reliable, well-governed service delivery.",
     who: ["Managed service and IT outsourcing providers", "Internal IT organisations", "Cloud operations teams"],
     requirements: [
       { t: "Service management system", d: "Policy, objectives and planning for services." },
@@ -437,7 +437,7 @@ const details: Record<string, Detail> = {
       { t: "Resolution & fulfilment", d: "Incident, request and problem management." },
       { t: "Control processes", d: "Change, release and configuration management." },
     ],
-    timeline: "12–18 weeks",
+    timeline: "12-18 weeks",
     validity: "3-year certificate, annual surveillance",
     assessment: "Accredited certification body",
     related: ["iso-27001", "iso-9001", "iso-22301"],
@@ -445,7 +445,7 @@ const details: Record<string, Detail> = {
   "iso-22301": {
     full: "ISO 22301 Business Continuity Management",
     issuer: "ISO",
-    summary: "The standard for business continuity management systems — proving you can keep critical services running through disruption.",
+    summary: "The standard for business continuity management systems, proving you can keep critical services running through disruption.",
     who: ["Financial services and critical infrastructure", "SaaS providers with uptime commitments", "Organisations facing DORA or resilience rules"],
     requirements: [
       { t: "Business impact analysis", d: "Critical activities, RTOs and RPOs defined." },
@@ -453,7 +453,7 @@ const details: Record<string, Detail> = {
       { t: "Plans & procedures", d: "Documented continuity and recovery plans." },
       { t: "Exercising", d: "Regular tests that prove plans work." },
     ],
-    timeline: "10–16 weeks",
+    timeline: "10-16 weeks",
     validity: "3-year certificate, annual surveillance",
     assessment: "Accredited certification body",
     related: ["iso-27001", "dora", "iso-20000"],
@@ -469,7 +469,7 @@ const details: Record<string, Detail> = {
       { t: "Operational control", d: "Service delivery, integration and performance." },
       { t: "Evaluation", d: "Monitoring, internal audit and improvement." },
     ],
-    timeline: "10–14 weeks",
+    timeline: "10-14 weeks",
     validity: "3-year certificate, annual surveillance",
     assessment: "Accredited certification body",
     related: ["iso-45001", "iso-9001"],
@@ -477,7 +477,7 @@ const details: Record<string, Detail> = {
   "iso-45001": {
     full: "ISO 45001 Occupational Health & Safety",
     issuer: "ISO",
-    summary: "The international standard for occupational health and safety management — reducing workplace risk and demonstrating a safe operation.",
+    summary: "The international standard for occupational health and safety management, reducing workplace risk and demonstrating a safe operation.",
     who: ["Manufacturing, construction and logistics", "Contractors bidding for large projects", "Organisations formalising safety programs"],
     requirements: [
       { t: "Worker participation", d: "Consultation and participation of workers." },
@@ -485,7 +485,7 @@ const details: Record<string, Detail> = {
       { t: "Operational planning", d: "Controls, emergency preparedness and contractors." },
       { t: "Incident investigation", d: "Nonconformity and corrective action." },
     ],
-    timeline: "10–14 weeks",
+    timeline: "10-14 weeks",
     validity: "3-year certificate, annual surveillance",
     assessment: "Accredited certification body",
     related: ["iso-9001", "iso-41001"],
@@ -500,7 +500,7 @@ export const frameworks: Framework[] = frameworkGroups.flatMap((g) =>
       { q: `How long does ${it.name} take?`, a: `Typical timeline: ${d.timeline.toLowerCase()}, depending on scope, maturity and team availability. We'll give you a firm plan after a two-week scoping and gap assessment.` },
       {
         q: `Can ${it.name} be combined with other frameworks?`,
-        a: `Yes — that's our speciality. ${it.name} shares substantial control overlap with ${d.related
+        a: `Yes, that's our speciality. ${it.name} shares substantial control overlap with ${d.related
           .slice(0, 2)
           .map((r) => nameOf(r))
           .join(" and ")}, so we build one control set and map evidence across all of them.`,

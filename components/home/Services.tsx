@@ -39,10 +39,10 @@ export function Services() {
     <section ref={root} className="relative bg-ivory pb-28 pt-28 md:pb-40 md:pt-40">
       <div className="container-x">
         <div className="grid gap-10 md:grid-cols-12">
-          <p className="eyebrow text-muted md:col-span-3">(SK—06) What we do</p>
+          <p className="eyebrow text-muted md:col-span-3">What we do</p>
           <div className="md:col-span-9">
             <Reveal as="h2" className="display text-[clamp(2.8rem,7vw,7.5rem)]">
-              Five services. <span className="serif text-brand">One program.</span>
+              Five services. <span className="em text-brand">One program.</span>
             </Reveal>
           </div>
         </div>

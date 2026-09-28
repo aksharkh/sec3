@@ -9,20 +9,20 @@ import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Frameworks",
-  description: "SOC 2, ISO 27001, FedRAMP, CMMC, PCI DSS, HIPAA, ISO 42001, GDPR, DORA and more — 29 frameworks delivered as one unified program.",
+  description: "SOC 2, ISO 27001, FedRAMP, CMMC, PCI DSS, HIPAA, ISO 42001, GDPR, DORA and more, 29 frameworks delivered as one unified program.",
 };
 
 export default function FrameworksPage() {
   return (
     <>
       <PageHero
-        eyebrow={`(FW—01) ${frameworks.length} frameworks`}
+        eyebrow={`${frameworks.length} frameworks`}
         title={
           <>
-            Every framework. <span className="serif text-brand">One method.</span>
+            Every framework. <span className="em text-brand">One method.</span>
           </>
         }
-        intro="Security attestations, government authorisations, privacy laws, AI governance and management systems — scoped together, tested once and mapped everywhere."
+        intro="Security attestations, government authorisations, privacy laws, AI governance and management systems, scoped together, tested once and mapped everywhere."
         actions={
           <>
             <Button href="#book">Find my frameworks</Button>
@@ -34,9 +34,9 @@ export default function FrameworksPage() {
         art="frameworks-hub"
       />
       <FrameworkExplorer items={frameworks} />
-      <OverlapMap eyebrow="(FW—02) Assess once" />
-      <ReadinessCheck eyebrow="(FW—03) Not sure where to start?" />
-      <FinalCTA eyebrow="(FW—04) Start here" />
+      <OverlapMap eyebrow="Assess once" />
+      <ReadinessCheck eyebrow="Not sure where to start?" />
+      <FinalCTA eyebrow="Start here" />
     </>
   );
 }

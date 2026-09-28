@@ -69,7 +69,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
             eyebrow="What's included"
             title={
               <>
-                Everything you need. <span className="serif text-brand">Nothing you don&apos;t.</span>
+                Everything you need. <span className="em text-brand">Nothing you don&apos;t.</span>
               </>
             }
           />
@@ -89,7 +89,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
       {/* Frameworks */}
       <section className="bg-paper py-24 md:py-32">
         <div className="container-x">
-          <SectionHead eyebrow="Frameworks covered" title={<>Built for <span className="serif text-brand">your roadmap.</span></>} />
+          <SectionHead eyebrow="Frameworks covered" title={<>Built for <span className="em text-brand">your roadmap.</span></>} />
           <div className="mt-14 flex flex-wrap gap-3">
             {fws.map((f) => (
               <Link
@@ -116,7 +116,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
       {related.length > 0 && (
         <section className="bg-ivory py-28 md:py-40">
           <div className="container-x">
-            <SectionHead eyebrow="Customer stories" title={<>{s.title}, <span className="serif text-brand">in practice.</span></>} />
+            <SectionHead eyebrow="Customer stories" title={<>{s.title}, <span className="em text-brand">in practice.</span></>} />
             <div className="mt-16 grid gap-5 md:grid-cols-2">
               {related.map((st) => (
                 <StoryCard key={st.slug} story={st} />

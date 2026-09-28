@@ -21,7 +21,7 @@ export function Footer() {
           <div className="md:col-span-4">
             <p className="max-w-sm text-2xl leading-snug tracking-[-0.02em] text-ivory/90">
               Practitioner-led compliance for companies that sell to{" "}
-              <span className="serif text-accent">demanding buyers.</span>
+              <span className="em text-accent">demanding buyers.</span>
             </p>
             <div className="mt-10 space-y-2">
               <a href={`mailto:${contact.email}`} className="link-sweep block text-lg">
@@ -72,20 +72,16 @@ export function Footer() {
           ))}
           <div className="flex items-end md:col-span-6 md:justify-end">
             <p className="eyebrow flex items-center gap-2 text-ivory/50">
-              <span className="relative flex size-2">
-                <span className="absolute inset-0 animate-ping rounded-full bg-accent/70" />
-                <span className="relative size-2 rounded-full bg-accent" />
-              </span>
               Accepting new engagements for Q4
             </p>
           </div>
         </div>
       </div>
 
-      {/* Giant wordmark — spans the full content width */}
+      {/* Giant wordmark, spans the full content width */}
       <div className="container-x relative select-none overflow-hidden" aria-hidden>
         <p className="display whitespace-nowrap pb-[1vw] text-[19.4vw] font-semibold leading-[0.8] tracking-[-0.065em] text-ivory 2xl:text-[19rem]">
-          Secure<span className="serif font-normal tracking-[-0.035em] text-accent">Knots</span>
+          Secure<span className="em font-normal tracking-[-0.035em] text-accent">Knots</span>
         </p>
       </div>
 

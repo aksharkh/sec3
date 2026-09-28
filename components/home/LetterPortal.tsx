@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
 const WORD = "UNIFIED";
-const TARGET = 2; // the first "I" — a solid stem we can dive through
+const TARGET = 2; // the first "I", a solid stem we can dive through
 
 /**
  * An ivory wall with a giant word knocked out of it. Scrolling scales the word
- * around the centre of one letter's stem until the stem fills the screen —
+ * around the centre of one letter's stem until the stem fills the screen  - 
  * so you pass *through* the letter into the navy scene behind.
  */
 export function LetterPortal() {
@@ -43,8 +43,7 @@ export function LetterPortal() {
           defaults: { ease: "none" },
           scrollTrigger: { trigger: el, start: "top top", end: "+=200%", pin: true, scrub: 0.6, invalidateOnRefresh: true },
         });
-        tl.to(".lp-caption", { autoAlpha: 0, y: -30, duration: 0.15 }, 0)
-          .to(group.current, { scale: 140, svgOrigin: `${cx} ${cy}`, duration: 1, ease: "power3.in" }, 0)
+        tl.to(group.current, { scale: 140, svgOrigin: `${cx} ${cy}`, duration: 1, ease: "power3.in" }, 0)
           .fromTo(".lp-behind", { scale: 1.6, autoAlpha: 0.2 }, { scale: 1, autoAlpha: 1, duration: 0.6, ease: "power2.out" }, 0.55);
       }, el);
     });
@@ -59,11 +58,11 @@ export function LetterPortal() {
       {/* Behind the wall */}
       <div className="lp-behind absolute inset-0 grid place-items-center">
         <div className="px-6 text-center">
-          <p className="eyebrow text-accent">(SK—08) Through the letter</p>
-          <p className="display mt-6 text-[clamp(3rem,9vw,9.5rem)]">
+          
+          <p className="display text-[clamp(3rem,9vw,9.5rem)]">
             Tied once.
             <br />
-            <span className="serif text-accent">Proven everywhere.</span>
+            <span className="em text-accent">Proven everywhere.</span>
           </p>
         </div>
       </div>
@@ -95,12 +94,7 @@ export function LetterPortal() {
         </defs>
         <rect width={size.w} height={size.h} fill="var(--ivory)" mask="url(#lp-mask)" />
       </svg>
-
-      <div className="lp-caption pointer-events-none absolute inset-x-0 bottom-10 z-10 flex justify-between px-[var(--gutter)] text-ink">
-        <span className="eyebrow">(SK—08) One program</span>
-        <span className="eyebrow">Keep scrolling ↓</span>
-      </div>
-      <h2 className="sr-only">Unified — tied once, proven everywhere.</h2>
+      <h2 className="sr-only">Unified, tied once, proven everywhere.</h2>
     </section>
   );
 }

@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const DEFAULT = ["SOC 2", "ISO 27001", "HIPAA"];
 
-export function OverlapMap({ eyebrow = "(SK—04) Assess once" }: { eyebrow?: string }) {
+export function OverlapMap({ eyebrow = "Assess once" }: { eyebrow?: string }) {
   const [selected, setSelected] = useState<string[]>(DEFAULT);
 
   const { separate, unified, saved, coverage } = useMemo(() => {
@@ -39,7 +39,7 @@ export function OverlapMap({ eyebrow = "(SK—04) Assess once" }: { eyebrow?: st
           <p className="eyebrow text-ivory/45 md:col-span-3">{eyebrow}</p>
           <div className="md:col-span-9">
             <Reveal as="h2" className="display text-[clamp(2.8rem,7vw,7.5rem)]">
-              Test a control once. <span className="serif text-accent">Map it everywhere.</span>
+              Test a control once. <span className="em text-accent">Map it everywhere.</span>
             </Reveal>
           </div>
         </div>
@@ -48,7 +48,7 @@ export function OverlapMap({ eyebrow = "(SK—04) Assess once" }: { eyebrow?: st
           {/* Controls */}
           <div className="lg:col-span-5">
             <p className="max-w-md text-lg leading-relaxed text-ivory/65">
-              Pick the frameworks on your roadmap. Watch how much of the work is shared — that&apos;s the
+              Pick the frameworks on your roadmap. Watch how much of the work is shared, that&apos;s the
               work we do once, not five times.
             </p>
 

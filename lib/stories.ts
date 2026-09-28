@@ -1,5 +1,5 @@
 /**
- * PLACEHOLDER — sample customer stories with fictional company names.
+ * PLACEHOLDER, sample customer stories with fictional company names.
  * Replace with approved client case studies (names, logos, figures, quotes) before launch.
  */
 
@@ -42,12 +42,12 @@ export const stories: Story[] = [
       { v: "62%", l: "Fewer evidence requests" },
     ],
     quote: {
-      text: "We had three audits on the same roadmap. SecureKnots turned it into one program — our engineers barely noticed it happening.",
+      text: "We had three audits on the same roadmap. SecureKnots turned it into one program, our engineers barely noticed it happening.",
       name: "VP Engineering",
       role: "Parallax Health",
     },
     challenge: [
-      "Parallax's enterprise pipeline was stalling in security review. Every hospital system asked for something different — one wanted SOC 2, another ISO 27001, all of them wanted HIPAA assurances.",
+      "Parallax's enterprise pipeline was stalling in security review. Every hospital system asked for something different, one wanted SOC 2, another ISO 27001, all of them wanted HIPAA assurances.",
       "Running three separate projects would have tied up the platform team for most of the year, right as they were shipping a major product release.",
     ],
     approach: [
@@ -154,7 +154,7 @@ export const stories: Story[] = [
       name: "Co-founder & CTO",
       role: "Lumen AI",
     },
-    challenge: ["Enterprise buyers were asking detailed questions about model risk, training data and human oversight — questions SOC 2 alone couldn't answer."],
+    challenge: ["Enterprise buyers were asking detailed questions about model risk, training data and human oversight, questions SOC 2 alone couldn't answer."],
     approach: [
       { t: "AI inventory", d: "Every model, dataset and AI-enabled feature catalogued." },
       { t: "Impact assessments", d: "AI system impact assessments for customer-facing capabilities." },
@@ -174,7 +174,7 @@ export const stories: Story[] = [
     hq: "Austin, US",
     frameworks: ["SOC 2", "SOC 3"],
     services: ["Audit Readiness"],
-    headline: "First SOC 2 report in nine weeks — and a public SOC 3 on the website.",
+    headline: "First SOC 2 report in nine weeks, and a public SOC 3 on the website.",
     summary: "A seed-stage infrastructure startup needed SOC 2 to sign its first Fortune 500 customer.",
     metrics: [
       { v: "9 wks", l: "To SOC 2 Type I" },
@@ -218,7 +218,7 @@ export const stories: Story[] = [
       name: "Chief Information Security Officer",
       role: "Meridian Capital Markets",
     },
-    challenge: ["Separate teams were preparing for SEBI's new framework, ISO 27001 surveillance and DPDPA readiness — with conflicting policies and duplicated evidence."],
+    challenge: ["Separate teams were preparing for SEBI's new framework, ISO 27001 surveillance and DPDPA readiness, with conflicting policies and duplicated evidence."],
     approach: [
       { t: "Regulatory crosswalk", d: "CSCRF, ISO 27001 Annex A and DPDPA obligations mapped to one control set." },
       { t: "Governance redesign", d: "A single cyber and privacy committee reporting to the board." },

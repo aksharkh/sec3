@@ -1,6 +1,6 @@
 /**
  * Deterministic generative artwork. Each seed (a slug) produces a unique
- * Lissajous "knot" drawn as a bundle of parallel strands — the visual
+ * Lissajous "knot" drawn as a bundle of parallel strands, the visual
  * language of the brand, used in place of stock imagery.
  */
 

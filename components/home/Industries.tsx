@@ -7,7 +7,7 @@ import { gsap } from "@/lib/gsap";
 import { Reveal } from "@/components/ui/Reveal";
 import { Arrow } from "@/components/ui/Button";
 
-export function Industries({ eyebrow = "(SK—10) Industries" }: { eyebrow?: string }) {
+export function Industries({ eyebrow = "" }: { eyebrow?: string }) {
   const [active, setActive] = useState<number | null>(null);
   const card = useRef<HTMLDivElement>(null);
   const list = useRef<HTMLDivElement>(null);
@@ -37,7 +37,7 @@ export function Industries({ eyebrow = "(SK—10) Industries" }: { eyebrow?: str
           <p className="eyebrow text-ivory/45 md:col-span-3">{eyebrow}</p>
           <div className="md:col-span-9">
             <Reveal as="h2" className="display text-[clamp(2.6rem,6.5vw,7rem)]">
-              Built for teams that sell to <span className="serif text-accent">demanding buyers.</span>
+              Built for teams that sell to <span className="em text-accent">demanding buyers.</span>
             </Reveal>
           </div>
         </div>

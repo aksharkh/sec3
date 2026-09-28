@@ -5,7 +5,7 @@ import { Magnetic } from "@/components/ui/Magnetic";
 import { Arrow } from "@/components/ui/Button";
 import { DotField } from "@/components/ui/DotField";
 
-export function FinalCTA({ eyebrow = "(SK—14) Start here" }: { eyebrow?: string }) {
+export function FinalCTA({ eyebrow = "" }: { eyebrow?: string }) {
   return (
     <section className="relative overflow-hidden bg-ivory pb-24 pt-20 md:pb-36 md:pt-28">
       <DotField className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_70%_60%,black_20%,transparent_75%)]" />
@@ -19,7 +19,7 @@ export function FinalCTA({ eyebrow = "(SK—14) Start here" }: { eyebrow?: strin
               Let&apos;s tie it
             </Reveal>
             <Reveal as="span" delay={0.1} className="block">
-              <span className="serif text-brand">together.</span>
+              <span className="em text-brand">together.</span>
             </Reveal>
           </h2>
           <div className="flex lg:col-span-3 lg:justify-end">

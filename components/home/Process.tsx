@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { process } from "@/lib/content";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
-export function Process({ eyebrow = "(SK—07) How it works" }: { eyebrow?: string }) {
+export function Process({ eyebrow = "" }: { eyebrow?: string }) {
   const root = useRef<HTMLElement>(null);
   const track = useRef<HTMLDivElement>(null);
 
@@ -53,10 +53,10 @@ export function Process({ eyebrow = "(SK—07) How it works" }: { eyebrow?: stri
           <div>
             <p className="eyebrow text-ivory/50">{eyebrow}</p>
             <h2 className="display mt-6 text-[clamp(2.6rem,6vw,6rem)]">
-              From tangle <span className="serif text-accent">to tied</span>
+              From tangle <span className="em text-accent">to tied</span>
             </h2>
           </div>
-          <p className="eyebrow hidden text-ivory/50 md:block">Typical SOC 2 / ISO 27001 timeline →</p>
+          <p className="hidden max-w-xs text-right text-ivory/55 md:block">A typical SOC 2 or ISO 27001 timeline.</p>
         </div>
 
         <div className="container-x mt-10 hidden md:block">
@@ -76,10 +76,10 @@ export function Process({ eyebrow = "(SK—07) How it works" }: { eyebrow?: stri
             >
               <div className="proc-anim flex items-center justify-between">
                 <span className="eyebrow text-accent">{p.time}</span>
-                <span className="eyebrow text-ivory/40">Step {p.n}</span>
+                
               </div>
               <div className="mt-12 md:mt-0">
-                <p className="proc-anim serif text-[clamp(5rem,9vw,9rem)] leading-[0.8] text-ivory/15">{p.n}</p>
+                <p className="proc-anim em text-[clamp(5rem,9vw,9rem)] leading-[0.8] text-ivory/15">{p.n}</p>
                 <h3 className="proc-anim mt-4 text-4xl tracking-[-0.03em] md:text-5xl">{p.title}</h3>
                 <p className="proc-anim mt-4 max-w-sm leading-relaxed text-ivory/65">{p.body}</p>
               </div>

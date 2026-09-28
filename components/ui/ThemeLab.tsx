@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-/** Temporary palette switcher for client review — remove before launch. */
+/** Temporary palette switcher for client review, remove before launch. */
 const palettes = [
+  { name: "Cobalt Glass", ivory: "#f2f3f5", paper: "#e9ebef", bone: "#dde0e6", brand: "#101b3f", brand2: "#23367e", brand3: "#4a64e0", accent: "#a9b8ff" },
   { name: "Navy & Sky", ivory: "#f3f0e8", paper: "#ebe7dc", bone: "#dfdacb", brand: "#0b2a5b", brand2: "#1c4a96", brand3: "#3a6fd8", accent: "#7fb2ff" },
   { name: "Midnight & Gold", ivory: "#f5f1e8", paper: "#ece5d6", bone: "#e0d6c2", brand: "#121a2e", brand2: "#24304f", brand3: "#3d4c75", accent: "#d4a64a" },
   { name: "Graphite & Electric", ivory: "#f4f4f2", paper: "#e9e9e6", bone: "#dcdcd8", brand: "#1a1d21", brand2: "#2b3036", brand3: "#4a525c", accent: "#5b82ff" },

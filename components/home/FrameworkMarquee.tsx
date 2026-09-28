@@ -10,8 +10,8 @@ export function FrameworkMarquee() {
   return (
     <section aria-label="Frameworks we deliver" className="relative border-y border-line bg-ivory py-10 md:py-14">
       <div className="container-x mb-8 flex items-center justify-between gap-6">
-        <p className="eyebrow text-muted">(SK—03) {frameworkCount} frameworks. One partner.</p>
-        <p className="eyebrow hidden text-muted md:block">Security · Government · Privacy &amp; AI · Financial · Management</p>
+        <p className="text-lg text-muted">{frameworkCount} frameworks, one partner.</p>
+        
       </div>
 
       <VelocityMarquee speed={70}>
@@ -19,7 +19,7 @@ export function FrameworkMarquee() {
           <Fragment key={name}>
             <span
               className={`whitespace-nowrap px-6 text-[clamp(2.6rem,6.5vw,6.5rem)] leading-none tracking-[-0.045em] md:px-10 ${
-                i % 2 ? "serif text-brand" : "font-medium text-ink"
+                i % 2 ? "em text-brand" : "font-medium text-ink"
               }`}
             >
               {name}

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps<"/customers/[slug]"
   const { slug } = await params;
   const s = getStory(slug);
   if (!s) return {};
-  return { title: `${s.company} — customer story`, description: s.summary };
+  return { title: `${s.company}, customer story`, description: s.summary };
 }
 
 export default async function StoryPage({ params }: PageProps<"/customers/[slug]">) {
@@ -121,7 +121,7 @@ export default async function StoryPage({ params }: PageProps<"/customers/[slug]
           </aside>
 
           <article className="lg:col-span-8 xl:col-span-8 xl:col-start-5">
-            <p className="eyebrow text-muted">01 — The challenge</p>
+            <p className="eyebrow text-muted">The challenge</p>
             <div className="mt-6 space-y-6 text-[clamp(1.4rem,2.2vw,2rem)] leading-[1.3] tracking-[-0.02em]">
               {s.challenge.map((p) => (
                 <FadeUp as="p" key={p}>
@@ -130,7 +130,7 @@ export default async function StoryPage({ params }: PageProps<"/customers/[slug]
               ))}
             </div>
 
-            <p className="eyebrow mt-24 text-muted">02 — The approach</p>
+            <p className="eyebrow mt-24 text-muted">The approach</p>
             <ol className="relative mt-10 space-y-3 before:absolute before:bottom-6 before:left-[1.35rem] before:top-6 before:w-px before:bg-line">
               {s.approach.map((a, i) => (
                 <FadeUp as="li" key={a.t} delay={i * 0.05} className="relative flex gap-6 rounded-[1.5rem] p-2 pr-6">
@@ -145,15 +145,15 @@ export default async function StoryPage({ params }: PageProps<"/customers/[slug]
 
             <FadeUp as="figure" className="relative mt-24 overflow-hidden rounded-[2rem] bg-brand p-10 text-ivory md:p-14">
               <Glyph seed={`${s.slug}-q`} className="pointer-events-none absolute -bottom-24 -right-24 w-96 text-accent/30" strands={9} />
-              <span aria-hidden className="serif block text-[7rem] leading-[0.5] text-accent">&ldquo;</span>
-              <blockquote className="serif relative mt-6 text-[clamp(1.9rem,3.4vw,3.2rem)] leading-[1.1]">{s.quote.text}</blockquote>
+              <span aria-hidden className="em block text-[7rem] leading-[0.5] text-accent">&ldquo;</span>
+              <blockquote className="em relative mt-6 text-[clamp(1.9rem,3.4vw,3.2rem)] leading-[1.1]">{s.quote.text}</blockquote>
               <figcaption className="relative mt-10 text-ivory/70">
                 <span className="block text-ivory">{s.quote.name}</span>
                 {s.quote.role}
               </figcaption>
             </FadeUp>
 
-            <p className="eyebrow mt-24 text-muted">03 — The results</p>
+            <p className="eyebrow mt-24 text-muted">The results</p>
             <ul className="mt-8 border-t border-line">
               {s.results.map((r) => (
                 <FadeUp as="li" key={r} className="flex items-start gap-5 border-b border-line py-6 text-xl tracking-[-0.01em]">

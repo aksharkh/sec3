@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
-/** Mechanical odometer: each digit is a 0–9 column that rolls into place on scroll. */
+/** Mechanical odometer: each digit is a 0-9 column that rolls into place on scroll. */
 export function Odometer({ value, className }: { value: number; className?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const digits = String(value).split("");

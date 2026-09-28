@@ -13,7 +13,6 @@ import { ReadinessCheck } from "@/components/home/ReadinessCheck";
 import { Insights } from "@/components/home/Insights";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import { FlowThread } from "@/components/ui/FlowThread";
-import { OutlineBand } from "@/components/ui/OutlineBand";
 
 export default function Home() {
   return (
@@ -33,7 +32,6 @@ export default function Home() {
       <StoriesRail />
       <ReadinessCheck />
       <Insights />
-      <OutlineBand />
       <FinalCTA />
     </>
   );

@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "SecureKnots — Many frameworks. One secure knot.";
+export const alt = "SecureKnots, Many frameworks. One secure knot.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

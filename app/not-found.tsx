@@ -8,7 +8,7 @@ export default function NotFound() {
       <div className="container-x relative">
         <p className="eyebrow text-muted">(404) Loose thread</p>
         <h1 className="display mt-8 text-[clamp(3.4rem,10vw,10rem)]">
-          This thread <span className="serif text-brand">comes loose.</span>
+          This thread <span className="em text-brand">comes loose.</span>
         </h1>
         <p className="mt-8 max-w-md text-lg text-muted">
           The page you&apos;re looking for has moved or never existed. Try search, or head back to solid ground.

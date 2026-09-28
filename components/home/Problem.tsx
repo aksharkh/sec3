@@ -5,7 +5,7 @@ import { gsap, prefersReducedMotion } from "@/lib/gsap";
 import { FadeUp } from "@/components/ui/Reveal";
 
 const text =
-  "Every new customer asks for another certificate. Another questionnaire. Another audit. So teams end up running five programs that test the same controls five different ways — burning engineering time and stalling the deals that matter.";
+  "Every new customer asks for another certificate. Another questionnaire. Another audit. So teams end up running five programs that test the same controls five different ways, burning engineering time and stalling the deals that matter.";
 
 const notes = [
   { k: "Up to 80%", v: "of controls overlap between SOC 2 and ISO 27001" },
@@ -43,7 +43,7 @@ export function Problem() {
     <section ref={root} data-theme="dark" className="relative -mt-px bg-brand pb-28 pt-16 text-ivory md:pb-44 md:pt-24">
       <div className="container-x grid gap-12 md:grid-cols-12">
         <div className="md:col-span-3">
-          <p className="eyebrow sticky top-28 text-ivory/50">(SK—02) The tangle</p>
+          
         </div>
 
         <div className="md:col-span-9">
@@ -57,7 +57,7 @@ export function Problem() {
 
           <div className="problem-answer-wrap mt-10 overflow-hidden">
             <p className="problem-answer display text-[clamp(3rem,8vw,8rem)] text-accent">
-              We tie it into <span className="serif">one.</span>
+              We tie it into <span className="em">one.</span>
             </p>
           </div>
 

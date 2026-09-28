@@ -7,7 +7,7 @@ import { KnotMark } from "@/components/ui/Logo";
 
 const INTERVAL = 9000;
 
-export function Testimonials({ items = testimonials, eyebrow = "(SK—09) Client voices" }: { items?: { quote: string; name: string; org: string }[]; eyebrow?: string }) {
+export function Testimonials({ items = testimonials, eyebrow = "Client voices" }: { items?: { quote: string; name: string; org: string }[]; eyebrow?: string }) {
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
   const quote = useRef<HTMLQuoteElement>(null);
@@ -51,7 +51,7 @@ export function Testimonials({ items = testimonials, eyebrow = "(SK—09) Client
         </div>
 
         <figure className="md:col-span-9">
-          <span aria-hidden className="serif block text-[8rem] leading-[0.5] text-brand">&ldquo;</span>
+          <span aria-hidden className="em block text-[8rem] leading-[0.5] text-brand">&ldquo;</span>
           <blockquote
             key={i}
             ref={quote}

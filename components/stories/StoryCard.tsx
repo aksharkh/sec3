@@ -3,7 +3,7 @@ import type { Story } from "@/lib/stories";
 import { Glyph, toneClasses } from "@/components/ui/Glyph";
 import { Arrow } from "@/components/ui/Button";
 
-/** Customer story card — company mark, headline metric, frameworks, generative art. */
+/** Customer story card, company mark, headline metric, frameworks, generative art. */
 export function StoryCard({ story, className, size = "md" }: { story: Story; className?: string; size?: "md" | "lg" }) {
   const t = toneClasses[story.tone];
   const m = story.metrics[0];

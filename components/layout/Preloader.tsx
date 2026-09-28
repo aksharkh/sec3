@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap, markSiteReady, prefersReducedMotion } from "@/lib/gsap";
+import { ReededGlassStatic } from "@/components/ui/ReededGlass";
 
 const SEEN_KEY = "sk-preloaded";
 const COLS = 6;
@@ -92,7 +93,12 @@ export function Preloader() {
       {/* Shutter columns (the background) */}
       <div className="absolute inset-0 flex">
         {Array.from({ length: COLS }).map((_, i) => (
-          <div key={i} className="pl-col h-full flex-1 bg-ink" style={{ marginLeft: i ? -1 : 0 }} />
+          <div key={i} className="pl-col relative h-full flex-1 overflow-hidden bg-ink" style={{ marginLeft: i ? -1 : 0 }}>
+            <div className="absolute inset-y-0" style={{ width: `${COLS * 100}%`, left: `${-i * 100}%` }}>
+              <ReededGlassStatic className="absolute inset-0" stripes={30} hue={0.55} />
+              <div className="absolute inset-0 bg-ink/55" />
+            </div>
+          </div>
         ))}
       </div>
 
@@ -112,7 +118,7 @@ export function Preloader() {
             ))}
             {WORD_B.split("").map((c, i) => (
               <span key={`b${i}`} className="inline-block overflow-hidden pb-[0.06em]">
-                <span className="pl-char serif inline-block text-accent will-change-transform">{c}</span>
+                <span className="pl-char em inline-block text-accent will-change-transform">{c}</span>
               </span>
             ))}
           </h2>

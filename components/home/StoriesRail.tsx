@@ -8,7 +8,7 @@ import { Arrow } from "@/components/ui/Button";
 import { StoryCard } from "@/components/stories/StoryCard";
 
 /** Draggable horizontal rail of customer stories. */
-export function StoriesRail({ eyebrow = "(SK—11) Customer stories" }: { eyebrow?: string }) {
+export function StoriesRail({ eyebrow = "Customer stories" }: { eyebrow?: string }) {
   const rail = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
 
@@ -75,7 +75,7 @@ export function StoriesRail({ eyebrow = "(SK—11) Customer stories" }: { eyebro
           <p className="eyebrow text-muted md:col-span-3">{eyebrow}</p>
           <div className="md:col-span-9">
             <Reveal as="h2" className="display text-[clamp(2.6rem,6.5vw,7rem)]">
-              Proof, <span className="serif text-brand">not promises.</span>
+              Proof, <span className="em text-brand">not promises.</span>
             </Reveal>
             <div className="mt-10 flex flex-wrap items-center justify-between gap-6">
               <p className="max-w-md text-lg text-muted">

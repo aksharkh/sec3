@@ -8,11 +8,11 @@ import { Arrow, Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Careers",
-  description: "Join SecureKnots — practitioner-led compliance and security consulting across the US and India.",
+  description: "Join SecureKnots, practitioner-led compliance and security consulting across the US and India.",
 };
 
 const perks = [
-  { t: "Real problems", d: "Work across SaaS, defense, fintech and AI — often in the same quarter." },
+  { t: "Real problems", d: "Work across SaaS, defense, fintech and AI, often in the same quarter." },
   { t: "Certifications funded", d: "Exam fees, training and study time for the credentials that matter." },
   { t: "Remote-first", d: "Hubs in Wilmington and Bengaluru; work where you do your best thinking." },
   { t: "Small teams, senior people", d: "No pyramid. You work directly with clients from week one." },
@@ -22,10 +22,10 @@ export default function CareersPage() {
   return (
     <>
       <PageHero
-        eyebrow="(CR—01) Careers"
+        eyebrow="Careers"
         title={
           <>
-            Do the work <span className="serif text-brand">you&apos;re proud of.</span>
+            Do the work <span className="em text-brand">you&apos;re proud of.</span>
           </>
         }
         intro="We're a team of former auditors, CISOs, testers and privacy lawyers who'd rather fix things than produce binders."
@@ -48,7 +48,7 @@ export default function CareersPage() {
 
       <section id="roles" data-theme="dark" className="scroll-mt-10 bg-ink py-28 text-ivory md:py-40">
         <div className="container-x">
-          <SectionHead dark eyebrow="(CR—02) Open roles" title={<>{roles.length} ways <span className="serif text-accent">in.</span></>} />
+          <SectionHead dark eyebrow="Open roles" title={<>{roles.length} ways <span className="em text-accent">in.</span></>} />
           <ul className="mt-16 border-t border-ivory/15 md:mt-24">
             {roles.map((r) => (
               <li key={r.title}>

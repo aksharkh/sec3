@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 const faqs = [
-  { q: "How quickly will you respond?", a: "Within one business day, from a practitioner — not a sales development rep." },
+  { q: "How quickly will you respond?", a: "Within one business day, from a practitioner, not a sales development rep." },
   { q: "What happens on the first call?", a: "We learn what you sell, who you sell to and your deadlines, then outline the frameworks, sequence and rough timeline. You leave with a plan whether or not you work with us." },
   { q: "Do you work with early-stage startups?", a: "Yes. We right-size scope so a seed-stage team can get a first report without a full-time security hire." },
   { q: "Are you an auditor?", a: "We prepare you for audits and coordinate with independent auditors and certification bodies, keeping advisory and attestation properly separate." },
@@ -28,11 +28,11 @@ export default function ContactPage() {
         <div className="container-x relative grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <HeroFade as="p" className="eyebrow text-accent">
-              (CT—01) Contact
+              Contact
             </HeroFade>
             <h1 className="display mt-8 text-[clamp(3.2rem,7.5vw,8rem)]">
               <Reveal as="span" trigger="load" className="block">
-                Let&apos;s tie it <span className="serif text-accent">together.</span>
+                Let&apos;s tie it <span className="em text-accent">together.</span>
               </Reveal>
             </h1>
             <HeroFade className="mt-10 space-y-6">
@@ -63,7 +63,7 @@ export default function ContactPage() {
 
       <section className="bg-ivory py-28 md:py-40">
         <div className="container-x">
-          <SectionHead eyebrow="(CT—02) Before you reach out" title={<>Good <span className="serif text-brand">questions.</span></>} />
+          <SectionHead eyebrow="Before you reach out" title={<>Good <span className="em text-brand">questions.</span></>} />
           <div className="mt-14 md:ml-[25%]">
             <Accordion items={faqs} />
           </div>

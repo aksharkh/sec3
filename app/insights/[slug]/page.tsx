@@ -91,7 +91,7 @@ export default async function ArticlePage({ params }: PageProps<"/insights/[slug
             ))}
             <div className="mt-16 rounded-[1.75rem] bg-paper p-8">
               <p className="eyebrow text-muted">Need help with this?</p>
-              <p className="mt-3 text-2xl tracking-[-0.02em]">Talk it through with a practitioner — 30 minutes, no pitch.</p>
+              <p className="mt-3 text-2xl tracking-[-0.02em]">Talk it through with a practitioner, 30 minutes, no pitch.</p>
               <a href="#book" className="mt-6 inline-flex rounded-full bg-ink px-6 py-3 text-ivory">
                 Book a call →
               </a>
@@ -106,7 +106,7 @@ export default async function ArticlePage({ params }: PageProps<"/insights/[slug
       <section data-theme="dark" className="bg-brand py-20 text-ivory">
         <div className="container-x grid gap-8 lg:grid-cols-12 lg:items-center">
           <p className="display text-[clamp(2rem,3.6vw,3.6rem)] lg:col-span-6">
-            Get the next one <span className="serif text-accent">in your inbox.</span>
+            Get the next one <span className="em text-accent">in your inbox.</span>
           </p>
           <div className="lg:col-span-6">
             <Newsletter />

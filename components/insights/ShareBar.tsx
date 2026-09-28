@@ -8,7 +8,7 @@ export function ShareBar({ title }: { title: string }) {
       await navigator.clipboard.writeText(location.href);
       toast("Link copied to clipboard.");
     } catch {
-      toast("Couldn't copy — please copy the URL from your address bar.");
+      toast("Couldn't copy, please copy the URL from your address bar.");
     }
   };
   const share = (base: string) => {

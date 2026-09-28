@@ -24,10 +24,10 @@ export default function CustomersPage() {
   return (
     <>
       <PageHero
-        eyebrow="(CS—01) Customer stories"
+        eyebrow="Customer stories"
         title={
           <>
-            Tied tight. <span className="serif text-brand">Proven in audit.</span>
+            Tied tight. <span className="em text-brand">Proven in audit.</span>
           </>
         }
         aside={
@@ -56,7 +56,7 @@ export default function CustomersPage() {
           </FadeUp>
           <FadeUp delay={0.1} className="flex flex-col justify-between rounded-[2rem] bg-paper p-8 lg:col-span-4 md:p-10">
             <p className="eyebrow text-muted">Featured story</p>
-            <blockquote className="serif mt-10 text-[clamp(1.8rem,2.6vw,2.6rem)] leading-[1.1] text-brand">&ldquo;{featured.quote.text}&rdquo;</blockquote>
+            <blockquote className="em mt-10 text-[clamp(1.8rem,2.6vw,2.6rem)] leading-[1.1] text-brand">&ldquo;{featured.quote.text}&rdquo;</blockquote>
             <p className="mt-8 text-sm">
               <span className="block font-medium">{featured.quote.name}</span>
               <span className="text-muted">{featured.quote.role}</span>
@@ -83,15 +83,15 @@ export default function CustomersPage() {
       {/* Grid */}
       <section className="bg-ivory py-24 md:py-32">
         <div className="container-x">
-          <SectionHead eyebrow="(CS—02) All stories" title={<>Find teams <span className="serif text-brand">like yours.</span></>} />
+          <SectionHead eyebrow="All stories" title={<>Find teams <span className="em text-brand">like yours.</span></>} />
           <div className="mt-14">
             <StoriesGrid items={stories} industries={storyIndustries} frameworks={storyFrameworks} />
           </div>
         </div>
       </section>
 
-      <Testimonials eyebrow="(CS—03) In their words" items={stories.map((s) => ({ quote: s.quote.text, name: s.quote.name, org: s.company }))} />
-      <FinalCTA eyebrow="(CS—04) Your story next" />
+      <Testimonials eyebrow="In their words" items={stories.map((s) => ({ quote: s.quote.text, name: s.quote.name, org: s.company }))} />
+      <FinalCTA eyebrow="Your story next" />
     </>
   );
 }

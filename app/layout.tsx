@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
-import { Cursor } from "@/components/ui/Cursor";
+import { GlassCursor } from "@/components/ui/GlassCursor";
 import { Preloader } from "@/components/layout/Preloader";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
@@ -13,25 +13,16 @@ import { CookieBanner } from "@/components/overlays/CookieBanner";
 import { Toaster } from "@/components/overlays/Toaster";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { ThemeLab } from "@/components/ui/ThemeLab";
-import { CursorTrail } from "@/components/ui/CursorTrail";
 import { InteractiveFX } from "@/components/providers/InteractiveFX";
 
-const sans = Inter_Tight({
-  variable: "--font-inter-tight",
+const sans = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
   display: "swap",
 });
 
-const serif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const mono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
 });
@@ -39,8 +30,8 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://secureknots.com"),
   title: {
-    default: "SecureKnots — Many frameworks. One secure knot.",
-    template: "%s — SecureKnots",
+    default: "SecureKnots | Many frameworks. One secure knot.",
+    template: "%s | SecureKnots",
   },
   description:
     "Practitioner-led compliance advisory and audit readiness for SOC 2, ISO 27001, FedRAMP, CMMC, PCI DSS, HIPAA, ISO 42001 and 20+ more frameworks. Assess once, comply to many.",
@@ -48,19 +39,19 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "SecureKnots",
-    title: "SecureKnots — Many frameworks. One secure knot.",
+    title: "SecureKnots | Many frameworks. One secure knot.",
     description: "Assess once, comply to many. Practitioner-led compliance across 29 frameworks.",
   },
   twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f3f0e8",
+  themeColor: "#f2f3f5",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" id="top" className={`${sans.variable} ${serif.variable} ${mono.variable} antialiased`}>
+    <html lang="en" id="top" className={`${sans.variable} ${mono.variable} antialiased`}>
       <body>
         <script
           type="application/ld+json"
@@ -84,8 +75,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Preloader />
         <PageTransition />
         <ScrollProgress />
-        <Cursor />
-        <CursorTrail />
+        <GlassCursor />
         <InteractiveFX />
         <Nav />
         <main id="main">{children}</main>
