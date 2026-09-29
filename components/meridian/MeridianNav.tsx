@@ -87,7 +87,7 @@ export function MeridianNav() {
             <Wordmark />
           </Link>
 
-          <nav aria-label="Primary" className="hidden items-center gap-9 lg:flex">
+          <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex xl:gap-9">
             {navLinks.map((l) => (
               <Link
                 key={l.href}
@@ -122,7 +122,7 @@ export function MeridianNav() {
             </button>
             <Link
               href="#book"
-              className="hidden h-10 items-center rounded-full bg-ink px-5 text-[0.85rem] font-medium text-ivory transition-colors duration-500 hover:bg-brand md:flex"
+              className="hidden h-10 items-center whitespace-nowrap rounded-full bg-ink px-5 text-[0.85rem] font-medium text-ivory transition-colors duration-500 hover:bg-brand md:flex"
             >
               Book a consultation
             </Link>
