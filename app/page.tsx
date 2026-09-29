@@ -1,33 +1,29 @@
-import { SignalHero } from "@/components/signal/home/SignalHero";
+import { MeridianHero } from "@/components/meridian/home/MeridianHero";
 import {
-  FrameworkIndex,
-  Statement,
-  ServiceConsole,
-  ProcessRail,
-  StoriesBento,
-  InsightsIndex,
-  SignalCTA,
-} from "@/components/signal/home/Sections";
+  FrameworkBand,
+  Perspective,
+  Capabilities,
+  Approach,
+  FrameworkDirectory,
+  Voices,
+  Journal,
+  ClosingCTA,
+} from "@/components/meridian/home/Sections";
 import { OverlapMap } from "@/components/home/OverlapMap";
-import { Stats } from "@/components/home/Stats";
-import { Industries } from "@/components/home/Industries";
-import { ReadinessCheck } from "@/components/home/ReadinessCheck";
 
 export default function Home() {
   return (
     <>
-      <SignalHero />
-      <FrameworkIndex />
-      <Statement />
+      <MeridianHero />
+      <FrameworkBand />
+      <Perspective />
+      <Capabilities />
+      <Approach />
+      <FrameworkDirectory />
       <OverlapMap />
-      <ServiceConsole />
-      <ProcessRail />
-      <Stats />
-      <StoriesBento />
-      <Industries />
-      <InsightsIndex />
-      <ReadinessCheck />
-      <SignalCTA />
+      <Voices />
+      <Journal />
+      <ClosingCTA />
     </>
   );
 }

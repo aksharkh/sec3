@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, IBM_Plex_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
-import { SignalLoader } from "@/components/signal/SignalLoader";
-import { SignalNav } from "@/components/signal/SignalNav";
-import { SignalFooter } from "@/components/signal/SignalFooter";
+import { MeridianLoader } from "@/components/meridian/MeridianLoader";
+import { MeridianNav } from "@/components/meridian/MeridianNav";
+import { MeridianFooter } from "@/components/meridian/MeridianFooter";
 import { PageTransition } from "@/components/providers/PageTransition";
 import { BookingModal } from "@/components/overlays/BookingModal";
 import { SearchPalette } from "@/components/overlays/SearchPalette";
@@ -13,17 +13,23 @@ import { Toaster } from "@/components/overlays/Toaster";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { InteractiveFX } from "@/components/providers/InteractiveFX";
 
-const sans = Archivo({
-  variable: "--font-archivo",
+const sans = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
-  axes: ["wdth"],
   display: "swap",
 });
 
-const mono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
+const serif = Instrument_Serif({
+  variable: "--font-instrument",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: "400",
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const mono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
   display: "swap",
 });
 
@@ -46,12 +52,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0d0d0e",
+  themeColor: "#fbfaf7",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" id="top" className={`${sans.variable} ${mono.variable} antialiased`}>
+    <html lang="en" id="top" className={`${sans.variable} ${serif.variable} ${mono.variable} antialiased`}>
       <body>
         <script
           type="application/ld+json"
@@ -68,22 +74,21 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             }),
           }}
         />
-        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-ink">
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-ivory">
           Skip to content
         </a>
         <SmoothScroll />
-        <SignalLoader />
+        <MeridianLoader />
         <PageTransition />
         <ScrollProgress />
         <InteractiveFX />
-        <SignalNav />
+        <MeridianNav />
         <main id="main">{children}</main>
-        <SignalFooter />
+        <MeridianFooter />
         <BookingModal />
         <SearchPalette />
         <CookieBanner />
         <Toaster />
-        <div className="grain" aria-hidden />
       </body>
     </html>
   );
