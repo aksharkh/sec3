@@ -1,29 +1,31 @@
-import { MeridianHero } from "@/components/meridian/home/MeridianHero";
+import { HaloHero } from "@/components/halo/home/HaloHero";
 import {
-  FrameworkBand,
-  Perspective,
-  Capabilities,
-  Approach,
-  FrameworkDirectory,
-  Voices,
-  Journal,
-  ClosingCTA,
-} from "@/components/meridian/home/Sections";
-import { OverlapMap } from "@/components/home/OverlapMap";
+  ChipBand,
+  Statement,
+  ServiceBento,
+  ProcessStepper,
+  FrameworkTabs,
+  OverlapCard,
+  Numbers,
+  StoryCards,
+  InsightCards,
+  HaloCTA,
+} from "@/components/halo/home/Sections";
 
 export default function Home() {
   return (
     <>
-      <MeridianHero />
-      <FrameworkBand />
-      <Perspective />
-      <Capabilities />
-      <Approach />
-      <FrameworkDirectory />
-      <OverlapMap />
-      <Voices />
-      <Journal />
-      <ClosingCTA />
+      <HaloHero />
+      <ChipBand />
+      <Statement />
+      <ServiceBento />
+      <ProcessStepper />
+      <FrameworkTabs />
+      <OverlapCard />
+      <Numbers />
+      <StoryCards />
+      <InsightCards />
+      <HaloCTA />
     </>
   );
 }

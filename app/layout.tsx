@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
-import { MeridianLoader } from "@/components/meridian/MeridianLoader";
-import { MeridianNav } from "@/components/meridian/MeridianNav";
-import { MeridianFooter } from "@/components/meridian/MeridianFooter";
+import { HaloLoader } from "@/components/halo/HaloLoader";
+import { HaloNav } from "@/components/halo/HaloNav";
+import { HaloFooter } from "@/components/halo/HaloFooter";
 import { PageTransition } from "@/components/providers/PageTransition";
 import { BookingModal } from "@/components/overlays/BookingModal";
 import { SearchPalette } from "@/components/overlays/SearchPalette";
@@ -13,23 +13,16 @@ import { Toaster } from "@/components/overlays/Toaster";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { InteractiveFX } from "@/components/providers/InteractiveFX";
 
-const sans = Geist({
-  variable: "--font-geist",
+const sans = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   display: "swap",
 });
 
-const serif = Instrument_Serif({
-  variable: "--font-instrument",
+const mono = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const mono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -52,12 +45,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#fbfaf7",
+  themeColor: "#f3f6fc",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" id="top" className={`${sans.variable} ${serif.variable} ${mono.variable} antialiased`}>
+    <html lang="en" id="top" className={`${sans.variable} ${mono.variable} antialiased`}>
       <body>
         <script
           type="application/ld+json"
@@ -78,13 +71,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <SmoothScroll />
-        <MeridianLoader />
+        <HaloLoader />
         <PageTransition />
         <ScrollProgress />
         <InteractiveFX />
-        <MeridianNav />
+        <HaloNav />
         <main id="main">{children}</main>
-        <MeridianFooter />
+        <HaloFooter />
         <BookingModal />
         <SearchPalette />
         <CookieBanner />

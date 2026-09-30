@@ -1,30 +1,32 @@
 @import "tailwindcss";
 
 /* ─────────────────────────────────────────────────────────────
-   SecureKnots "Meridian" design tokens
-   Editorial, minimal, corporate. Warm paper surfaces, deep ink blocks,
-   a single cobalt accent. Serif display over a neutral grotesk.
+   SecureKnots "Halo" design tokens
+   Soft product-style UI: cool mist surfaces, white rounded cards,
+   deep navy blocks and an electric corporate blue.
    ───────────────────────────────────────────────────────────── */
 :root {
-  --ivory: #fbfaf7;
-  --paper: #f3f1ec;
-  --bone: #e6e2d9;
-  --ink: #0f1729;
-  --ink-2: #131d33;
-  --ink-3: #1d2842;
-  --brand: #1f3fae;
-  --brand-2: #152d84;
-  --brand-3: #9fb5ff;
+  --ivory: #f3f6fc;
+  --paper: #ffffff;
+  --bone: #e4eaf6;
+  --ink: #0a1230;
+  --ink-2: #0e1840;
+  --ink-3: #182555;
+  --brand: #2a5cff;
+  --brand-2: #1a3fd0;
+  --brand-3: #8eaeff;
   --accent: #ffffff;
-  --glow: #e7ecff;
-  --muted: #636a78;
-  --muted-dark: #a4aab6;
-  --line: rgb(15 23 41 / 0.1);
+  --glow: #e3ebff;
+  --muted: #5d6783;
+  --muted-dark: #9aa5c2;
+  --line: rgb(10 18 48 / 0.08);
   --line-dark: rgb(255 255 255 / 0.12);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
-  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --gutter: clamp(1rem, 3vw, 2.5rem);
+  --shadow-card: 0 1px 2px rgb(10 18 48 / 0.04), 0 12px 32px -16px rgb(10 18 48 / 0.12);
+  --shadow-float: 0 2px 4px rgb(10 18 48 / 0.04), 0 30px 60px -24px rgb(26 63 208 / 0.28);
 }
 
 @theme inline {
@@ -44,25 +46,24 @@
   --color-line: var(--line);
   --color-line-dark: var(--line-dark);
 
-  --font-sans: var(--font-geist);
-  --font-serif: var(--font-instrument);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-jetbrains);
 
   --ease-out-expo: var(--ease-out);
   --ease-in-out-quart: var(--ease-in-out);
 
-  --radius-2xl: 6px;
-  --radius-3xl: 8px;
+  --radius-2xl: 20px;
+  --radius-3xl: 28px;
 }
 
-/* Meridian shape lock: quiet, near-square panels; controls stay pill. */
+/* Halo shape lock: everything is a soft, generously rounded card. */
 [class*="rounded-[1.5rem]"],
 [class*="rounded-[1.75rem]"],
 [class*="rounded-[2rem]"],
 [class*="rounded-[2.5rem]"],
 [class*="rounded-[3rem]"],
 [class*="rounded-[12px]"] {
-  border-radius: 6px !important;
+  border-radius: 24px !important;
 }
 
 /* ───────── Base ───────── */
@@ -85,9 +86,8 @@ html.lenis body {
 body {
   background: var(--ivory);
   color: var(--ink);
-  font-family: var(--font-geist), system-ui, sans-serif;
-  font-feature-settings: "ss01", "cv11";
-  letter-spacing: -0.006em;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  letter-spacing: -0.011em;
   overflow-x: clip;
 }
 
@@ -103,36 +103,99 @@ body {
 }
 
 /* ───────── Type primitives ───────── */
-/* Display voice: a transitional serif, sentence case, tightly set. */
+/* Display voice: tight geometric sans, sentence case. */
 .display,
-.wide {
-  font-family: var(--font-instrument), "Times New Roman", serif;
-  font-weight: 400;
+.wide,
+.serif {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-weight: 600;
   font-stretch: normal !important;
   text-transform: none;
-  letter-spacing: -0.018em;
-  line-height: 1;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
 }
-/* Emphasis inside headlines: the italic cut. */
+/* Emphasis inside headlines: a blue gradient instead of a second typeface. */
 .em {
-  font-style: italic;
+  font-style: normal;
   font-weight: inherit;
+  background: linear-gradient(100deg, var(--brand) 10%, #6f95ff 60%, #9fc0ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  padding-right: 0.06em;
+}
+[data-theme="dark"] .em,
+.on-dark .em {
+  background-image: linear-gradient(100deg, #9fbaff 0%, #ffffff 100%);
 }
 .eyebrow {
-  font-family: var(--font-geist), system-ui, sans-serif;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 .mono {
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-  letter-spacing: 0;
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  letter-spacing: -0.02em;
 }
-.serif {
-  font-family: var(--font-instrument), "Times New Roman", serif;
-  font-weight: 400;
-  letter-spacing: -0.012em;
+
+/* ───────── Halo surfaces ───────── */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow-card);
+}
+.card-hover {
+  transition: transform 0.7s var(--ease-out), box-shadow 0.7s var(--ease-out), border-color 0.5s;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-float);
+  border-color: rgb(42 92 255 / 0.25);
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 0.4rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.halo-bg {
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgb(42 92 255 / 0.16), transparent 70%),
+    radial-gradient(40% 40% at 85% 20%, rgb(143 174 255 / 0.22), transparent 70%),
+    var(--ivory);
+}
+.dot-grid {
+  background-image: radial-gradient(rgb(10 18 48 / 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.navy-glow {
+  background:
+    radial-gradient(50% 70% at 85% 0%, rgb(42 92 255 / 0.55), transparent 70%),
+    radial-gradient(40% 60% at 0% 100%, rgb(42 92 255 / 0.3), transparent 70%),
+    var(--ink);
+}
+.blue-glow {
+  background:
+    radial-gradient(60% 90% at 100% 0%, #7fa2ff, transparent 60%),
+    radial-gradient(50% 80% at 0% 100%, #173bd0, transparent 70%),
+    var(--brand);
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.floaty { animation: floaty 7s ease-in-out infinite; }
+@keyframes ping-soft {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.6); opacity: 0; }
 }
 
 /* SplitText line masks — keep descenders from being clipped */
@@ -319,4 +382,17 @@ html.has-cursor textarea {
 .link-u:hover {
   background-size: 0% 1px;
   background-position: 100% 100%;
+}
+
+/* Halo: full-bleed dark and blue bands on inner pages become inset rounded cards. */
+main > section[data-theme="dark"],
+main > section.bg-brand,
+main > section.bg-ink,
+main > section.bg-ink-2 {
+  margin-inline: 0.75rem;
+  border-radius: 36px;
+  overflow: clip;
+}
+main > section[data-theme="dark"] + section[data-theme="dark"] {
+  margin-top: 0.75rem;
 }

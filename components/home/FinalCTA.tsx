@@ -1,7 +1,7 @@
-import { ClosingCTA } from "@/components/meridian/home/Sections";
+import { HaloCTA } from "@/components/halo/home/Sections";
 
-/** Closing call to action used across pages. In the Meridian design this is the centred paper slab. */
+/** Closing call to action used across pages. In the Halo design this is the inset blue card. */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function FinalCTA(_props: { eyebrow?: string }) {
-  return <ClosingCTA />;
+  return <HaloCTA />;
 }

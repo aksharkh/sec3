@@ -33,10 +33,10 @@ export function PageHero({
 }) {
   const muted = dark ? "text-accent/60" : "text-muted";
   return (
-    <section className={`relative overflow-hidden pb-14 pt-36 md:pb-20 md:pt-44 ${dark ? "bg-brand text-accent" : "bg-ivory text-ink"}`}>
+    <section className={`relative overflow-hidden pb-14 pt-36 md:pb-20 md:pt-44 ${dark ? "bg-brand text-accent" : "halo-bg text-ink"}`}>
       <div className="container-x relative">
-        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-line pb-5">
-          <HeroFade as="p" className={`eyebrow flex items-center gap-3 ${muted}`}>
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <HeroFade as="p" className={`pill ${dark ? "!border-white/20 !bg-white/15 text-white" : "text-ink"}`}>
             <span className={`size-1.5 rounded-full ${dark ? "bg-accent" : "bg-brand"}`} />
             {eyebrow}
           </HeroFade>
@@ -60,8 +60,8 @@ export function PageHero({
           )}
         </div>
 
-        <div className={`mt-12 grid gap-10 md:mt-16 ${aside ? "lg:grid-cols-12 lg:items-end" : ""}`}>
-          <h1 className={`wide ${size === "xl" ? "text-[clamp(2.8rem,7vw,8rem)] leading-[0.95]" : "text-[clamp(2.4rem,5.4vw,6rem)] leading-[0.98]"} ${aside ? "lg:col-span-8" : "max-w-[18ch]"}`}>
+        <div className={`mt-8 grid gap-10 md:mt-10 ${aside ? "lg:grid-cols-12 lg:items-end" : ""}`}>
+          <h1 className={`wide ${size === "xl" ? "text-[clamp(2.6rem,6vw,6rem)]" : "text-[clamp(2.3rem,4.8vw,4.8rem)]"} ${aside ? "lg:col-span-8" : "max-w-[18ch]"}`}>
             <Reveal as="span" trigger="load" delay={0.1} className="block">
               {title}
             </Reveal>
