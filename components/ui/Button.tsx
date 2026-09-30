@@ -4,13 +4,13 @@ import { Magnetic } from "./Magnetic";
 
 type Variant = "ink" | "accent" | "ivory" | "outline" | "outline-light";
 
-// "ink" is the primary action: a black slab whose arrow block turns cobalt.
+// "ink" is the primary action: solid brand blue, legible on white and on navy.
 const styles: Record<Variant, { wrap: string; dot: string }> = {
-  ink: { wrap: "bg-ink text-ivory", dot: "bg-brand text-white" },
-  accent: { wrap: "bg-white text-ink", dot: "bg-ink text-white" },
-  ivory: { wrap: "bg-brand text-white", dot: "bg-ink text-white" },
-  outline: { wrap: "border border-ink text-ink", dot: "border-l border-ink text-ink group-hover:bg-ink group-hover:text-ivory" },
-  "outline-light": { wrap: "border border-white/60 text-white", dot: "border-l border-white/60 text-white group-hover:bg-white group-hover:text-ink" },
+  ink: { wrap: "bg-brand text-white hover:bg-brand-2", dot: "" },
+  accent: { wrap: "bg-white text-ink hover:bg-glow", dot: "" },
+  ivory: { wrap: "bg-ink text-white hover:bg-ink-3", dot: "" },
+  outline: { wrap: "border border-ink/25 text-ink hover:border-ink hover:bg-ink hover:text-white", dot: "" },
+  "outline-light": { wrap: "border border-white/35 text-white hover:bg-white hover:text-ink", dot: "" },
 };
 
 export function Arrow({ className }: { className?: string }) {
@@ -21,7 +21,7 @@ export function Arrow({ className }: { className?: string }) {
   );
 }
 
-/** Thread button: square slab with a separate arrow block. */
+/** Atlas button: a plain, confident rectangle with a nudging arrow. */
 export function Button({
   href,
   children,
@@ -44,21 +44,12 @@ export function Button({
       href={book ? "#book" : href}
       data-book={book}
       data-cursor="hide"
-      className={`group relative inline-flex h-13 items-stretch text-[0.95rem] font-medium tracking-[-0.01em] transition-transform duration-500 ease-out-expo active:scale-[0.98] ${s.wrap} ${className ?? ""}`}
+      className={`group inline-flex h-12 items-center gap-4 rounded-[3px] px-6 text-[0.95rem] font-medium transition-colors duration-300 active:translate-y-px ${s.wrap} ${className ?? ""}`}
     >
-      <span className="flex items-center overflow-hidden px-5">
-        <span className="relative block overflow-hidden">
-          <span className="block transition-transform duration-500 ease-out-expo group-hover:-translate-y-full">{children}</span>
-          <span aria-hidden className="absolute inset-0 block translate-y-full transition-transform duration-500 ease-out-expo group-hover:translate-y-0">
-            {children}
-          </span>
-        </span>
-      </span>
-      <span className={`grid w-13 place-items-center transition-colors duration-500 ${s.dot}`}>
-        <svg viewBox="0 0 16 16" fill="none" className="size-4 transition-transform duration-500 ease-out-expo group-hover:translate-x-1" aria-hidden>
-          <path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.6" />
-        </svg>
-      </span>
+      <span>{children}</span>
+      <svg viewBox="0 0 16 16" fill="none" className="size-3.5 transition-transform duration-500 ease-out-expo group-hover:translate-x-1.5" aria-hidden>
+        <path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
     </Link>
   );
   return magnetic ? <Magnetic strength={0.12}>{inner}</Magnetic> : inner;

@@ -1,7 +1,7 @@
-import { ThreadCTA } from "@/components/thread/ThreadCTA";
+import { AtlasCTA } from "@/components/atlas/home/Lower";
 
-/** Closing call to action used across pages. In the Thread design this is the cobalt blueprint slab. */
+/** Closing call to action used across pages. In the Atlas design this is the navy band. */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function FinalCTA(_props: { eyebrow?: string }) {
-  return <ThreadCTA />;
+  return <AtlasCTA />;
 }

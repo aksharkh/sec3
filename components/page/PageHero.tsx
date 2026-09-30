@@ -33,16 +33,21 @@ export function PageHero({
 }) {
   const muted = dark ? "text-accent/60" : "text-muted";
   return (
-    <section className={`relative overflow-hidden pb-14 pt-28 md:pb-20 md:pt-32 lg:pt-16 border-b border-ink ${dark ? "bg-brand text-accent" : "paper-grid bg-ivory text-ink"}`}>
+    <section className={`relative overflow-hidden pb-14 pt-32 md:pb-20 md:pt-40 border-b border-line ${dark ? "bg-brand text-accent" : "bg-paper text-ink"}`}>
+      <div className="pointer-events-none absolute right-[-10rem] top-1/2 hidden -translate-y-1/2 lg:block" aria-hidden>
+        {[820, 640, 460, 280].map((d) => (
+          <span key={d} className="absolute left-1/2 top-1/2 rounded-full border border-ink/[0.07]" style={{ width: d, height: d, marginLeft: -d / 2, marginTop: -d / 2 }} />
+        ))}
+      </div>
       <div className="container-x relative">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <HeroFade as="p" className={`eyebrow flex items-center gap-3 ${muted}`}>
-            <span className={`size-2.5 ${dark ? "bg-accent" : "bg-brand"}`} />
+            <span className={`size-1.5 rounded-full ${dark ? "bg-accent" : "bg-brand"}`} />
             {eyebrow}
           </HeroFade>
           {crumbs && (
             <HeroFade as="nav" aria-label="Breadcrumb">
-              <ol className={`mono flex flex-wrap items-center gap-2 text-xs uppercase ${muted}`}>
+              <ol className={`flex flex-wrap items-center gap-2 text-sm ${muted}`}>
                 {crumbs.map((c, i) => (
                   <li key={c.label} className="flex items-center gap-2">
                     {c.href ? (
@@ -61,7 +66,7 @@ export function PageHero({
         </div>
 
         <div className={`mt-8 grid gap-10 md:mt-10 ${aside ? "lg:grid-cols-12 lg:items-end" : ""}`}>
-          <h1 className={`wide ${size === "xl" ? "text-[clamp(3rem,8.4vw,9rem)]" : "text-[clamp(2.6rem,6.4vw,6.6rem)]"} ${aside ? "lg:col-span-8" : "max-w-[18ch]"}`}>
+          <h1 className={`wide ${size === "xl" ? "text-[clamp(2.6rem,5.6vw,5.6rem)]" : "text-[clamp(2.3rem,4.4vw,4.4rem)]"} ${aside ? "lg:col-span-8" : "max-w-[18ch]"}`}>
             <Reveal as="span" trigger="load" delay={0.1} className="block">
               {title}
             </Reveal>

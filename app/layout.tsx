@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, DM_Mono } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
-import { ThreadLoader } from "@/components/thread/ThreadLoader";
-import { ThreadRail } from "@/components/thread/ThreadRail";
-import { ThreadFooter } from "@/components/thread/ThreadFooter";
+import { AtlasLoader } from "@/components/atlas/AtlasLoader";
+import { AtlasHeader } from "@/components/atlas/AtlasHeader";
+import { AtlasFooter } from "@/components/atlas/AtlasFooter";
 import { PageTransition } from "@/components/providers/PageTransition";
 import { BookingModal } from "@/components/overlays/BookingModal";
 import { SearchPalette } from "@/components/overlays/SearchPalette";
@@ -12,15 +12,15 @@ import { CookieBanner } from "@/components/overlays/CookieBanner";
 import { Toaster } from "@/components/overlays/Toaster";
 import { InteractiveFX } from "@/components/providers/InteractiveFX";
 
-const sans = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+const sans = IBM_Plex_Sans({
+  variable: "--font-plex",
   subsets: ["latin"],
-  axes: ["opsz", "wdth"],
+  weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
-const mono = DM_Mono({
-  variable: "--font-dm-mono",
+const mono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
   display: "swap",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f2f1ec",
+  themeColor: "#0a1f44",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -71,12 +71,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <SmoothScroll />
-        <ThreadLoader />
+        <AtlasLoader />
         <PageTransition />
         <InteractiveFX />
-        <ThreadRail />
+        <AtlasHeader />
         <main id="main">{children}</main>
-        <ThreadFooter />
+        <AtlasFooter />
         <BookingModal />
         <SearchPalette />
         <CookieBanner />

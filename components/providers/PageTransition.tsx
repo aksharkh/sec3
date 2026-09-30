@@ -88,10 +88,10 @@ export function PageTransition() {
     <div
       ref={curtain}
       aria-hidden
-      className="invisible fixed inset-0 z-[95] flex items-center justify-center overflow-hidden rounded-none blueprint bg-brand text-white"
+      className="invisible fixed inset-0 z-[95] flex items-center justify-center overflow-hidden rounded-none navy text-white"
     >
       <div className="pt-inner flex flex-col items-center gap-5">
-        <KnotMark className="size-9 animate-[spin_6s_linear_infinite] text-white" strokeWidth={2.2} />
+        <KnotMark className="size-9 animate-[spin_6s_linear_infinite] text-brand-3" strokeWidth={2.2} />
         <span ref={label} className="display text-[clamp(2.4rem,5.4vw,4.6rem)]" />
       </div>
     </div>

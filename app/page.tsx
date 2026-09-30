@@ -1,13 +1,15 @@
-import { Journey } from "@/components/thread/home/Journey";
+import { Split } from "@/components/atlas/home/Split";
+import { StoryRegister, InsightBriefs, AtlasCTA } from "@/components/atlas/home/Lower";
 import { OverlapMap } from "@/components/home/OverlapMap";
-import { ThreadCTA } from "@/components/thread/ThreadCTA";
 
 export default function Home() {
   return (
-    <>
-      <Journey />
+    <div className="pt-[var(--header)]">
+      <Split />
       <OverlapMap />
-      <ThreadCTA />
-    </>
+      <StoryRegister />
+      <InsightBriefs />
+      <AtlasCTA />
+    </div>
   );
 }
