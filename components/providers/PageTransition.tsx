@@ -37,11 +37,11 @@ export function PageTransition() {
       window.__lenis?.stop();
       const el = curtain.current!;
       if (label.current) label.current.textContent = a.dataset.label || prettify(url.pathname);
-      gsap.set(el, { visibility: "visible", yPercent: 100 });
+      gsap.set(el, { visibility: "visible", xPercent: 100 });
       gsap.set(".pt-inner", { yPercent: 30, autoAlpha: 0 });
       gsap
         .timeline()
-        .to(el, { yPercent: 0, duration: 0.75, ease: "expo.inOut" })
+        .to(el, { xPercent: 0, duration: 0.75, ease: "expo.inOut" })
         .to(".pt-inner", { yPercent: 0, autoAlpha: 1, duration: 0.5, ease: "expo.out" }, "-=0.25")
         .add(() => router.push(url.pathname + url.search + url.hash));
     };
@@ -76,7 +76,7 @@ export function PageTransition() {
           },
         })
         .to(".pt-inner", { yPercent: -30, autoAlpha: 0, duration: 0.4, ease: "power2.in" }, 0.1)
-        .to(el, { yPercent: -100, duration: 0.9, ease: "expo.inOut" }, 0.2)
+        .to(el, { xPercent: -100, duration: 0.9, ease: "expo.inOut" }, 0.2)
         .add(() => {
           window.__lenis?.start();
           markSiteReady();
@@ -88,7 +88,7 @@ export function PageTransition() {
     <div
       ref={curtain}
       aria-hidden
-      className="invisible fixed inset-0 z-[95] flex items-center justify-center overflow-hidden rounded-none blue-glow text-white"
+      className="invisible fixed inset-0 z-[95] flex items-center justify-center overflow-hidden rounded-none blueprint bg-brand text-white"
     >
       <div className="pt-inner flex flex-col items-center gap-5">
         <KnotMark className="size-9 animate-[spin_6s_linear_infinite] text-white" strokeWidth={2.2} />

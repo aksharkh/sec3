@@ -33,16 +33,16 @@ export function PageHero({
 }) {
   const muted = dark ? "text-accent/60" : "text-muted";
   return (
-    <section className={`relative overflow-hidden pb-14 pt-36 md:pb-20 md:pt-44 ${dark ? "bg-brand text-accent" : "halo-bg text-ink"}`}>
+    <section className={`relative overflow-hidden pb-14 pt-28 md:pb-20 md:pt-32 lg:pt-16 border-b border-ink ${dark ? "bg-brand text-accent" : "paper-grid bg-ivory text-ink"}`}>
       <div className="container-x relative">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <HeroFade as="p" className={`pill ${dark ? "!border-white/20 !bg-white/15 text-white" : "text-ink"}`}>
-            <span className={`size-1.5 rounded-full ${dark ? "bg-accent" : "bg-brand"}`} />
+          <HeroFade as="p" className={`eyebrow flex items-center gap-3 ${muted}`}>
+            <span className={`size-2.5 ${dark ? "bg-accent" : "bg-brand"}`} />
             {eyebrow}
           </HeroFade>
           {crumbs && (
             <HeroFade as="nav" aria-label="Breadcrumb">
-              <ol className={`flex flex-wrap items-center gap-2 text-sm ${muted}`}>
+              <ol className={`mono flex flex-wrap items-center gap-2 text-xs uppercase ${muted}`}>
                 {crumbs.map((c, i) => (
                   <li key={c.label} className="flex items-center gap-2">
                     {c.href ? (
@@ -61,7 +61,7 @@ export function PageHero({
         </div>
 
         <div className={`mt-8 grid gap-10 md:mt-10 ${aside ? "lg:grid-cols-12 lg:items-end" : ""}`}>
-          <h1 className={`wide ${size === "xl" ? "text-[clamp(2.6rem,6vw,6rem)]" : "text-[clamp(2.3rem,4.8vw,4.8rem)]"} ${aside ? "lg:col-span-8" : "max-w-[18ch]"}`}>
+          <h1 className={`wide ${size === "xl" ? "text-[clamp(3rem,8.4vw,9rem)]" : "text-[clamp(2.6rem,6.4vw,6.6rem)]"} ${aside ? "lg:col-span-8" : "max-w-[18ch]"}`}>
             <Reveal as="span" trigger="load" delay={0.1} className="block">
               {title}
             </Reveal>

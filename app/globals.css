@@ -1,32 +1,37 @@
 @import "tailwindcss";
 
 /* ─────────────────────────────────────────────────────────────
-   SecureKnots "Halo" design tokens
-   Soft product-style UI: cool mist surfaces, white rounded cards,
-   deep navy blocks and an electric corporate blue.
+   SecureKnots "Thread" design tokens
+   Poster-like and architectural: paper, black, one cobalt.
+   Square corners, visible rules, condensed display type.
    ───────────────────────────────────────────────────────────── */
 :root {
-  --ivory: #f3f6fc;
-  --paper: #ffffff;
-  --bone: #e4eaf6;
-  --ink: #0a1230;
-  --ink-2: #0e1840;
-  --ink-3: #182555;
-  --brand: #2a5cff;
-  --brand-2: #1a3fd0;
-  --brand-3: #8eaeff;
+  --ivory: #f2f1ec;
+  --paper: #e9e7df;
+  --bone: #d9d6cb;
+  --ink: #0b0b10;
+  --ink-2: #12121a;
+  --ink-3: #1d1e2a;
+  --brand: #1a3df0;
+  --brand-2: #0f29b8;
+  --brand-3: #9db0ff;
   --accent: #ffffff;
-  --glow: #e3ebff;
-  --muted: #5d6783;
-  --muted-dark: #9aa5c2;
-  --line: rgb(10 18 48 / 0.08);
-  --line-dark: rgb(255 255 255 / 0.12);
+  --glow: #dfe5ff;
+  --muted: #5e5f68;
+  --muted-dark: #a0a1ab;
+  --line: rgb(11 11 16 / 0.16);
+  --line-dark: rgb(255 255 255 / 0.18);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
-  --gutter: clamp(1rem, 3vw, 2.5rem);
-  --shadow-card: 0 1px 2px rgb(10 18 48 / 0.04), 0 12px 32px -16px rgb(10 18 48 / 0.12);
-  --shadow-float: 0 2px 4px rgb(10 18 48 / 0.04), 0 30px 60px -24px rgb(26 63 208 / 0.28);
+  --gutter: clamp(1.1rem, 3vw, 2.75rem);
+  --rail: 0px;
+  --ruler: 64px;
+}
+@media (min-width: 1024px) {
+  :root {
+    --rail: 76px;
+  }
 }
 
 @theme inline {
@@ -46,24 +51,21 @@
   --color-line: var(--line);
   --color-line-dark: var(--line-dark);
 
-  --font-sans: var(--font-manrope);
-  --font-mono: var(--font-jetbrains);
+  --font-sans: var(--font-bricolage);
+  --font-mono: var(--font-dm-mono);
 
   --ease-out-expo: var(--ease-out);
   --ease-in-out-quart: var(--ease-in-out);
 
-  --radius-2xl: 20px;
-  --radius-3xl: 28px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
 }
 
-/* Halo shape lock: everything is a soft, generously rounded card. */
-[class*="rounded-[1.5rem]"],
-[class*="rounded-[1.75rem]"],
-[class*="rounded-[2rem]"],
-[class*="rounded-[2.5rem]"],
-[class*="rounded-[3rem]"],
-[class*="rounded-[12px]"] {
-  border-radius: 24px !important;
+/* Thread shape lock: no rounded corners anywhere. */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
 }
 
 /* ───────── Base ───────── */
@@ -86,8 +88,9 @@ html.lenis body {
 body {
   background: var(--ivory);
   color: var(--ink);
-  font-family: var(--font-manrope), system-ui, sans-serif;
-  letter-spacing: -0.011em;
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  letter-spacing: -0.012em;
+  padding-left: var(--rail);
   overflow-x: clip;
 }
 
@@ -103,99 +106,61 @@ body {
 }
 
 /* ───────── Type primitives ───────── */
-/* Display voice: tight geometric sans, sentence case. */
+/* Display voice: condensed grotesque set like a poster. */
 .display,
 .wide,
 .serif {
-  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-family: var(--font-bricolage), system-ui, sans-serif;
   font-weight: 600;
-  font-stretch: normal !important;
+  font-stretch: 78% !important;
   text-transform: none;
-  letter-spacing: -0.045em;
-  line-height: 1.02;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
 }
-/* Emphasis inside headlines: a blue gradient instead of a second typeface. */
+/* Emphasis inside headlines: a cobalt marker block. */
 .em {
   font-style: normal;
   font-weight: inherit;
-  background: linear-gradient(100deg, var(--brand) 10%, #6f95ff 60%, #9fc0ff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent !important;
-  padding-right: 0.06em;
+  background: var(--brand);
+  color: #fff !important;
+  padding: 0 0.14em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 [data-theme="dark"] .em,
 .on-dark .em {
-  background-image: linear-gradient(100deg, #9fbaff 0%, #ffffff 100%);
+  background: #fff;
+  color: var(--brand) !important;
 }
 .eyebrow {
-  font-family: var(--font-manrope), system-ui, sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-family: var(--font-dm-mono), ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 .mono {
-  font-family: var(--font-jetbrains), ui-monospace, monospace;
-  letter-spacing: -0.02em;
+  font-family: var(--font-dm-mono), ui-monospace, monospace;
+  letter-spacing: -0.01em;
 }
-
-/* ───────── Halo surfaces ───────── */
-.card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  box-shadow: var(--shadow-card);
+.vert {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
 }
-.card-hover {
-  transition: transform 0.7s var(--ease-out), box-shadow 0.7s var(--ease-out), border-color 0.5s;
+.blueprint {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
-.card-hover:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-float);
-  border-color: rgb(42 92 255 / 0.25);
+.paper-grid {
+  background-image:
+    linear-gradient(rgb(11 11 16 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(11 11 16 / 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--paper);
-  padding: 0.4rem 0.85rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-}
-.halo-bg {
-  background:
-    radial-gradient(60% 50% at 50% 0%, rgb(42 92 255 / 0.16), transparent 70%),
-    radial-gradient(40% 40% at 85% 20%, rgb(143 174 255 / 0.22), transparent 70%),
-    var(--ivory);
-}
-.dot-grid {
-  background-image: radial-gradient(rgb(10 18 48 / 0.12) 1px, transparent 1px);
-  background-size: 22px 22px;
-}
-.navy-glow {
-  background:
-    radial-gradient(50% 70% at 85% 0%, rgb(42 92 255 / 0.55), transparent 70%),
-    radial-gradient(40% 60% at 0% 100%, rgb(42 92 255 / 0.3), transparent 70%),
-    var(--ink);
-}
-.blue-glow {
-  background:
-    radial-gradient(60% 90% at 100% 0%, #7fa2ff, transparent 60%),
-    radial-gradient(50% 80% at 0% 100%, #173bd0, transparent 70%),
-    var(--brand);
-}
-@keyframes floaty {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-.floaty { animation: floaty 7s ease-in-out infinite; }
-@keyframes ping-soft {
-  0% { transform: scale(1); opacity: 0.6; }
-  100% { transform: scale(2.6); opacity: 0; }
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
 }
 
 /* SplitText line masks — keep descenders from being clipped */
@@ -356,7 +321,7 @@ html.has-cursor textarea {
   pointer-events: none;
   opacity: var(--spot);
   transition: opacity 0.4s;
-  background: radial-gradient(420px circle at var(--mx) var(--my), color-mix(in srgb, var(--brand) 7%, transparent), transparent 60%);
+  background: radial-gradient(420px circle at var(--mx) var(--my), color-mix(in srgb, var(--brand) 10%, transparent), transparent 60%);
 }
 
 /* ───────── Meridian motion primitives ───────── */
@@ -384,15 +349,10 @@ html.has-cursor textarea {
   background-position: 100% 100%;
 }
 
-/* Halo: full-bleed dark and blue bands on inner pages become inset rounded cards. */
-main > section[data-theme="dark"],
-main > section.bg-brand,
-main > section.bg-ink,
-main > section.bg-ink-2 {
-  margin-inline: 0.75rem;
-  border-radius: 36px;
-  overflow: clip;
-}
-main > section[data-theme="dark"] + section[data-theme="dark"] {
-  margin-top: 0.75rem;
+
+/* Thread: with reduced motion the journey is not pinned, so let it scroll sideways natively. */
+@media (prefers-reduced-motion: reduce) {
+  .journey {
+    overflow-x: auto !important;
+  }
 }

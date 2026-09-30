@@ -4,13 +4,13 @@ import { Magnetic } from "./Magnetic";
 
 type Variant = "ink" | "accent" | "ivory" | "outline" | "outline-light";
 
-// "ink" is the primary action: electric blue pill with a white arrow chip.
+// "ink" is the primary action: a black slab whose arrow block turns cobalt.
 const styles: Record<Variant, { wrap: string; dot: string }> = {
-  ink: { wrap: "bg-brand text-white shadow-[0_10px_24px_-10px_rgb(42_92_255/0.7)] hover:bg-brand-2", dot: "bg-white text-brand" },
-  accent: { wrap: "bg-white text-ink hover:bg-glow", dot: "bg-brand text-white" },
-  ivory: { wrap: "bg-ink text-white hover:bg-ink-3", dot: "bg-white/15 text-white" },
-  outline: { wrap: "border border-line bg-paper text-ink hover:border-brand/40", dot: "bg-ivory text-ink" },
-  "outline-light": { wrap: "border border-white/20 bg-white/5 text-white hover:bg-white/10", dot: "bg-white/15 text-white" },
+  ink: { wrap: "bg-ink text-ivory", dot: "bg-brand text-white" },
+  accent: { wrap: "bg-white text-ink", dot: "bg-ink text-white" },
+  ivory: { wrap: "bg-brand text-white", dot: "bg-ink text-white" },
+  outline: { wrap: "border border-ink text-ink", dot: "border-l border-ink text-ink group-hover:bg-ink group-hover:text-ivory" },
+  "outline-light": { wrap: "border border-white/60 text-white", dot: "border-l border-white/60 text-white group-hover:bg-white group-hover:text-ink" },
 };
 
 export function Arrow({ className }: { className?: string }) {
@@ -21,7 +21,7 @@ export function Arrow({ className }: { className?: string }) {
   );
 }
 
-/** Halo button: soft pill with a round arrow chip. */
+/** Thread button: square slab with a separate arrow block. */
 export function Button({
   href,
   children,
@@ -44,15 +44,19 @@ export function Button({
       href={book ? "#book" : href}
       data-book={book}
       data-cursor="hide"
-      className={`group relative inline-flex h-12 items-center gap-3 rounded-full pl-5 pr-1.5 text-[0.9rem] font-semibold tracking-[-0.01em] transition-[background-color,border-color,transform] duration-500 ease-out-expo active:scale-[0.97] ${s.wrap} ${className ?? ""}`}
+      className={`group relative inline-flex h-13 items-stretch text-[0.95rem] font-medium tracking-[-0.01em] transition-transform duration-500 ease-out-expo active:scale-[0.98] ${s.wrap} ${className ?? ""}`}
     >
-      <span>{children}</span>
-      <span className={`relative grid size-9 place-items-center overflow-hidden rounded-full transition-transform duration-500 ease-out-expo group-hover:scale-105 ${s.dot}`}>
-        <svg viewBox="0 0 16 16" fill="none" className="absolute size-3.5 transition-transform duration-500 ease-out-expo group-hover:translate-x-6" aria-hidden>
-          <path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-        <svg viewBox="0 0 16 16" fill="none" className="absolute size-3.5 -translate-x-6 transition-transform duration-500 ease-out-expo group-hover:translate-x-0" aria-hidden>
-          <path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+      <span className="flex items-center overflow-hidden px-5">
+        <span className="relative block overflow-hidden">
+          <span className="block transition-transform duration-500 ease-out-expo group-hover:-translate-y-full">{children}</span>
+          <span aria-hidden className="absolute inset-0 block translate-y-full transition-transform duration-500 ease-out-expo group-hover:translate-y-0">
+            {children}
+          </span>
+        </span>
+      </span>
+      <span className={`grid w-13 place-items-center transition-colors duration-500 ${s.dot}`}>
+        <svg viewBox="0 0 16 16" fill="none" className="size-4 transition-transform duration-500 ease-out-expo group-hover:translate-x-1" aria-hidden>
+          <path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.6" />
         </svg>
       </span>
     </Link>

@@ -1,26 +1,26 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, JetBrains_Mono } from "next/font/google";
+import { Bricolage_Grotesque, DM_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
-import { HaloLoader } from "@/components/halo/HaloLoader";
-import { HaloNav } from "@/components/halo/HaloNav";
-import { HaloFooter } from "@/components/halo/HaloFooter";
+import { ThreadLoader } from "@/components/thread/ThreadLoader";
+import { ThreadRail } from "@/components/thread/ThreadRail";
+import { ThreadFooter } from "@/components/thread/ThreadFooter";
 import { PageTransition } from "@/components/providers/PageTransition";
 import { BookingModal } from "@/components/overlays/BookingModal";
 import { SearchPalette } from "@/components/overlays/SearchPalette";
 import { CookieBanner } from "@/components/overlays/CookieBanner";
 import { Toaster } from "@/components/overlays/Toaster";
-import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { InteractiveFX } from "@/components/providers/InteractiveFX";
 
-const sans = Manrope({
-  variable: "--font-manrope",
+const sans = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
+  axes: ["opsz", "wdth"],
   display: "swap",
 });
 
-const mono = JetBrains_Mono({
-  variable: "--font-jetbrains",
+const mono = DM_Mono({
+  variable: "--font-dm-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
   display: "swap",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f3f6fc",
+  themeColor: "#f2f1ec",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -71,13 +71,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <SmoothScroll />
-        <HaloLoader />
+        <ThreadLoader />
         <PageTransition />
-        <ScrollProgress />
         <InteractiveFX />
-        <HaloNav />
+        <ThreadRail />
         <main id="main">{children}</main>
-        <HaloFooter />
+        <ThreadFooter />
         <BookingModal />
         <SearchPalette />
         <CookieBanner />
